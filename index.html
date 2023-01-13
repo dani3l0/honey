@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>honey</title>
+	<link rel="icon" href="img/icon.png">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="js/dom.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body onload="onload()">
+	<div class="background">
+		<img src="img/background.jpg" id="background" class="unloaded" onload="load_img(this)">
+	</div>
+	<div class="main">
+		<div class="page home hidden" id="page-home">
+			<div class="wrapper">
+				<div class="home">
+					<img src="img/icon.png" class="appicon">
+					<div class="appname">honey</div>
+					<div class="appdesc">Nice and sweet place for all your self-hosted services.</div>
+				</div>
+				<div class="buttons">
+					<div onclick="show('page-services')">
+						<div class="icon">apps</div>
+						<div class="text">Services</div>
+					</div>
+					<div onclick="show('page-about')">
+						<div class="icon">info</div>
+						<div class="text">About</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="page hidden" id="page-services">
+			<div class="back"><div class="icon"></div></div>
+			<div class="wrapper">
+				<div class="header">
+					<div class="icon">apps</div>
+					<div class="text">Services</div>
+				</div>
+				<div class="boxes">
+					<a class="box" href="caldav">
+						<img src="img/preview/caldav.png">
+						<div>
+							<div class="name">CalDav</div>
+							<div class="desc">Simple CalDav server for calendar sync between various devices.</div>
+						</div>
+					</a>
+					<a class="box" href="files">
+						<img src="img/preview/files.png">
+						<div>
+							<div class="name">Files</div>
+							<div class="desc">Fancy file manager for the web.</div>
+						</div>
+					</a>
+					<a class="box" href="gallery">
+						<img src="img/preview/gallery.png">
+						<div>
+							<div class="name">Gallery</div>
+							<div class="desc">Photo & video gallery syncable with multiple Android devices.</div>
+						</div>
+					</a>
+					<a class="box" href="git">
+						<img src="img/preview/git.png">
+						<div>
+							<div class="name">Git</div>
+							<div class="desc">Self-hosted, painless, secure place for your repositories.</div>
+						</div>
+					</a>
+					<a class="box" href="mail">
+						<img src="img/preview/mail.png">
+						<div>
+							<div class="name">E-Mail</div>
+							<div class="desc">Feature-rich, decentralized and secure E-Mail server.</div>
+						</div>
+					</a>
+					<a class="box" href="music">
+						<img src="img/preview/music.png">
+						<div>
+							<div class="name">Music</div>
+							<div class="desc">Beautiful, moody music streaming app.</div>
+						</div>
+					</a>
+					<a class="box" href="notes">
+						<img src="img/preview/notes.png">
+						<div>
+							<div class="name">Notes</div>
+							<div class="desc">Sweet & lightweight app for taking notes.</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="page hidden" id="page-about">
+			<div class="back"><div class="icon"></div></div>
+			<div class="wrapper">
+				<div class="header">
+					<div class="icon">info</div>
+					<div class="text">About</div>
+				</div>
+				<img src="img/appicon.png" class="appicon">
+				<div class="appname about">honey</div>
+				<div class="appdesc">Nice and sweet place for all your self-hosted services.</div>
+				<div class="appdesc">Source: <a href="https://gitlab.com/dani3l0/honey" target="_blank">gitlab.com/dani3l0/honey</a></div>
+				<div class="boxes static">
+					<div class="box">
+						<div class="icon" style="--color: 0deg">code</div>
+						<div>
+							<div class="name">Open Source</div>
+							<div class="desc">Code is publicly available. Download, modify, collaborate, whatever.</div>
+						</div>
+					</div>
+					<div class="box">
+						<div class="icon" style="--color: 144deg">mop</div>
+						<div>
+							<div class="name">Simple & Clean</div>
+							<div class="desc">Interface is meant to be uncomplicated and pleasant in sight.</div>
+						</div>
+					</div>
+					<div class="box">
+						<div class="icon" style="--color: 240deg">language</div>
+						<div>
+							<div class="name">Static</div>
+							<div class="desc">Requires no dynamic backend as it's built with plain HTML/CSS/JS.</div>
+						</div>
+					</div>
+					<div class="box">
+						<div class="icon" style="--color: 36deg">auto_awesome</div>
+						<div>
+							<div class="name">Responsive</div>
+							<div class="desc">Layout is automatically adjusted depending on device you are using.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
