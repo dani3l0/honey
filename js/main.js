@@ -24,6 +24,7 @@ function back() {
 
 var is_dark = false;
 function switch_theme(value) {
+	back();
 	if (value === undefined) value = !is_dark; 
 	is_dark = value;
 	get("css_dark").disabled = !is_dark;
