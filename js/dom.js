@@ -10,3 +10,7 @@ function for_all(class_name, func) {
 function load_img(img) {
 	img.classList.remove("unloaded");
 }
+function get_background() {
+	let bg = get("background");
+	return bg.children[1-bg.classList.contains("dark")];
+}

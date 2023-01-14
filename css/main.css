@@ -6,7 +6,7 @@
 }
 
 body {
-	background: #DDD;
+	background: #EEE;
 	color: #222;
 	margin: 0;
 	font-family: Quicksand;
@@ -20,6 +20,9 @@ body {
 }
 a {
 	color: #44F;
+}
+body.init * {
+	transition: none !important;
 }
 .icon {
 	font-family: 'Material Symbols Rounded';
@@ -36,7 +39,7 @@ a {
 	-webkit-font-feature-settings: 'liga';
 	-webkit-font-smoothing: antialiased;
 }
-.background, #background {
+#background img {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -44,13 +47,21 @@ a {
 	height: 100%;
 	overflow: hidden;
 	object-fit: cover;
-	transition: all .45s;
+	transition: all .45s !important;
 }
-#background.scaled {
+#background .scaled {
 	transform: scale(1.14);
+}
+#background.dark > img:last-child {
+	opacity: 0;
+	transform: scale(1);
+}
+#background:not(.dark) > img:first-child {
+	transform: scale(1);
 }
 .unloaded {
 	opacity: 0;
+	transform: scale(1) !important;
 }
 
 .main {
@@ -94,7 +105,7 @@ a {
 }
 .wrapper {
 	box-shadow: 2px 2px 8px #0003;
-	background: #FFF8;
+	background: #EEE8;
 	padding: 3px;
 	backdrop-filter: blur(16px);
 	border-radius: 24px;
@@ -105,7 +116,7 @@ a {
 }
 .home .wrapper {
 	box-shadow: none;
-	background: #FFF0;
+	background: transparent;
 	backdrop-filter: none;
 }
 
@@ -113,7 +124,7 @@ a {
 	font-size: 48px;
 }
 .appdesc {
-	opacity: .7;
+	opacity: .6;
 	margin: 2px 12px;
 }
 .appname.about {
@@ -126,16 +137,17 @@ a {
 	backdrop-filter: blur(16px);
 	border-radius: 24px;
 	max-width: 480px;
-	background: #FFF8;
+	background: #EEE8;
 	padding: 2px;
 	justify-content: space-between;
+	transition: background .4s;
 }
 .buttons > div {
 	padding: 16px;
 	margin: 2px;
 	cursor: pointer;
 	border-radius: 20px;
-	width: calc(100% / 2);
+	width: 100%;
 	transition: all .2s;
 }
 .buttons > div:hover {
@@ -151,7 +163,7 @@ a {
 	width: 64px;
 	height: 64px;
 	border-radius: 24px;
-	background: #FFF8;
+	background: #EEE8;
 	margin: 20px;
 	backdrop-filter: blur(16px);
 }
@@ -224,7 +236,7 @@ a.box {
 	font-size: 18px;
 }
 .box .desc {
-	opacity: .65;
+	opacity: .6;
 }
 .header {
 	display: flex;

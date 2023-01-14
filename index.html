@@ -6,12 +6,14 @@
 	<title>honey</title>
 	<link rel="icon" href="img/icon.png">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/dark.css" id="css_dark" disabled>
 	<script type="text/javascript" src="js/dom.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
-<body onload="onload()">
-	<div class="background">
-		<img src="img/background.jpg" id="background" class="unloaded" onload="load_img(this)">
+<body onload="onload()" class="init">
+	<div id="background">
+		<img class="unloaded" onload="load_img(this)">
+		<img class="unloaded" onload="load_img(this)">
 	</div>
 	<div class="main">
 		<div class="page home hidden" id="page-home">
@@ -22,6 +24,10 @@
 					<div class="appdesc">Nice and sweet place for all your self-hosted services.</div>
 				</div>
 				<div class="buttons">
+					<div onclick="switch_theme()">
+						<div class="icon" id="theme-indicator">light_mode</div>
+						<div class="text">Theme</div>
+					</div>
 					<div onclick="show('page-services')">
 						<div class="icon">apps</div>
 						<div class="text">Services</div>
