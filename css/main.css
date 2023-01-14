@@ -6,7 +6,7 @@
 }
 
 body {
-	background: #EEE;
+	background: #000;
 	color: #222;
 	margin: 0;
 	font-family: Quicksand;
@@ -23,6 +23,9 @@ a {
 }
 body.init * {
 	transition: none !important;
+}
+body.init .page {
+	transition: opacity .3s, top .3s !important;
 }
 .icon {
 	font-family: 'Material Symbols Rounded';
