@@ -1,14 +1,60 @@
-var CONFIG = {
+var UI = {
 	"dark_mode": false
 }
+var SERVICES = [
+	{
+		"name": "CalDav",
+		"desc": "Simple CalDav server for calendar sync between various devices.",
+		"href": "caldav",
+		"icon": "img/preview/caldav.png"
+	},
+	{
+		"name": "Files",
+		"desc": "Fancy file manager for the web.",
+		"href": "files",
+		"icon": "img/preview/files.png"
+	},
+	{
+		"name": "Gallery",
+		"desc": "Photo & video gallery syncable with multiple Android devices.",
+		"href": "gallery",
+		"icon": "img/preview/gallery.png"
+	},
+	{
+		"name": "Git",
+		"desc": "Self-hosted, painless, secure place for your repositories.",
+		"href": "git",
+		"icon": "img/preview/git.png"
+	},
+	{
+		"name": "E-Mail",
+		"desc": "Feature-rich, decentralized and secure E-Mail server.",
+		"href": "mail",
+		"icon": "img/preview/mail.png"
+	},
+	{
+		"name": "Music",
+		"desc": "Beautiful, moody music streaming app.",
+		"href": "music",
+		"icon": "img/preview/music.png"
+	},
+	{
+		"name": "Notes",
+		"desc": "Sweet & lightweight app for taking notes.",
+		"href": "notes",
+		"icon": "img/preview/notes.png"
+	}
+]
 
 function config(key, value) {
+	let def = UI[key];
+	let val = localStorage.getItem(key);
+	if (def == value && !val) return;
 	if (value !== undefined) {
 		localStorage.setItem(key, value);
-		return value;
+		return;
 	}
-	let val = localStorage.getItem(key);
-	if (val === null) val = CONFIG.dark_mode;
+	if (!val) val = UI[key].toString();
 	return val;
 }
 
@@ -17,6 +63,7 @@ function onload() {
 		btn.onclick = back;
 	});
 	switch_theme(config("dark_mode") == "true");
+	load_apps();
 	setTimeout(() => {
 		back();
 		document.body.classList.remove("init");
@@ -54,4 +101,13 @@ function switch_theme(value) {
 		bg_box.remove("dark");
 		get_background().src = "img/background.jpg";
 	}
+}
+
+function load_apps() {
+	let final = "";
+	for (let i = 0; i < SERVICES.length; i++) {
+		let app = mk_entry(SERVICES[i]);
+		final += app;
+	}
+	get("applist").innerHTML = final;
 }
