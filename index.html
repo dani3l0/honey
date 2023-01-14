@@ -32,9 +32,9 @@
 						<div class="icon">apps</div>
 						<div class="text">Services</div>
 					</div>
-					<div onclick="show('page-about')">
-						<div class="icon">info</div>
-						<div class="text">About</div>
+					<div onclick="show('page-more')">
+						<div class="icon">more</div>
+						<div class="text">More</div>
 					</div>
 				</div>
 			</div>
@@ -49,44 +49,125 @@
 				<div class="boxes" id="applist"></div>
 			</div>
 		</div>
-		<div class="page hidden" id="page-about">
+		<div class="page hidden" id="page-more" style="--screens: 3">
 			<div class="back"><div class="icon"></div></div>
 			<div class="wrapper">
-				<div class="header">
-					<div class="icon">info</div>
-					<div class="text">About</div>
+				<div class="selector">
+					<div class="bg"></div>
+					<div class="entry" onclick="open_screen(this)">
+						<div>Security</div>
+					</div>
+					<div class="entry" onclick="open_screen(this)">
+						<div>Settings</div>
+					</div>
+					<div class="entry" onclick="open_screen(this)">
+						<div>About</div>
+					</div>
 				</div>
-				<img src="img/appicon.png" class="appicon">
-				<div class="appname about">honey</div>
-				<div class="appdesc">Nice and sweet place for all your self-hosted services.</div>
-				<div class="appdesc">Source: <a href="https://gitlab.com/dani3l0/honey" target="_blank">gitlab.com/dani3l0/honey</a></div>
-				<div class="boxes static">
-					<div class="box">
-						<div class="icon" style="--color: 0deg">code</div>
-						<div>
-							<div class="name">Open Source</div>
-							<div class="desc">Code is publicly available. Download, modify, collaborate, whatever.</div>
+				<div class="screens">
+					<div class="screen">
+						<div class="split">
+							<div class="icon fancy">shield</div>
+							<div class="right">
+								<div class="pp"><b id="security-pp">85</b>%</div>
+								<div class="text">6 out of 7 listed services use encrypted connections</div>
+							</div>
+						</div>
+						<div class="boxes static">
+							<div class="box">
+								<div class="icon" style="--color: 0deg">code</div>
+								<div>
+									<div class="name">Open Source</div>
+									<div class="desc">Code is publicly available. Download, modify, collaborate, whatever.</div>
+								</div>
+							</div>
+							<div class="box">
+								<div class="icon" style="--color: 144deg">mop</div>
+								<div>
+									<div class="name">Simple & Clean</div>
+									<div class="desc">Interface is meant to be uncomplicated and pleasant in sight.</div>
+								</div>
+							</div>
+							<div class="box">
+								<div class="icon" style="--color: 240deg">language</div>
+								<div>
+									<div class="name">Static</div>
+									<div class="desc">Requires no dynamic backend as it's built with plain HTML/CSS/JS.</div>
+								</div>
+							</div>
+							<div class="box">
+								<div class="icon" style="--color: 36deg">auto_awesome</div>
+								<div>
+									<div class="name">Responsive</div>
+									<div class="desc">Layout is automatically adjusted depending on device you are using.</div>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="box">
-						<div class="icon" style="--color: 144deg">mop</div>
-						<div>
-							<div class="name">Simple & Clean</div>
-							<div class="desc">Interface is meant to be uncomplicated and pleasant in sight.</div>
+					<div class="screen hidden">
+						<div class="settings">
+							<div class="setting checked" onclick="switch_theme()" id="setting-theme">
+								<div class="icon">dark_mode</div>
+								<div class="text">
+									<div class="name">Dark mode</div>
+									<div class="desc">Whether to show dark background & wallpaper.</div>
+								</div>
+								<div class="value"></div>
+							</div>
+							<div class="setting">
+								<div class="icon">open_in_new</div>
+								<div class="text">
+									<div class="name">Open in new tab</div>
+									<div class="desc">Whether to open services in new tab by default.</div>
+								</div>
+								<div class="value"></div>
+							</div>
+							<div class="setting">
+								<div class="icon">restart_alt</div>
+								<div class="text">
+									<div class="name">Reset settings</div>
+									<div class="desc">This will reset all preferences to default.</div>
+								</div>
+								<div class="value"></div>
+							</div>
 						</div>
 					</div>
-					<div class="box">
-						<div class="icon" style="--color: 240deg">language</div>
-						<div>
-							<div class="name">Static</div>
-							<div class="desc">Requires no dynamic backend as it's built with plain HTML/CSS/JS.</div>
+					<div class="screen hidden">
+						<div style="margin: 72px 0 56px">
+							<img src="img/appicon.png" class="appicon">
+							<div class="appname about">honey</div>
+							<div class="appdesc">Nice and sweet place for all your self-hosted services.</div>
+							<div class="appdesc">Source: <a href="https://gitlab.com/dani3l0/honey" target="_blank">gitlab.com/dani3l0/honey</a></div>
 						</div>
-					</div>
-					<div class="box">
-						<div class="icon" style="--color: 36deg">auto_awesome</div>
-						<div>
-							<div class="name">Responsive</div>
-							<div class="desc">Layout is automatically adjusted depending on device you are using.</div>
+						<div class="boxes static">
+							<div class="box">
+								<div class="icon" style="--color: 0deg">code</div>
+								<div>
+									<div class="name">Open Source</div>
+									<div class="desc">Code is publicly available. Download, modify, collaborate, whatever.</div>
+								</div>
+							</div>
+							<div class="box">
+								<div class="icon" style="--color: 144deg">mop</div>
+								<div>
+									<div class="name">Simple & Clean</div>
+									<div class="desc">Interface is meant to be uncomplicated and pleasant in sight.</div>
+								</div>
+							</div>
+							<div class="box">
+								<div class="icon" style="--color: 240deg">language</div>
+								<div>
+									<div class="name">Static</div>
+									<div class="desc">Requires no dynamic backend as it's built with plain HTML/CSS/JS.</div>
+								</div>
+							</div>
+							<div class="box">
+								<div class="icon" style="--color: 36deg">auto_awesome</div>
+								<div>
+									<div class="name">Responsive</div>
+									<div class="desc">Layout is automatically adjusted depending on device you are using.</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

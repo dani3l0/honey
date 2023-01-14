@@ -70,7 +70,9 @@ function onload() {
 	}, 50)
 }
 
+let CURRENT_VIEW;
 function show(id) {
+	CURRENT_VIEW = id;
 	for_all("page", (page) => {
 		page.classList.add("hidden");
 	});
@@ -84,7 +86,6 @@ function back() {
 }
 
 function switch_theme(value) {
-	back();
 	let is_dark = config("dark_mode") == "true";
 	if (value === undefined) value = !is_dark; 
 	is_dark = value;
@@ -92,11 +93,13 @@ function switch_theme(value) {
 	get("css_dark").disabled = !is_dark;
 	let bg_box = get("background").classList;
 	if (is_dark) {
+		get("setting-theme").classList.add("checked");
 		get("theme-indicator").innerText = "dark_mode";
 		bg_box.add("dark");
 		get_background().src = "img/background-dark.jpg";
 	}
 	else {
+		get("setting-theme").classList.remove("checked");
 		get("theme-indicator").innerText = "light_mode";
 		bg_box.remove("dark");
 		get_background().src = "img/background.jpg";
@@ -110,4 +113,34 @@ function load_apps() {
 		final += app;
 	}
 	get("applist").innerHTML = final;
+}
+
+function open_screen(button) {
+	let parent = button.parentNode;
+	let cursor = parent.getElementsByClassName("bg")[0];
+	let items = parent.getElementsByClassName("entry");
+	let clicked_id = 0;
+	for (let i = 0; i < items.length; i++) {
+		if (items[i] === button) {
+			clicked_id = i;
+			break;
+		}
+	}
+	cursor.style.left = `${100 * clicked_id / items.length}%`;
+	let wrapper = parent.parentNode.parentNode;
+	let screens = get_class("screens", wrapper)[0];
+	let from_height = screens.clientHeight;
+	for_all("screen", (screen) => {
+		screen.classList.add("hidden");
+	}, wrapper);
+	screens.children[clicked_id].classList.remove("hidden");
+	let to_height = screens.children[clicked_id].clientHeight;
+	screens.style.transform = `translateX(calc(-${clicked_id}% * (100 / var(--screens))))`;
+	screens.style.height = `${from_height}px`;
+	setTimeout(() => {
+		screens.style.height = `${to_height}px`;
+	}, 10);
+	setTimeout(() => {
+		screens.style.height = null;
+	}, 420);
 }

@@ -21,10 +21,10 @@ body {
 a {
 	color: #44F;
 }
-body.init * {
+.init * {
 	transition: none !important;
 }
-body.init .page {
+.init .page {
 	transition: opacity .3s, top .3s !important;
 }
 .icon {
@@ -116,6 +116,7 @@ body.init .page {
 	text-align: center;
 	overflow: hidden;
 	min-width: 340px;
+	transition: background .2s;
 }
 .home .wrapper {
 	box-shadow: none;
@@ -169,6 +170,7 @@ body.init .page {
 	background: #EEE8;
 	margin: 20px;
 	backdrop-filter: blur(16px);
+	transition: background .2s;
 }
 
 .back .icon {
@@ -196,7 +198,7 @@ body.init .page {
 	flex-wrap: wrap;
 }
 .static {
-	margin: 24px 6px 16px;
+	margin: 16px 6px;
 }
 .static .box:hover {
 	background: transparent;
@@ -252,4 +254,112 @@ a.box {
 }
 .header .text {
 	font-size: 26px;
+}
+
+.selector {
+	position: relative;
+	background: #FFF8;
+	margin: 18px auto;
+	border-radius: 16px;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	width: calc(100% - 32px);
+	max-width: 640px;
+	transition: color .2s, background .2s;
+}
+.selector .bg {
+	position: absolute;
+	width: calc(100% / var(--screens) - 8px);
+	height: calc(100% - 8px);
+	background: #0001;
+	top: 50%;
+	left: 0;
+	margin-left: 4px;
+	border-radius: 12px;
+	transform: translateY(-50%);
+	transition: all .4s;
+}
+.selector .entry {
+	margin: 0 auto;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding: 14px;
+	margin: 2px;
+	z-index: 1;
+	cursor: pointer;
+}
+.selector .entry > div {
+	margin: 0 auto;
+}
+
+.split {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	text-align: right;
+	padding: 80px 24px;
+	max-width: 480px;
+	margin: 0 auto;
+}
+.split .fancy {
+	font-size: 80px;
+}
+.split .pp > b {
+	font-size: 48px;
+	margin-right: 2px;
+}
+.split .text {
+	max-width: 240px;
+	margin-left: auto;
+	opacity: .6;
+}
+.split .right {
+	margin-right: 8px;
+}
+
+.screens {
+	display: flex;
+	width: calc(100% * var(--screens));
+	align-items: flex-start;
+	transition: all .4s;
+}
+.screen {
+	width: 100%;
+	height: auto;
+}
+.screen.hidden {
+	height: 0;
+}
+
+.settings {
+	margin: 12px 16px 32px;
+}
+.setting {
+	background: #FFF8;
+	max-width: 640px;
+	border-radius: 16px;
+	margin: 8px auto;
+	display: flex;
+	align-items: center;
+	padding: 12px;
+	text-align: left;
+	cursor: pointer;
+	transition: background .2s, color .2s, box-shadow .2s;
+}
+.setting:hover {
+	background: #DDD8;
+}
+.setting .icon {
+	margin-right: 8px;
+	padding: 12px;
+}
+.setting .desc {
+	opacity: .6;
+}
+.setting.checked {
+	color: #EEE;
+	background: #56F;
+	box-shadow: 2px 2px 8px #56F8;
 }

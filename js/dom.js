@@ -1,8 +1,12 @@
 function get(id) {
 	return document.getElementById(id);
 }
-function for_all(class_name, func) {
-	let a = document.getElementsByClassName(class_name);
+function get_class(class_name, parent) {
+	if (!parent) parent = document;
+	return parent.getElementsByClassName(class_name);
+}
+function for_all(class_name, func, parent) {
+	let a = get_class(class_name, parent);
 	for (let i = 0; i < a.length; i++) {
 		func(a[i]);
 	}

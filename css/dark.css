@@ -23,6 +23,23 @@ a {
 	background: #FFF1;
 }
 .box .icon {
-	background: hsl(var(--color), 100%, 22%);
+	background: hsl(var(--color), 100%, 18%);
 	color: hsl(var(--color), 100%, 85%);
+}
+.selector {
+	position: relative;
+	background: #0008;
+}
+.selector .bg {
+	background: #FFF1;
+}
+.setting {
+	background: #1118;
+}
+.setting:hover {
+	background: #2228;
+}
+.setting.checked {
+	background: #36F;
+	box-shadow: 2px 2px 8px #36F8;
 }
