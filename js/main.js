@@ -1,8 +1,22 @@
+var CONFIG = {
+	"dark_mode": false
+}
+
+function config(key, value) {
+	if (value !== undefined) {
+		localStorage.setItem(key, value);
+		return value;
+	}
+	let val = localStorage.getItem(key);
+	if (val === null) val = CONFIG.dark_mode;
+	return val;
+}
+
 function onload() {
 	for_all("back", (btn) => {
 		btn.onclick = back;
 	});
-	switch_theme(true);
+	switch_theme(config("dark_mode") == "true");
 	setTimeout(() => {
 		back();
 		document.body.classList.remove("init");
@@ -22,11 +36,12 @@ function back() {
 	get_background().classList.add("scaled");
 }
 
-var is_dark = false;
 function switch_theme(value) {
 	back();
+	let is_dark = config("dark_mode") == "true";
 	if (value === undefined) value = !is_dark; 
 	is_dark = value;
+	config("dark_mode", is_dark);
 	get("css_dark").disabled = !is_dark;
 	let bg_box = get("background").classList;
 	if (is_dark) {
