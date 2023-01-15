@@ -5,9 +5,17 @@
 	src: url(../font/MaterialSymbolsRounded.woff2) format('woff2');
 }
 
+html {
+	--color: #222;
+	--background: #EEE8;
+	--bg2: #FFF8;
+	--hover: #0001;
+	--scale-factor: 1.15;
+}
+
 body {
 	background: #000;
-	color: #222;
+	color: var(--color);
 	margin: 0;
 	font-family: Quicksand;
 	font-weight: bold;
@@ -16,7 +24,7 @@ body {
 	-webkit-tap-highlight-color: transparent;
 }
 ::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 a {
 	color: #44F;
@@ -53,7 +61,7 @@ a {
 	transition: transform .4s, opacity .4s !important;
 }
 #background.scaled img {
-	transform: scale(1.14);
+	transform: scale(var(--scale-factor));
 }
 #background.dark > img:first-child {
 	opacity: 0;
@@ -64,10 +72,10 @@ a {
 	transform: none;
 }
 #background.dark:not(.scaled) > img:first-child {
-	transform: scale(1.14);
+	transform: scale(var(--scale-factor));
 }
 #background:not(.dark):not(.scaled) > img:last-child {
-	transform: scale(1.14);
+	transform: scale(var(--scale-factor));
 }
 .unloaded {
 	opacity: 0;
@@ -115,7 +123,7 @@ a {
 }
 .wrapper {
 	box-shadow: 2px 2px 8px #0003;
-	background: #EEE8;
+	background: var(--background);
 	padding: 3px;
 	backdrop-filter: blur(16px);
 	border-radius: 24px;
@@ -148,7 +156,7 @@ a {
 	backdrop-filter: blur(16px);
 	border-radius: 24px;
 	max-width: 480px;
-	background: #EEE8;
+	background: var(--background);
 	padding: 2px;
 	justify-content: space-between;
 	transition: background .3s;
@@ -162,7 +170,7 @@ a {
 	transition: background .2s;
 }
 .buttons > div:hover {
-	background: #0001;
+	background: var(--hover);
 }
 .buttons .text {
 	margin-top: -2px;
@@ -174,7 +182,7 @@ a {
 	width: 64px;
 	height: 64px;
 	border-radius: 24px;
-	background: #EEE8;
+	background: var(--background);
 	margin: 20px;
 	backdrop-filter: blur(16px);
 	transition: background .2s;
@@ -189,7 +197,7 @@ a {
 	transition: background .2s;
 }
 .back .icon:hover {
-	background: #0001;
+	background: var(--hover);
 }
 .back .icon:after {
 	content: "chevron_left";
@@ -224,12 +232,12 @@ a {
 	transition: background .2s;
 }
 .box:hover {
-	background: #0001;
+	background: var(--hover);
 }
 .box .icon {
 	font-size: 24px;
 	padding: 20px;
-	background: hsl(var(--color), 100%, 90%);
+	background: hsl(var(--color), 100%, 89%);
 	color: hsl(var(--color), 100%, 35%);
 	border-radius: 100px;
 	margin: 2px 12px 2px 2px;
@@ -265,7 +273,7 @@ a.box {
 
 .selector {
 	position: relative;
-	background: #FFF8;
+	background: var(--bg2);
 	margin: 18px auto;
 	border-radius: 16px;
 	display: flex;
@@ -279,7 +287,7 @@ a.box {
 	position: absolute;
 	width: calc(100% / var(--screens) - 8px);
 	height: calc(100% - 8px);
-	background: #0001;
+	background: var(--hover);
 	top: 50%;
 	left: 0;
 	margin-left: 4px;
@@ -344,7 +352,7 @@ a.box {
 	margin: 12px 16px 32px;
 }
 .setting {
-	background: #FFF8;
+	background: var(--bg2);
 	max-width: 640px;
 	border-radius: 16px;
 	margin: 8px auto;

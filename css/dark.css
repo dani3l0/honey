@@ -1,40 +1,12 @@
-body {
-	color: #EEE;
-}
-a {
-	color: #BBF;
-}
-.wrapper {
-	background: #1118;
-}
-.buttons {
-	background: #1118;
-}
-.buttons > div:hover {
-	background: #FFF1;
-}
-.back {
-	background: #1118;
-}
-.back .icon:hover {
-	background: #FFF1;
-}
-.box:hover {
-	background: #FFF1;
+html {
+	--color: #EEE;
+	--background: #1118;
+	--bg2: #0008;
+	--hover: #FFF1;
 }
 .box .icon {
-	background: hsl(var(--color), 100%, 18%);
-	color: hsl(var(--color), 100%, 85%);
-}
-.selector {
-	position: relative;
-	background: #0008;
-}
-.selector .bg {
-	background: #FFF1;
-}
-.setting {
-	background: #1118;
+	background: hsl(var(--color), 100%, 80%);
+	color: hsl(var(--color), 100%, 28%);
 }
 .setting:hover {
 	background: #2228;
