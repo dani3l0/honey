@@ -2,12 +2,11 @@ function onload() {
 	let xhr = new XMLHttpRequest();
 	xhr.open("GET", "config/config.json");
 	xhr.onload = function() {
-		CONFIG = JSON.parse(this.responseText);
+		load_config(this.responseText);
 		for_all("back", (btn) => {
 			btn.onclick = show;
 		});
 		switch_theme(config("dark_mode") == "true");
-		load_apps();
 		setTimeout(() => {
 			show();
 			document.body.classList.remove("init");
@@ -41,13 +40,13 @@ function switch_theme(value) {
 		setting.classList.add("checked");
 		icon.innerText = "dark_mode";
 		bg.add("dark");
-		get_background().src = "img/background-dark.jpg";
+		get_background().src = CONFIG.ui.wallpaper_dark;
 	}
 	else {
 		setting.classList.remove("checked");
 		icon.innerText = "light_mode";
 		bg.remove("dark");
-		get_background().src = "img/background.jpg";
+		get_background().src = CONFIG.ui.wallpaper;
 	}
 }
 

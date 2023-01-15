@@ -6,8 +6,8 @@ This will be a dashboard hosted on my homeserver with self-hosted stuff. But, fo
 
 #### Still to do before prod:
 
-- [ ] External config loaded with XHR (app list)
-- [ ] Apply config for the rest stuff (data shown in More page, default user settings)
+- [x] External config loaded with XHR (app list)
+- [x] Apply config for the rest stuff (data shown in More page, default user settings)
 - [ ] Make 'Security' module functional
 - [ ] Security screen on/off
 - [ ] CSS global color variables for easier theming

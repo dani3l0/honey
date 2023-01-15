@@ -4,7 +4,7 @@
 		"desc": "Nice and sweet place for all your self-hosted services.",
 		"icon": "img/icon.png",
 		"wallpaper": "img/background.jpg",
-		"wallpaper_dark": "img/background_dark.jpg",
+		"wallpaper_dark": "img/background-dark.jpg",
 		"dark_mode": false,
 		"open_new_tab": false,
 		"hosted_by": "somebody",

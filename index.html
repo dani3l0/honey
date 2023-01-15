@@ -19,9 +19,9 @@
 		<div class="page home hidden" id="page-home">
 			<div class="wrapper">
 				<div class="home">
-					<img src="img/icon.png" class="appicon">
-					<div class="appname">honey</div>
-					<div class="appdesc">Nice and sweet place for all your self-hosted services.</div>
+					<img class="appicon" id="app-icon">
+					<div class="appname" id="app-name"></div>
+					<div class="appdesc" id="app-desc"></div>
 				</div>
 				<div class="buttons">
 					<div onclick="switch_theme()">
@@ -73,9 +73,7 @@
 								<div class="text">6 out of 7 listed services use secure connections</div>
 							</div>
 						</div>
-						<div class="hostedby">
-							<div>All services hosted by <b>nobody</b></div>
-						</div>
+						<div class="hostedby">All services hosted by <b id="app-hostedby"></b></div>
 						<div class="boxes static">
 							<div class="box">
 								<div class="icon" style="--color: 144deg">lock</div>

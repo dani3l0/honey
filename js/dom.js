@@ -2,6 +2,10 @@ function get(id) {
 	return document.getElementById(id);
 }
 
+function set(id, text) {
+	get(id).innerText = text;
+}
+
 function get_class(class_name, parent) {
 	if (!parent) parent = document;
 	return parent.getElementsByClassName(class_name);
@@ -55,4 +59,15 @@ function config(key, value) {
 
 function get_bool(key) {
 	return config(key) == "true";
+}
+
+function load_config(conf) {
+	CONFIG = JSON.parse(conf);
+	let ui = CONFIG.ui;
+	set("app-name", ui.name);
+	set("app-desc", ui.desc);
+	get("app-icon").src = ui.icon;
+	if (ui.hosted_by) set("app-hostedby", ui.hosted_by);
+	else get("app-hostedby").parentNode.style.display = "none";
+	load_apps();
 }
