@@ -42,14 +42,14 @@ function mk_entry(app) {
 }
 
 function config(key, value) {
-	let def = UI[key];
+	let def = CONFIG["ui"][key];
 	let val = localStorage.getItem(key);
 	if (def == value && !val) return;
 	if (value !== undefined) {
 		localStorage.setItem(key, value);
 		return;
 	}
-	if (!val) val = UI[key].toString();
+	if (!val) val = CONFIG["ui"][key].toString();
 	return val;
 }
 

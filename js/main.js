@@ -1,66 +1,23 @@
-var UI = {
-	"dark_mode": false
-}
-
-var SERVICES = [
-	{
-		"name": "CalDav",
-		"desc": "Simple CalDav server for calendar sync between various devices.",
-		"href": "caldav",
-		"icon": "img/preview/caldav.png"
-	},
-	{
-		"name": "Files",
-		"desc": "Fancy file manager for the web.",
-		"href": "files",
-		"icon": "img/preview/files.png"
-	},
-	{
-		"name": "Gallery",
-		"desc": "Photo & video gallery syncable with multiple Android devices.",
-		"href": "gallery",
-		"icon": "img/preview/gallery.png"
-	},
-	{
-		"name": "Git",
-		"desc": "Self-hosted, painless, secure place for your repositories.",
-		"href": "git",
-		"icon": "img/preview/git.png"
-	},
-	{
-		"name": "E-Mail",
-		"desc": "Feature-rich, decentralized and secure E-Mail server.",
-		"href": "mail",
-		"icon": "img/preview/mail.png"
-	},
-	{
-		"name": "Music",
-		"desc": "Beautiful, moody music streaming app.",
-		"href": "music",
-		"icon": "img/preview/music.png"
-	},
-	{
-		"name": "Notes",
-		"desc": "Sweet & lightweight app for taking notes.",
-		"href": "notes",
-		"icon": "img/preview/notes.png"
-	}
-]
-
 function onload() {
-	for_all("back", (btn) => {
-		btn.onclick = back;
-	});
-	switch_theme(config("dark_mode") == "true");
-	load_apps();
-	setTimeout(() => {
-		back();
-		document.body.classList.remove("init");
-	}, 50)
+	let xhr = new XMLHttpRequest();
+	xhr.open("GET", "config/config.json");
+	xhr.onload = function() {
+		CONFIG = JSON.parse(this.responseText);
+		for_all("back", (btn) => {
+			btn.onclick = show;
+		});
+		switch_theme(config("dark_mode") == "true");
+		load_apps();
+		setTimeout(() => {
+			show();
+			document.body.classList.remove("init");
+		}, 50);
+	};
+	xhr.send();
 }
 
-let CURRENT_VIEW;
 function show(id) {
+	if (typeof(id) != "string") id = "page-home";
 	CURRENT_VIEW = id;
 	for_all("page", (page) => {
 		page.classList.add("hidden");
@@ -70,10 +27,6 @@ function show(id) {
 	let bg = get("background").classList;
 	if (CURRENT_VIEW == "page-home") bg.add("scaled");
 	else bg.remove("scaled");
-}
-
-function back() {
-	show("page-home");
 }
 
 function switch_theme(value) {
@@ -100,14 +53,17 @@ function switch_theme(value) {
 
 function load_apps() {
 	let final = "";
-	for (let i = 0; i < SERVICES.length; i++) {
-		let app = mk_entry(SERVICES[i]);
+	for (let i = 0; i < CONFIG["services"].length; i++) {
+		let app = mk_entry(CONFIG["services"][i]);
 		final += app;
 	}
 	get("applist").innerHTML = final;
 }
 
+let S_TAP_LOCK;
 function open_screen(button) {
+	if (S_TAP_LOCK) return;
+	S_TAP_LOCK = true;
 	let parent = button.parentNode;
 	let cursor = parent.getElementsByClassName("bg")[0];
 	let items = parent.getElementsByClassName("entry");
@@ -134,5 +90,6 @@ function open_screen(button) {
 	}, 10);
 	setTimeout(() => {
 		screens.style.height = null;
+		S_TAP_LOCK = false;
 	}, 420);
 }

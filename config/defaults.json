@@ -1,0 +1,57 @@
+{
+	"ui": {
+		"name": "honey",
+		"desc": "Nice and sweet place for all your self-hosted services.",
+		"icon": "img/icon.png",
+		"wallpaper": "img/background.jpg",
+		"wallpaper_dark": "img/background_dark.jpg",
+		"dark_mode": false,
+		"open_new_tab": false,
+		"hosted_by": "somebody",
+		"enable_security": true
+	},
+	"services": [
+		{
+			"name": "CalDav",
+			"desc": "Simple CalDav server for calendar sync between various devices.",
+			"href": "caldav",
+			"icon": "img/preview/caldav.png"
+		},
+		{
+			"name": "Files",
+			"desc": "Fancy file manager for the web.",
+			"href": "files",
+			"icon": "img/preview/files.png"
+		},
+		{
+			"name": "Gallery",
+			"desc": "Photo & video gallery syncable with multiple Android devices.",
+			"href": "gallery",
+			"icon": "img/preview/gallery.png"
+		},
+		{
+			"name": "Git",
+			"desc": "Self-hosted, painless, secure place for your repositories.",
+			"href": "git",
+			"icon": "img/preview/git.png"
+		},
+		{
+			"name": "E-Mail",
+			"desc": "Feature-rich, decentralized and secure E-Mail server.",
+			"href": "mail",
+			"icon": "img/preview/mail.png"
+		},
+		{
+			"name": "Music",
+			"desc": "Beautiful, moody music streaming app.",
+			"href": "music",
+			"icon": "img/preview/music.png"
+		},
+		{
+			"name": "Notes",
+			"desc": "Sweet & lightweight app for taking notes.",
+			"href": "notes",
+			"icon": "img/preview/notes.png"
+		}
+	]
+}
