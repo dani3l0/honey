@@ -50,7 +50,7 @@ a {
 	height: 100%;
 	overflow: hidden;
 	object-fit: cover;
-	transition: all .45s !important;
+	transition: transform .4s, opacity .4s !important;
 }
 #background.scaled img {
 	transform: scale(1.14);
@@ -95,7 +95,7 @@ a {
 	height: 100vh;
 	transform: translateX(-50%);
 	overflow-y: scroll;
-	transition: all .4s;
+	transition: top .4s, opacity .4s, visibility .4s, color .3s;
 }
 .home.page {
 	top: 50%;
@@ -106,12 +106,12 @@ a {
 	transform: translate(-50%, -50%);
 }
 .page.hidden {
-	top: 320px;
+	top: 240px;
 	visibility: hidden;
 	opacity: 0;
 }
 .home.page.hidden {
-	top: calc(50% - 72px);
+	top: calc(50% - 64px);
 }
 .wrapper {
 	box-shadow: 2px 2px 8px #0003;
@@ -151,7 +151,7 @@ a {
 	background: #EEE8;
 	padding: 2px;
 	justify-content: space-between;
-	transition: background .4s;
+	transition: background .3s;
 }
 .buttons > div {
 	padding: 16px;
@@ -159,7 +159,7 @@ a {
 	cursor: pointer;
 	border-radius: 20px;
 	width: 100%;
-	transition: all .2s;
+	transition: background .2s;
 }
 .buttons > div:hover {
 	background: #0001;
@@ -186,7 +186,7 @@ a {
 	height: 56px;
 	cursor: pointer;
 	border-radius: 20px;
-	transition: all .2s;
+	transition: background .2s;
 }
 .back .icon:hover {
 	background: #0001;
@@ -221,7 +221,7 @@ a {
 	text-align: left;
 	text-decoration: none;
 	color: inherit;
-	transition: all .2s;
+	transition: background .2s;
 }
 .box:hover {
 	background: #0001;
@@ -273,7 +273,7 @@ a.box {
 	overflow: hidden;
 	width: calc(100% - 32px);
 	max-width: 640px;
-	transition: color .2s, background .2s;
+	transition: background .2s;
 }
 .selector .bg {
 	position: absolute;
@@ -285,7 +285,7 @@ a.box {
 	margin-left: 4px;
 	border-radius: 12px;
 	transform: translateY(-50%);
-	transition: all .4s;
+	transition: background .4s, left .3s;
 }
 .selector .entry {
 	margin: 0 auto;
@@ -330,7 +330,7 @@ a.box {
 	display: flex;
 	width: calc(100% * var(--screens));
 	align-items: flex-start;
-	transition: all .4s;
+	transition: transform .4s, height .4s;
 }
 .screen {
 	width: 100%;
@@ -353,7 +353,7 @@ a.box {
 	padding: 12px;
 	text-align: left;
 	cursor: pointer;
-	transition: background .2s, color .2s, box-shadow .2s;
+	transition: background .2s, box-shadow .2s;
 }
 .setting:hover {
 	background: #DDD8;
@@ -369,6 +369,7 @@ a.box {
 	color: #EEE;
 	background: #56F;
 	box-shadow: 2px 2px 8px #56F8;
+	transition: all .2s;
 }
 .hostedby {
 	font-size: 13px;
