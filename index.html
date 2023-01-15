@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body onload="onload()" class="init">
-	<div id="background">
+	<div id="background" class="scaled">
 		<img class="unloaded" onload="load_img(this)">
 		<img class="unloaded" onload="load_img(this)">
 	</div>
@@ -70,36 +70,25 @@
 							<div class="icon fancy">shield</div>
 							<div class="right">
 								<div class="pp"><b id="security-pp">85</b>%</div>
-								<div class="text">6 out of 7 listed services use encrypted connections</div>
+								<div class="text">6 out of 7 listed services use secure connections</div>
 							</div>
+						</div>
+						<div class="hostedby">
+							<div>All services hosted by <b>nobody</b></div>
 						</div>
 						<div class="boxes static">
 							<div class="box">
-								<div class="icon" style="--color: 0deg">code</div>
+								<div class="icon" style="--color: 144deg">lock</div>
 								<div>
-									<div class="name">Open Source</div>
-									<div class="desc">Code is publicly available. Download, modify, collaborate, whatever.</div>
+									<div class="name">Enryption?</div>
+									<div class="desc">HTTPS ensures data is transferred securely, that nobody can monitor your traffic.</div>
 								</div>
 							</div>
 							<div class="box">
-								<div class="icon" style="--color: 144deg">mop</div>
+								<div class="icon" style="--color: 272deg">dns</div>
 								<div>
-									<div class="name">Simple & Clean</div>
-									<div class="desc">Interface is meant to be uncomplicated and pleasant in sight.</div>
-								</div>
-							</div>
-							<div class="box">
-								<div class="icon" style="--color: 240deg">language</div>
-								<div>
-									<div class="name">Static</div>
-									<div class="desc">Requires no dynamic backend as it's built with plain HTML/CSS/JS.</div>
-								</div>
-							</div>
-							<div class="box">
-								<div class="icon" style="--color: 36deg">auto_awesome</div>
-								<div>
-									<div class="name">Responsive</div>
-									<div class="desc">Layout is automatically adjusted depending on device you are using.</div>
+									<div class="name">Self-hosted</div>
+									<div class="desc">Little server serving for a small group of people. All data is stored only here.</div>
 								</div>
 							</div>
 						</div>

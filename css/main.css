@@ -52,15 +52,22 @@ a {
 	object-fit: cover;
 	transition: all .45s !important;
 }
-#background .scaled {
+#background.scaled img {
 	transform: scale(1.14);
 }
-#background.dark > img:last-child {
+#background.dark > img:first-child {
 	opacity: 0;
-	transform: scale(1);
+	transform: none;
 }
-#background:not(.dark) > img:first-child {
-	transform: scale(1);
+#background:not(.dark) > img:last-child {
+	opacity: 0;
+	transform: none;
+}
+#background.dark:not(.scaled) > img:first-child {
+	transform: scale(1.14);
+}
+#background:not(.dark):not(.scaled) > img:last-child {
+	transform: scale(1.14);
 }
 .unloaded {
 	opacity: 0;
@@ -299,7 +306,7 @@ a.box {
 	align-items: center;
 	justify-content: space-between;
 	text-align: right;
-	padding: 80px 24px;
+	padding: 80px 24px 60px;
 	max-width: 480px;
 	margin: 0 auto;
 }
@@ -362,4 +369,12 @@ a.box {
 	color: #EEE;
 	background: #56F;
 	box-shadow: 2px 2px 8px #56F8;
+}
+.hostedby {
+	font-size: 13px;
+	color: #0007;
+	margin: 12px 0 24px;
+}
+.hostedby b {
+	color: #56F;
 }

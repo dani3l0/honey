@@ -1,6 +1,7 @@
 var UI = {
 	"dark_mode": false
 }
+
 var SERVICES = [
 	{
 		"name": "CalDav",
@@ -46,18 +47,6 @@ var SERVICES = [
 	}
 ]
 
-function config(key, value) {
-	let def = UI[key];
-	let val = localStorage.getItem(key);
-	if (def == value && !val) return;
-	if (value !== undefined) {
-		localStorage.setItem(key, value);
-		return;
-	}
-	if (!val) val = UI[key].toString();
-	return val;
-}
-
 function onload() {
 	for_all("back", (btn) => {
 		btn.onclick = back;
@@ -78,30 +67,33 @@ function show(id) {
 	});
 	get(id).classList.remove("hidden");
 	get(id).scrollTop = 0;
-	get_background().classList.remove("scaled");
+	let bg = get("background").classList;
+	if (CURRENT_VIEW == "page-home") bg.add("scaled");
+	else bg.remove("scaled");
 }
+
 function back() {
 	show("page-home");
-	get_background().classList.add("scaled");
 }
 
 function switch_theme(value) {
-	let is_dark = config("dark_mode") == "true";
-	if (value === undefined) value = !is_dark; 
-	is_dark = value;
+	let is_dark = get_bool("dark_mode");
+	if (value === undefined) is_dark = !is_dark; 
 	config("dark_mode", is_dark);
 	get("css_dark").disabled = !is_dark;
-	let bg_box = get("background").classList;
+	let bg = get("background").classList;
+	let setting = get("setting-theme");
+	let icon = get("theme-indicator");
 	if (is_dark) {
-		get("setting-theme").classList.add("checked");
-		get("theme-indicator").innerText = "dark_mode";
-		bg_box.add("dark");
+		setting.classList.add("checked");
+		icon.innerText = "dark_mode";
+		bg.add("dark");
 		get_background().src = "img/background-dark.jpg";
 	}
 	else {
-		get("setting-theme").classList.remove("checked");
-		get("theme-indicator").innerText = "light_mode";
-		bg_box.remove("dark");
+		setting.classList.remove("checked");
+		icon.innerText = "light_mode";
+		bg.remove("dark");
 		get_background().src = "img/background.jpg";
 	}
 }

@@ -43,3 +43,10 @@ a {
 	background: #36F;
 	box-shadow: 2px 2px 8px #36F8;
 }
+.hostedby {
+	color: #FFF7;
+	margin: 12px 0 24px;
+}
+.hostedby b {
+	color: #79F;
+}
