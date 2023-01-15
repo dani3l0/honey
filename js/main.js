@@ -59,6 +59,14 @@ function load_apps() {
 	get("applist").innerHTML = final;
 }
 
+function new_tab_toggle(setting) {
+	let v = !get_bool("open_new_tab");
+	config("open_new_tab", v);
+	setting = setting.classList;
+	v ? setting.add("checked") : setting.remove("checked");
+	load_apps();
+}
+
 let S_TAP_LOCK;
 function open_screen(button) {
 	if (S_TAP_LOCK) return;

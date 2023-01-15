@@ -353,7 +353,7 @@ a.box {
 	padding: 12px;
 	text-align: left;
 	cursor: pointer;
-	transition: background .2s, box-shadow .2s;
+	transition: background .2s, box-shadow .2s, color .2s;
 }
 .setting:hover {
 	background: #DDD8;
@@ -369,7 +369,6 @@ a.box {
 	color: #EEE;
 	background: #56F;
 	box-shadow: 2px 2px 8px #56F8;
-	transition: all .2s;
 }
 .hostedby {
 	font-size: 13px;

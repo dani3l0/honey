@@ -35,8 +35,9 @@ function safe_text(text) {
 }
 
 function mk_entry(app) {
+	let new_tab = get_bool("open_new_tab") ? ` target="_blank"` : "";
 	return `
-		<a class="box" href="${safe_text(app["href"])}">
+		<a class="box" href="${safe_text(app["href"])}"${new_tab}>
 			<img src="${safe_text(app["icon"])}">
 			<div>
 				<div class="name">${safe_text(app["name"])}</div>

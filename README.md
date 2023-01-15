@@ -12,7 +12,7 @@ This will be a dashboard hosted on my homeserver with self-hosted stuff. But, fo
 - [ ] Security screen on/off
 - [ ] CSS global color variables for easier theming
 - [ ] Fix blur flicker on showing/hiding pages
-- [ ] Open in new tab setting
+- [x] Open in new tab setting
 - [ ] Better icon colors in 'More' page
 - [ ] Minor code optimizations
 
