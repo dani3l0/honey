@@ -1,5 +1,6 @@
 html {
 	--color: #EEE;
+	--color2: #EEE9;
 	--background: #1118;
 	--bg2: #0008;
 	--hover: #FFF1;
@@ -13,11 +14,9 @@ html {
 }
 .setting.checked {
 	background: #36F;
-	box-shadow: 2px 2px 8px #36F8;
 }
 .hostedby {
 	color: #FFF7;
-	margin: 12px 0 24px;
 }
 .hostedby b {
 	color: #79F;

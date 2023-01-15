@@ -6,7 +6,6 @@ function onload() {
 		for_all("back", (btn) => {
 			btn.onclick = show;
 		});
-		switch_theme(config("dark_mode") == "true");
 		setTimeout(() => {
 			show();
 			document.body.classList.remove("init");
@@ -59,12 +58,18 @@ function load_apps() {
 	get("applist").innerHTML = final;
 }
 
-function new_tab_toggle(setting) {
-	let v = !get_bool("open_new_tab");
+function new_tab_toggle(value) {
+	let v = get_bool("open_new_tab");
+	if (value === undefined) v = !v; 
 	config("open_new_tab", v);
-	setting = setting.classList;
+	setting = get("setting-newtab").classList;
 	v ? setting.add("checked") : setting.remove("checked");
 	load_apps();
+}
+
+function reset_all_settings() {
+	localStorage.clear();
+	load_config();
 }
 
 let S_TAP_LOCK;

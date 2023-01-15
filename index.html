@@ -73,12 +73,11 @@
 								<div class="text">6 out of 7 listed services use secure connections</div>
 							</div>
 						</div>
-						<div class="hostedby">All services hosted by <b id="app-hostedby"></b></div>
 						<div class="boxes static">
 							<div class="box">
 								<div class="icon" style="--color: 144deg">lock</div>
 								<div>
-									<div class="name">Enryption</div>
+									<div class="name">Encryption</div>
 									<div class="desc">HTTPS ensures data is transferred securely, so nobody can monitor your traffic.</div>
 								</div>
 							</div>
@@ -86,10 +85,11 @@
 								<div class="icon" style="--color: 272deg">dns</div>
 								<div>
 									<div class="name">Self-hosted</div>
-									<div class="desc">Little server serving for a small group of people. All data is stored only here.</div>
+									<div class="desc">Everything is running on this server. No more relying on centralized data-harvesters.</div>
 								</div>
 							</div>
 						</div>
+						<div class="hostedby">All services hosted by <b id="app-hostedby"></b></div>
 					</div>
 					<div class="screen hidden">
 						<div class="settings">
@@ -101,7 +101,7 @@
 								</div>
 								<div class="value"></div>
 							</div>
-							<div class="setting" onclick="new_tab_toggle(this)">
+							<div class="setting" onclick="new_tab_toggle()" id="setting-newtab">
 								<div class="icon">open_in_new</div>
 								<div class="text">
 									<div class="name">Open in new tab</div>
@@ -109,7 +109,7 @@
 								</div>
 								<div class="value"></div>
 							</div>
-							<div class="setting">
+							<div class="setting" onclick="reset_all_settings()" id="setting-reset">
 								<div class="icon">restart_alt</div>
 								<div class="text">
 									<div class="name">Reset settings</div>
@@ -124,7 +124,7 @@
 							<img src="img/appicon.png" class="appicon">
 							<div class="appname about">honey</div>
 							<div class="appdesc">Nice and sweet place for all your self-hosted services.</div>
-							<div class="appdesc">Source: <a href="https://gitlab.com/dani3l0/honey" target="_blank">gitlab.com/dani3l0/honey</a></div>
+							<div class="appdesc source">Source: <a href="https://gitlab.com/dani3l0/honey" target="_blank">gitlab.com/dani3l0/honey</a></div>
 						</div>
 						<div class="boxes static">
 							<div class="box">

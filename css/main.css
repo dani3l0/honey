@@ -7,6 +7,7 @@
 
 html {
 	--color: #222;
+	--color2: #2229;
 	--background: #EEE8;
 	--bg2: #FFF8;
 	--hover: #0001;
@@ -27,7 +28,7 @@ body {
 	display: none;
 }
 a {
-	color: #44F;
+	color: #68F;
 }
 .init * {
 	transition: none !important;
@@ -145,6 +146,10 @@ a {
 .appdesc {
 	opacity: .6;
 	margin: 2px 12px;
+}
+.source {
+	opacity: 1;
+	color: var(--color2);
 }
 .appname.about {
 	font-size: 36px;
@@ -314,7 +319,7 @@ a.box {
 	align-items: center;
 	justify-content: space-between;
 	text-align: right;
-	padding: 80px 24px 60px;
+	padding: 96px 24px 68px;
 	max-width: 480px;
 	margin: 0 auto;
 }
@@ -376,12 +381,11 @@ a.box {
 .setting.checked {
 	color: #EEE;
 	background: #56F;
-	box-shadow: 2px 2px 8px #56F8;
 }
 .hostedby {
 	font-size: 13px;
 	color: #0007;
-	margin: 12px 0 24px;
+	margin: 18px 0 20px;
 }
 .hostedby b {
 	color: #56F;

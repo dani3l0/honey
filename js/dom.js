@@ -63,7 +63,7 @@ function get_bool(key) {
 }
 
 function load_config(conf) {
-	CONFIG = JSON.parse(conf);
+	if (conf) CONFIG = JSON.parse(conf);
 	let ui = CONFIG.ui;
 	set("app-name", ui.name);
 	set("app-desc", ui.desc);
@@ -71,4 +71,13 @@ function load_config(conf) {
 	if (ui.hosted_by) set("app-hostedby", ui.hosted_by);
 	else get("app-hostedby").parentNode.style.display = "none";
 	load_apps();
+	switch_theme(get_bool("dark_mode"));
+	new_tab_toggle(get_bool("open_new_tab"));
+}
+
+function is_secure(uri) {
+	if (uri.includes("tp://")) return false;
+	if (!uri.startsWith("https://")) {
+		uri = location.href;
+	}
 }
