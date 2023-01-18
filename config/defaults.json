@@ -7,8 +7,7 @@
 		"wallpaper_dark": "img/background-dark.jpg",
 		"dark_mode": false,
 		"open_new_tab": false,
-		"hosted_by": "somebody",
-		"enable_security": true
+		"hosted_by": "somebody"
 	},
 	"services": [
 		{
