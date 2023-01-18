@@ -74,8 +74,8 @@ function new_tab_toggle(value) {
 }
 
 function reset_all_settings() {
-	localStorage.clear();
-	load_config();
+	if (check_cookies()) localStorage.clear();
+	load_config(CONFIG_DEFAULT);
 }
 
 let S_TAP_LOCK;

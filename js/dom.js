@@ -46,16 +46,26 @@ function mk_entry(app) {
 		</a>`;
 }
 
-function config(key, value) {
-	let def = CONFIG["ui"][key];
-	let val = localStorage.getItem(key);
-	if (def == value && !val) return;
-	if (value !== undefined) {
-		localStorage.setItem(key, value);
-		return;
+function check_cookies() {
+	try {
+		localStorage;
+		return true;
 	}
-	if (!val) val = CONFIG["ui"][key].toString();
-	return val;
+	catch {
+		return false;
+	}
+}
+
+function config(key, value) {
+	let write = value !== undefined;
+	if (check_cookies()) {
+		let val = localStorage.getItem(key);
+		if (CONFIG["ui"][key] == value && !val) return;
+		if (write) localStorage.setItem(key, value);
+		return val;
+	}
+	if (write) CONFIG["ui"][key] = value.toString();
+	return CONFIG["ui"][key].toString();
 }
 
 function get_bool(key) {
@@ -63,11 +73,13 @@ function get_bool(key) {
 }
 
 function load_config(conf) {
+	CONFIG_DEFAULT = conf;
 	if (conf) CONFIG = JSON.parse(conf);
 	let ui = CONFIG.ui;
 	set("app-name", ui.name);
 	set("app-desc", ui.desc);
 	get("app-icon").src = ui.icon;
+	if (!check_cookies()) get("nocook").classList.remove("none");
 	if (ui.hosted_by) set("app-hostedby", ui.hosted_by);
 	else get("app-hostedby").parentNode.style.display = "none";
 	load_apps();

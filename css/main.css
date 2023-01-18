@@ -390,3 +390,10 @@ a.box {
 .hostedby b {
 	color: #56F;
 }
+.warn {
+	margin: 8px 0;
+	color: #F60;
+}
+.none {
+	display: none;
+}

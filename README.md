@@ -13,7 +13,7 @@ This will be a dashboard hosted on my homeserver with self-hosted stuff. But, fo
 - [ ] Fix blur flicker on showing/hiding pages
 - [x] Open in new tab setting
 - [x] Better icon colors in 'More' page
-- [ ] Work with blocked cookies
+- [x] Work with blocked cookies
 - [ ] Minor code optimizations
 
 blah blah blah
