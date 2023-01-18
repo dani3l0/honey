@@ -76,8 +76,9 @@ function load_config(conf) {
 }
 
 function is_secure(uri) {
-	if (uri.includes("tp://")) return false;
-	if (!uri.startsWith("https://")) {
-		uri = location.href;
-	}
+	let secure = uri.indexOf("tps://") != -1;
+	let insecure = uri.indexOf("tp://") != -1;
+	if (secure) return true;
+	if (insecure) return false;
+	return is_secure(location.href);
 }

@@ -51,11 +51,17 @@ function switch_theme(value) {
 
 function load_apps() {
 	let final = "";
-	for (let i = 0; i < CONFIG["services"].length; i++) {
+	let secures = 0;
+	let i = 0;
+	while (i < CONFIG["services"].length) {
 		let app = mk_entry(CONFIG["services"][i]);
 		final += app;
+		i++;
 	}
 	get("applist").innerHTML = final;
+	set("services-total", i);
+	set("services-secure", secures);
+	set("security-pp", Math.round(100 * secures / i));
 }
 
 function new_tab_toggle(value) {
