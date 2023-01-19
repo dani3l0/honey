@@ -1,3 +1,4 @@
+document.title = "Loading...";
 function onload() {
 	let xhr = new XMLHttpRequest();
 	xhr.open("GET", "config/config.json");
@@ -54,9 +55,11 @@ function load_apps() {
 	let secures = 0;
 	let i = 0;
 	while (i < CONFIG["services"].length) {
-		let app = mk_entry(CONFIG["services"][i]);
+		let item = CONFIG["services"][i];
+		let app = mk_entry(item);
 		final += app;
 		i++;
+		if (is_secure(item["href"])) secures++;
 	}
 	get("applist").innerHTML = final;
 	set("services-total", i);

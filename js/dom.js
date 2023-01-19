@@ -62,6 +62,7 @@ function config(key, value) {
 		let val = localStorage.getItem(key);
 		if (CONFIG["ui"][key] == value && !val) return;
 		if (write) localStorage.setItem(key, value);
+		else if (!val) return CONFIG["ui"][key].toString();
 		return val;
 	}
 	if (write) CONFIG["ui"][key] = value.toString();
@@ -77,8 +78,10 @@ function load_config(conf) {
 	if (conf) CONFIG = JSON.parse(conf);
 	let ui = CONFIG.ui;
 	set("app-name", ui.name);
+	document.title = ui.name;
 	set("app-desc", ui.desc);
 	get("app-icon").src = ui.icon;
+	get("favicon").href = ui.icon;
 	if (!check_cookies()) get("nocook").classList.remove("none");
 	if (ui.hosted_by) set("app-hostedby", ui.hosted_by);
 	else get("app-hostedby").parentNode.style.display = "none";
