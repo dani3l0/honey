@@ -147,13 +147,6 @@ a {
 	opacity: .6;
 	margin: 2px 12px;
 }
-.source {
-	opacity: 1;
-	color: var(--color2);
-}
-.appname.about {
-	font-size: 36px;
-}
 .buttons {
 	box-shadow: 2px 2px 8px #0002;
 	display: flex;
@@ -374,9 +367,6 @@ a.box {
 .setting .icon {
 	margin-right: 8px;
 	padding: 12px;
-}
-.setting .desc {
-	opacity: .6;
 }
 .setting.checked {
 	color: #EEE;
