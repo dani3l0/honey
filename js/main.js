@@ -92,6 +92,22 @@ function blur_toggle(value) {
 	}
 }
 
+function animations(value) {
+	let v = get_bool("animations");
+	if (value === undefined) v = !v; 
+	config("animations", v);
+	setting = get("setting-animations").classList;
+	let body = document.body.classList;
+	if (v) {
+		setting.add("checked");
+		body.remove("noanim");
+	}
+	else {
+		setting.remove("checked");
+		body.add("noanim");
+	}
+}
+
 function reset_all_settings() {
 	if (check_cookies()) localStorage.clear();
 	load_config(CONFIG_DEFAULT);

@@ -30,6 +30,9 @@ body {
 .noblur {
 	--blur: blur(0);
 }
+.noanim * {
+	transition: none !important;
+}
 
 ::-webkit-scrollbar {
 	display: none;
