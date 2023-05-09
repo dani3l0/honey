@@ -354,7 +354,7 @@ a.box {
 }
 .setting {
 	background: var(--bg2);
-	margin: 8px 0;
+	margin: 8px;
 	padding: 20px;
 	display: flex;
 	cursor: pointer;
@@ -372,10 +372,12 @@ a.box {
 }
 .setting .desc {
 	opacity: .6;
+	margin-right: 16px;
 }
 .setting .switch {
 	position: relative;
 	width: 44px;
+	min-width: 44px;
 	height: 24px;
 	background: #8886;
 	border-radius: 100px;
