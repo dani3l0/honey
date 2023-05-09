@@ -9,12 +9,6 @@ html {
 	background: hsl(var(--color), 100%, 80%);
 	color: hsl(var(--color), 100%, 28%);
 }
-.setting:hover {
-	background: #2228;
-}
-.setting.checked {
-	background: #36F;
-}
 .hostedby {
 	color: #FFF7;
 }
