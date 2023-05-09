@@ -88,6 +88,7 @@ function load_config(conf) {
 	load_apps();
 	switch_theme(get_bool("dark_mode"));
 	new_tab_toggle(get_bool("open_new_tab"));
+	blur_toggle(get_bool("blur"));
 }
 
 function is_secure(uri) {

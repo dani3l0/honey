@@ -76,6 +76,22 @@ function new_tab_toggle(value) {
 	load_apps();
 }
 
+function blur_toggle(value) {
+	let v = get_bool("blur");
+	if (value === undefined) v = !v; 
+	config("blur", v);
+	setting = get("setting-blur").classList;
+	let body = document.body.classList;
+	if (v) {
+		setting.add("checked");
+		body.remove("noblur");
+	}
+	else {
+		setting.remove("checked");
+		body.add("noblur");
+	}
+}
+
 function reset_all_settings() {
 	if (check_cookies()) localStorage.clear();
 	load_config(CONFIG_DEFAULT);
