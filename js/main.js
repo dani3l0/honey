@@ -108,11 +108,6 @@ function animations(value) {
 	}
 }
 
-function reset_all_settings() {
-	if (check_cookies()) localStorage.clear();
-	load_config(CONFIG_DEFAULT);
-}
-
 let S_TAP_LOCK;
 function open_screen(button) {
 	if (S_TAP_LOCK) return;
