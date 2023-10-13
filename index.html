@@ -5,17 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="icon" id="favicon">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/dark.css" id="css_dark" disabled>
-	<script type="text/javascript" src="js/dom.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+	<script src="js/main.js" type="module"></script>
 </head>
-<body onload="onload()" class="init">
-	<div id="background" class="scaled">
-		<img class="unloaded" onload="load_img(this)">
-		<img class="unloaded" onload="load_img(this)">
-	</div>
+<body class="init">
+	<div id="background"></div>
 	<div class="main">
-		<div class="page home hidden" id="page-home">
+		<div class="page home" p="home">
 			<div class="wrapper">
 				<div class="home">
 					<img class="appicon" id="app-icon">
@@ -23,108 +18,36 @@
 					<div class="appdesc" id="app-desc"></div>
 				</div>
 				<div class="buttons">
-					<div onclick="switch_theme()">
-						<div class="icon" id="theme-indicator">light_mode</div>
+					<div id="theme-switcher">
+						<div class="icon"></div>
 						<div class="text">Theme</div>
 					</div>
-					<div onclick="show('page-services')">
+					<div t="services">
 						<div class="icon">apps</div>
 						<div class="text">Services</div>
 					</div>
-					<div onclick="show('page-more')">
+					<div t="more">
 						<div class="icon">more</div>
 						<div class="text">More</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="page hidden" id="page-services">
+		<div class="page" p="services">
 			<div class="back"><div class="icon"></div></div>
 			<div class="wrapper">
 				<div class="header">
 					<div class="icon">apps</div>
 					<div class="text">Services</div>
 				</div>
-				<div class="boxes" id="applist"></div>
+				<div class="boxes" id="app-list"></div>
 			</div>
 		</div>
-		<div class="page hidden" id="page-more" style="--screens: 2">
+		<div class="page" p="more">
 			<div class="back"><div class="icon"></div></div>
 			<div class="wrapper">
-				<div class="selector">
-					<div class="bg"></div>
-					<div class="entry" onclick="open_screen(this)">
-						<div>Overview</div>
-					</div>
-					<div class="entry" onclick="open_screen(this)">
-						<div>Settings</div>
-					</div>
-				</div>
-				<div class="screens">
-					<div class="screen">
-						<div class="split">
-							<div class="icon fancy">shield</div>
-							<div class="right">
-								<div class="pp"><b id="security-pp">85</b>%</div>
-								<div class="text"><b id="services-secure"></b> out of <b id="services-total"></b> listed services use secure connections</div>
-							</div>
-						</div>
-						<div class="boxes static">
-							<div class="box">
-								<div class="icon" style="--color: 144deg">lock</div>
-								<div>
-									<div class="name">Encryption</div>
-									<div class="desc">HTTPS ensures data is transferred securely, so nobody can monitor your traffic.</div>
-								</div>
-							</div>
-							<div class="box">
-								<div class="icon" style="--color: 272deg">dns</div>
-								<div>
-									<div class="name">Self-hosted</div>
-									<div class="desc">All services are independent. No more relying on centralized data-harvesters.</div>
-								</div>
-							</div>
-						</div>
-						<div class="hostedby">All services hosted by <b id="app-hostedby"></b></div>
-					</div>
-					<div class="screen hidden">
-						<div class="warn none" id="nocook">WARNING: due to blocked cookies, all settings will be lost after page reload</div>
-						<div class="settings">
-							<div class="setting" onclick="switch_theme()" id="setting-theme">
-								<div class="icon">dark_mode</div>
-								<div class="text">
-									<div class="name">Dark mode</div>
-									<div class="desc">Make the colors more appropriate for low-light environments</div>
-								</div>
-								<div class="switch"></div>
-							</div>
-							<div class="setting" onclick="new_tab_toggle()" id="setting-newtab">
-								<div class="icon">open_in_new</div>
-								<div class="text">
-									<div class="name">Open in new tab</div>
-									<div class="desc">Clicking an application will open it in a new browser tab</div>
-								</div>
-								<div class="switch"></div>
-							</div>
-							<div class="setting" onclick="blur_toggle()" id="setting-blur">
-								<div class="icon">blur_on</div>
-								<div class="text">
-									<div class="name">Enable blur</div>
-									<div class="desc">Improves UI sweetness but has a huge impact on performance</div>
-								</div>
-								<div class="switch"></div>
-							</div>
-							<div class="setting" onclick="animations()" id="setting-animations">
-								<div class="icon">animation</div>
-								<div class="text">
-									<div class="name">Animations</div>
-									<div class="desc">Show nice and fancy page transitions, improves experience</div>
-								</div>
-								<div class="switch"></div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<div class="warn none" id="no-cookies">WARNING: due to blocked cookies, all settings will be lost after page reload</div>
+				<div class="settings" id="settings"></div>
 			</div>
 		</div>
 	</div>
