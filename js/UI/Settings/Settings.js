@@ -43,7 +43,7 @@ export default class Settings {
 		let item = document.createElement("div")
 		item.classList.add("setting")
 		item.innerHTML = `
-			<div class="icon">${icon}</div>
+			<i>${icon}</i>
 			<div class="text">
 				<div class="name">${name}</div>
 				<div class="desc">${desc}</div>

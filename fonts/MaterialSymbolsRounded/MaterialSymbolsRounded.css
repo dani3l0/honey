@@ -5,7 +5,7 @@
 	src: url(MaterialSymbolsRounded.woff2) format('woff2');
 }
 
-.icon {
+i {
 	font-family: 'Material Symbols Rounded';
 	font-weight: normal;
 	font-style: normal;
@@ -17,6 +17,7 @@
 	white-space: nowrap;
 	word-wrap: normal;
 	direction: ltr;
+	display: inline-block;
 	-webkit-font-feature-settings: 'liga';
 	-webkit-font-smoothing: antialiased;
 }

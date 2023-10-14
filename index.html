@@ -10,6 +10,8 @@
 <body class="init">
 	<div id="background"></div>
 	<div class="main">
+
+		<!-- Home page -->
 		<div class="page home" p="home">
 			<div class="wrapper">
 				<div class="home">
@@ -19,33 +21,41 @@
 				</div>
 				<div class="buttons">
 					<div id="theme-switcher">
-						<div class="icon"></div>
+						<i></i>
 						<div class="text">Theme</div>
 					</div>
 					<div t="services">
-						<div class="icon">apps</div>
+						<i>apps</i>
 						<div class="text">Services</div>
 					</div>
-					<div t="more">
-						<div class="icon">more</div>
-						<div class="text">More</div>
+					<div t="settings">
+						<i>settings</i>
+						<div class="text">Settings</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<!-- App list -->
 		<div class="page" p="services">
-			<div class="back"><div class="icon"></div></div>
+			<div class="back"><i></i></div>
 			<div class="wrapper">
 				<div class="header">
-					<div class="icon">apps</div>
+					<i>apps</i>
 					<div class="text">Services</div>
 				</div>
 				<div class="boxes" id="app-list"></div>
 			</div>
 		</div>
-		<div class="page" p="more">
-			<div class="back"><div class="icon"></div></div>
+
+		<!-- Settings -->
+		<div class="page" p="settings">
+			<div class="back"><i></i></div>
 			<div class="wrapper">
+				<div class="header">
+					<i>settings</i>
+					<div class="text">Settings</div>
+				</div>
 				<div class="warn none" id="no-cookies">WARNING: due to blocked cookies, all settings will be lost after page reload</div>
 				<div class="settings" id="settings"></div>
 			</div>

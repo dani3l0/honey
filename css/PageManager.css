@@ -41,7 +41,7 @@
 	transition: background .2s;
 }
 
-.back .icon {
+.back i {
 	margin: 4px;
 	width: 56px;
 	height: 56px;
@@ -50,11 +50,11 @@
 	transition: background .2s;
 }
 
-.back .icon:hover {
+.back i:hover {
 	background: var(--hover);
 }
 
-.back .icon:after {
+.back i:after {
 	content: "chevron_left";
 	position: absolute;
 	top: 50%;
@@ -68,7 +68,7 @@
 	margin: 20px 20px 16px;
 }
 
-.header .icon {
+.header i {
 	margin-top: 1px;
 	margin-right: 10px;
 }

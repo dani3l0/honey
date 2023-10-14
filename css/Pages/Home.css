@@ -12,7 +12,7 @@
 	object-fit: cover;
 }
 
-#theme-switcher .icon::after {
+#theme-switcher i::after {
 	content: "light_mode"
 }
 

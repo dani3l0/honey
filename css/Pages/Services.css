@@ -22,7 +22,7 @@
 	background: var(--hover);
 }
 
-.box .icon {
+.box i {
 	font-size: 24px;
 	padding: 20px;
 	background: hsl(var(--color), 100%, 89%);

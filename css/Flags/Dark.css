@@ -6,6 +6,6 @@ body.dark {
 	--hover: #FFF1;
 }
 
-body.dark #theme-switcher .icon::after {
+body.dark #theme-switcher i::after {
 	content: "dark_mode"
 }
