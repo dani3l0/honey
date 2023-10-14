@@ -31,3 +31,8 @@ body.dark #background.scaled img:first-child,
 body:not(.dark) #background.scaled img:last-child {
 	transform: none;
 }
+
+#background .notloaded {
+	transform: scale(1) !important;
+	opacity: 0 !important;
+}

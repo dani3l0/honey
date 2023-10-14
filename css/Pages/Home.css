@@ -10,6 +10,12 @@
 	width: 192px;
 	height: 192px;
 	object-fit: cover;
+	transition: transform .4s, opacity .4s;
+}
+
+.appicon.notloaded {
+	transform: scale(.8);
+	opacity: 0;
 }
 
 #theme-switcher i::after {

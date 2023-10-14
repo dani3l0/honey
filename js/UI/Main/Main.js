@@ -17,6 +17,10 @@ export default class Main {
 		this.backgrounds = document.getElementById("background")
 		for (let i = 0; i < 2; i++) {
 			let img = document.createElement("img")
+			img.classList.add("notloaded")
+			img.addEventListener("load", () => {
+				img.classList.remove("notloaded")
+			})
 			this.backgrounds.appendChild(img)
 		}
 

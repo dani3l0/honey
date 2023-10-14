@@ -12,7 +12,7 @@
 	border-radius: 16px;
 	align-items: center;
 	text-align: left;
-	transition: background .4s;
+	transition: background .3s;
 }
 
 .setting i {
@@ -37,7 +37,7 @@
 	background: #8886;
 	border-radius: 100px;
 	margin: 0 4px 0 auto;
-	transition: border .4s, background .4s;
+	transition: border .4s, background .3s;
 }
 
 .setting .switch:after {
@@ -50,7 +50,7 @@
 	top: 50%;
 	border-radius: 10px;
 	transform: translateY(-50%);
-	transition: left .2s, background .4s;
+	transition: left .2s, background .3s;
 }
 
 .setting.checked .switch {

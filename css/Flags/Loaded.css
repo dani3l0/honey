@@ -1,0 +1,16 @@
+body {
+	transition: opacity .3s;
+}
+
+body:not(.loaded) {
+	opacity: 0;
+	transition: none;
+}
+
+body:not(.loaded) * {
+	transition: none !important;
+}
+
+body:not(.loaded) .page .wrapper {
+	transform: scale(.8) translateY(50%);
+}

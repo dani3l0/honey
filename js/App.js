@@ -12,7 +12,6 @@ export default class App {
 	constructor(config) {
 		if (App.instance) return App.instance
 		App.instance = this
-		document.body.classList.remove("init")
 		this.config = new Config(config)
 		this.init()
 	}
@@ -24,5 +23,6 @@ export default class App {
 		this.settings = new Settings()
 
 		showPage("home")
+		document.body.classList.add("loaded")
 	}
 }

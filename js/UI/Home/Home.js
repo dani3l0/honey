@@ -35,6 +35,10 @@ export default class Home {
 	initHomeUI() {
 		let logo = document.getElementById("app-icon")
 		logo.src = this.config.get("icon")
+		logo.classList.add("notloaded")
+		logo.addEventListener("load", () => {
+			logo.classList.remove("notloaded")
+		})
 
 		let name = document.getElementById("app-name")
 		name.innerText = this.config.get("name")
