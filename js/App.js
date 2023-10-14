@@ -23,6 +23,8 @@ export default class App {
 		this.settings = new Settings()
 
 		showPage("home")
-		document.body.classList.add("loaded")
+		setTimeout(() => {
+			document.body.classList.add("loaded")
+		}, 100)
 	}
 }
