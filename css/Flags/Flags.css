@@ -1,0 +1,19 @@
+@import url(Dark.css);
+
+body {
+	--color: #222;
+	--color2: #2229;
+	--background: #EEE8;
+	--bg2: #FFF8;
+	--hover: #0001;
+	--scale-factor: 1.15;
+	--blur: blur(16px);
+}
+
+body.noblur {
+	--blur: 0;
+}
+
+body.noanim * {
+	transition: none !important;
+}

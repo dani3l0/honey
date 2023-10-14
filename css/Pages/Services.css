@@ -1,0 +1,52 @@
+.boxes {
+	display: flex;
+	flex: 1 1 0;
+	flex-wrap: wrap;
+}
+
+.box {
+	min-width: 292px;
+	flex: 1;
+	margin: 2px;
+	border-radius: 20px;
+	padding: 8px;
+	display: flex;
+	align-items: center;
+	text-align: left;
+	text-decoration: none;
+	color: inherit;
+	transition: background .2s;
+}
+
+.box:hover {
+	background: var(--hover);
+}
+
+.box .icon {
+	font-size: 24px;
+	padding: 20px;
+	background: hsl(var(--color), 100%, 89%);
+	color: hsl(var(--color), 100%, 35%);
+	border-radius: 100px;
+	margin: 2px 12px 2px 2px;
+}
+
+a.box {
+	cursor: pointer;
+	padding: 14px;
+}
+
+.box img {
+	width: 64px;
+	height: 64px;
+	object-fit: cover;
+	margin-right: 12px;
+}
+
+.box .name {
+	font-size: 18px;
+}
+
+.box .desc {
+	opacity: .6;
+}

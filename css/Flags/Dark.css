@@ -1,0 +1,11 @@
+body.dark {
+	--color: #EEE;
+	--color2: #EEE9;
+	--background: #1118;
+	--bg2: #0008;
+	--hover: #FFF1;
+}
+
+body.dark #theme-switcher .icon::after {
+	content: "dark_mode"
+}

@@ -5,6 +5,7 @@
 	font-weight: 500;
 	src: local("Quicksand Medium"), local("Quicksand-Medium"), url(quicksand-medium.woff2) format("woff2");
 }
+
 /* quicksand-bold */
 @font-face {
 	font-family: Quicksand;
@@ -12,4 +13,3 @@
 	font-weight: 700;
 	src: local("Quicksand Bold"), local("Quicksand-Bold"), url(quicksand-bold.woff2) format("woff2");
 }
-
