@@ -8,8 +8,7 @@
 		"dark_mode": false,
 		"open_new_tab": false,
 		"blur": true,
-		"animations": true,
-		"hosted_by": "somebody"
+		"animations": true
 	},
 	"services": [
 		{
