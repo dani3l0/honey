@@ -92,3 +92,5 @@ Of course, some third-party resources are used in this project. I kanged them fo
 - **[Google Fonts](https://fonts.google.com/)**, for material icons on buttons and Quicksand font
 
 - **honey icon** - random icon found in DuckDuckGo Images
+
+- **Wallpapers** - very nice background images kanged from [wallhaven](https://wallhaven.cc/)
