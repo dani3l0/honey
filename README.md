@@ -19,7 +19,7 @@ It works out-of-the-box as all operations are done client-side.
 
 ## ⚙️ Configuration
 
-Configuration file is located at `config/config.json`. It is pretty readable, so you shouldn't have trouble customizing it.
+Configuration file is located at `config/config.json`. It is pretty readable, so you shouldn't have trouble customizing it. Also, please don't remove any keys as it will break user interface.
 
 
 ### 📱 Tweaking the user interface
@@ -68,7 +68,7 @@ npm i
 
 ### 🗼 Live server
 
-**For coding.** This will spin up a HTTP server on [localhost:5173](http://localhost:5173/). Each time source file is saved, UI will automatically hot-reload so there is no need for `ALT+TAB` and `F5`.
+**For coding.** This will spin up a HTTP server on **[localhost:5173](http://localhost:5173/)**. Each time source file is saved, UI will automatically hot-reload so there is no need for `ALT+TAB` and `F5`.
 
 ```
 npm run dev
@@ -77,8 +77,18 @@ npm run dev
 
 ### 🏗️ Build
 
-**Prepare project for production.** This command will link and optimize project assets to take less space and require less bandwith. Prebuilt assets will be stored in `dist` directory.
+**Prepare project for production.** This command will link and optimize project assets to take less space and require less bandwith. Prebuilt assets will be stored in `dist` directory and are ready to be put in a webserver root.
 
 ```
 npm run build
 ```
+
+## 🤝 Credits
+
+Of course, some third-party resources are used in this project. I kanged them for self-hosting, easier development and to avoid compatibility issues.
+
+- **[Material Icons](https://github.com/materialos/android-icon-pack/)**, for app icons at _Services_ page
+
+- **[Google Fonts](https://fonts.google.com/)**, for material icons on buttons and Quicksand font
+
+- **honey icon** - random icon found in DuckDuckGo Images
