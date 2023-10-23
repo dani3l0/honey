@@ -27,7 +27,8 @@ export function addOnOffTile(conf, icon, name, desc, key, func) {
 	if (func) item.addEventListener("click", f)
 
 	handleState()
-	if (func && conf.changed(key)) f()
+	if (func) f()
+
 	document.getElementById("settings").appendChild(item)
 	return item
 }

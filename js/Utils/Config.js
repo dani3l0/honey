@@ -37,10 +37,6 @@ export default class Config {
 		}
 	}
 
-	changed(key) {
-		return this.get(key) != this.config["ui"][key]
-	}
-
 	getServices() {
 		return this.config["services"]
 	}
