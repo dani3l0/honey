@@ -1,6 +1,6 @@
 @import url(Home.css);
 @import url(Services.css);
-@import url(Settings.css);
+@import url(Settings/Settings.css);
 
 .page {
 	position: fixed;
@@ -79,4 +79,37 @@
 
 .header .text {
 	font-size: 26px;
+}
+
+.sub-switch {
+	display: flex;
+	background: var(--bg2);
+	transition: background .2s;
+	margin: 16px 24px 0;
+	z-index: 1;
+	padding: 4px;
+	border-radius: 16px;
+	position: relative;
+	overflow: hidden;
+	--id: inherit;
+}
+
+.sub-switch::before {
+	content: " ";
+	z-index: -1;
+	position: absolute;
+	top: 4px;
+	left: calc(var(--id) / var(--switches) * 100% + 4px - 4px * var(--id));
+	width: calc(100% / var(--switches) - 4px);
+	height: calc(100% - 8px);
+	opacity: .25;
+	background: var(--color2);
+	border-radius: 12px;
+	transition: left .3s, background .3s;
+}
+
+.sub-switch div {
+	padding: 12px;
+	width: 50%;
+	cursor: pointer;
 }

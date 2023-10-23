@@ -48,16 +48,34 @@
 			</div>
 		</div>
 
-		<!-- Settings -->
+		<!-- More -->
 		<div class="page" p="settings">
 			<div class="back"><i></i></div>
 			<div class="wrapper">
-				<div class="header">
-					<i>settings</i>
-					<div class="text">Settings</div>
+				<div class="sub-switch" id="switch">
+					<div>Privacy</div>
+					<div>Settings</div>
 				</div>
-				<div class="warn none" id="no-cookies">WARNING: due to blocked cookies, all settings will be lost after page reload</div>
-				<div class="settings" id="settings"></div>
+				<div class="subpages" id="subsettings">
+
+					<!-- Privacy report -->
+					<div>
+						<div class="security">
+							<i>shield</i>
+							<div>
+								<div class="score"><b id="report-score"></b></div>
+								<div id="report"></div>
+							</div>
+						</div>
+						<div id="report-boxes"></div>
+					</div>
+
+					<!-- Settings -->
+					<div>
+						<div id="no-cookies">WARNING: due to blocked cookies, all settings will be lost after page reload</div>
+						<div class="settings" id="settings"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
