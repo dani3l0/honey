@@ -20,7 +20,7 @@
 
 #report-boxes .icon-rocket::after {
 	--color: #68F;
-	content: "rocket_launch";
+	content: "rocket";
 }
 
 #report-boxes .prewarn i::after {
