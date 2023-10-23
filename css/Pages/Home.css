@@ -18,8 +18,30 @@
 	opacity: 0;
 }
 
+#theme-switcher i {
+	position: relative;
+	overflow: hidden;
+}
+
+#theme-switcher i::before, #theme-switcher i::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	--hidden: 1;
+	opacity: calc(1 - var(--hidden));
+	transform: translate(-50%, -50%) rotateZ(calc(var(--hidden) * 360deg)) scale(calc(1 - var(--hidden) / 2));
+	transition: transform .3s, opacity .3s;
+}
+
+#theme-switcher i::before {
+	--hidden: 0;
+	--dark: 0;
+	content: "light_mode";
+}
+
 #theme-switcher i::after {
-	content: "light_mode"
+	--dark: 1;
+	content: "dark_mode";
 }
 
 .home.page {

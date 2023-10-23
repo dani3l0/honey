@@ -1,0 +1,14 @@
+@import url(Privacy.css);
+@import url(Settings.css);
+
+.subpages {
+	position: relative;
+	transform: translateX(calc(var(--id) * -100%));
+	transition: transform .4s, height .4s;
+}
+
+.subpages > div {
+	position: absolute;
+	left: calc(var(--n) * 100%);
+	width: 100%;
+}

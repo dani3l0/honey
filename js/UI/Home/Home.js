@@ -7,11 +7,15 @@ export default class Home {
 		this.app = new App()
 		this.config = this.app.config
 		this.init()
+	}
+
+	init() {
+		this.initButtons()
 		this.initHomeUI()
 		this.initBackButtons()
 	}
 
-	init() {
+	initButtons() {
 		let buttons = document.getElementsByClassName("buttons")[0].children
 		for (let button of buttons) {
 			let target = button.getAttribute("t")

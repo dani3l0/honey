@@ -1,0 +1,72 @@
+.settings {
+	margin: 32px auto;
+	padding: 0 16px;
+}
+
+.setting {
+	background: var(--bg2);
+	margin: 8px;
+	padding: 20px;
+	display: flex;
+	cursor: pointer;
+	border-radius: 16px;
+	align-items: center;
+	text-align: left;
+	transition: background .3s;
+}
+
+.setting i {
+	margin-right: 14px;
+	font-size: 28px;
+}
+
+.setting .name {
+	font-size: 16px;
+}
+
+.setting .desc {
+	opacity: .6;
+	margin-right: 16px;
+}
+
+.setting .switch {
+	position: relative;
+	width: 44px;
+	min-width: 44px;
+	height: 24px;
+	background: #8886;
+	border-radius: 100px;
+	margin: 0 4px 0 auto;
+	transition: border .4s, background .3s;
+}
+
+.setting .switch:after {
+	content: "";
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	background: var(--color);
+	left: 4px;
+	top: 50%;
+	border-radius: 10px;
+	transform: translateY(-50%);
+	transition: left .2s, background .3s;
+}
+
+.setting.checked .switch {
+	background-color: #68F;
+	border-color: #68F;
+}
+
+.setting.checked .switch:after {
+	left: calc(100% - 20px);
+}
+
+#no-cookies {
+	margin: 24px 0 -8px;
+	color: #F60;
+}
+
+#no-cookies.hidden {
+	display: none;
+}

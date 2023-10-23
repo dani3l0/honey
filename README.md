@@ -26,17 +26,18 @@ Configuration file is located at `config/config.json`. It is pretty readable, so
 
 The following keys are available under `ui` section. Some of them are listed in _Settings_ page and can be overriden by end-user.
 
-| Key name				| Description																			| in Settings	|
-|-----------------------|---------------------------------------------------------------------------------------|---------------|
-| `name`				| Name shown at the main screen and the tab title.										|		❌		|
-| `desc`				| Short description shown under title at the main screen.								|		❌		|
-| `icon`				| Icon shown at the main screen and as site's favicon.									|		❌		|
-| `wallpaper`			| Background image visible when dark mode is disabled.									|		❌		|
-| `wallpaper_dark`		| Background image visible when dark mode is enabled.									|		❌		|
-| `dark_mode`			| Tells whether dark mode is enabled by default.										|		✅		|
-| `open_new_tab`		| Tells whether clicking on a service will open it in new tab by default.				|		✅		|
-| `blur`				| Tells whether card background blur is enabled by default.								|		✅		|
-| `animations`			| Tells whether UI animations are enabled by default.									|		✅		|
+| Key name				| Description																																	| in Settings	|
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| `name`				| Name shown at the main screen and the tab title.																								|		❌		|
+| `desc`				| Short description shown under title at the main screen.																						|		❌		|
+| `icon`				| Icon shown at the main screen and as site's favicon.																							|		❌		|
+| `wallpaper`			| Background image visible when dark mode is disabled.																							|		❌		|
+| `wallpaper_dark`		| Background image visible when dark mode is enabled.																							|		❌		|
+| `dark_mode`			| Tells whether dark mode is enabled by default.																								|		✅		|
+| `open_new_tab`		| Tells whether clicking on a service will open it in new tab by default.																		|		✅		|
+| `blur`				| Tells whether card background blur is enabled by default.																						|		✅		|
+| `animations`			| Tells whether UI animations are enabled by default.																							|		✅		|
+| `https_importance`	| How important is HTTPS comparing to independence. If set to `0.25`, HTTPS will score maximum 25% in Privacy Panel. Total importance is `1`.	|		✅		|
 
 
 ### 🔗 Adding custom services

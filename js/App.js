@@ -1,7 +1,7 @@
 import Drawer from "./UI/Drawer/Drawer"
 import Home from "./UI/Home/Home"
 import Main from "./UI/Main/Main"
-import Settings from "./UI/Settings/Settings"
+import More from "./UI/More/More"
 import Config from "./Utils/Config"
 import { showPage } from "./Utils/DOMUtils"
 
@@ -20,7 +20,7 @@ export default class App {
 		this.main = new Main()
 		this.home = new Home()
 		this.drawer = new Drawer()
-		this.settings = new Settings()
+		this.more = new More()
 
 		showPage("home")
 		setTimeout(() => {

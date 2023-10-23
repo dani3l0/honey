@@ -1,7 +1,7 @@
 import App from "../../App";
 
 export default class Drawer {
-	constructor(name) {
+	constructor() {
 		this.app = new App()
 		this.config = this.app.config
 		this.init()

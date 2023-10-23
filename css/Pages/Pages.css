@@ -1,6 +1,6 @@
 @import url(Home.css);
 @import url(Services.css);
-@import url(Settings/Settings.css);
+@import url(More/More.css);
 
 .page {
 	position: fixed;

@@ -1,0 +1,80 @@
+#report-boxes {
+	display: flex;
+	text-align: left;
+	flex-wrap: wrap;
+	margin-bottom: 8px;
+}
+
+#report-boxes i::after {
+	color: var(--color);
+	text-shadow: 0 0 48px var(--color);
+	padding: 16px;
+	font-size: 28px;
+	border-radius: 32px;
+}
+
+#report-boxes .icon-https::after {
+	--color: #0C7;
+	content: "lock";
+}
+
+#report-boxes .icon-rocket::after {
+	--color: #68F;
+	content: "rocket_launch";
+}
+
+#report-boxes .prewarn i::after {
+	--color: #EA0;
+}
+
+#report-boxes .warn i::after {
+	--color: #F60;
+}
+
+#report-boxes .error i::after {
+	--color: #F22;
+}
+
+#report-boxes > div {
+	display: flex;
+	width: 50%;
+	min-width: 256px;
+	flex: 1;
+	padding: 20px 8px;
+	align-items: center;
+}
+
+#report-boxes .title {
+	font-size: 16px;
+}
+
+#report-boxes .subtitle {
+	opacity: .6;
+}
+
+.security {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 600px;
+	padding: 24px;
+	margin: 120px auto 80px;
+	text-align: right;
+}
+
+.security i {
+	font-size: 80px;
+}
+
+.security #report-score {
+	font-size: 48px;
+}
+
+.security #report {
+	opacity: .6;
+}
+
+.score::after {
+	content: "%";
+	font-size: 18px;
+}
