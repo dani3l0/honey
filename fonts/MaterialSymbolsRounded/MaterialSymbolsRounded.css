@@ -17,7 +17,10 @@ i {
 	white-space: nowrap;
 	word-wrap: normal;
 	direction: ltr;
-	display: inline-block;
 	-webkit-font-feature-settings: 'liga';
 	-webkit-font-smoothing: antialiased;
+}
+
+i {
+	display: inline-block;
 }
