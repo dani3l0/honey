@@ -1,9 +1,18 @@
-FROM nginx:1.25.2-alpine3.18
+FROM node:alpine
 
-WORKDIR /usr/share/nginx/html
+# Path to assets in container
+WORKDIR /app
+COPY . .
 
-RUN wget -q -O honey.zip https://github.com/dani3l0/honey/releases/download/v2.1.1/honey-v2.1.1-stable.zip && unzip -q -o honey.zip && rm honey.zip
+# Build honey
+RUN npm install
+RUN npm run build
 
-EXPOSE 80
+# Run a built-in webserver
+CMD npm run preview
 
-HEALTHCHECK CMD wget -nv --spider --tries=1 http://127.0.0.1:80
+# Expose port
+EXPOSE 4173
+
+# Health check
+HEALTHCHECK CMD wget -nv --spider --tries=1 http://127.0.0.1:4173

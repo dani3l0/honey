@@ -1,12 +1,12 @@
 {
-  "name": "vite-project",
+  "name": "honey",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview --host"
   },
   "devDependencies": {
     "vite": "^4.4.5"
