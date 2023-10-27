@@ -46,7 +46,6 @@ export default class Privacy {
 		indepencence_t = `There are ${indepencence_t} 3rd-party services here.`
 
 		let score = (encryption + indepencence) / 2
-		score = 0.99
 		let score_t, score_d
 		if (score == 1) {
 			score_t = "Superb"
