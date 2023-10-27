@@ -1,13 +1,18 @@
 # honey
 
-A sweet dashboard I use on my homeserver with some self-hosted stuff...
+_A sweet dashboard I use on my homeserver with some self-hosted stuff..._
 
-**[📺 Live demo](https://honeyy.vercel.app/)**
+honey is written in **pure** `HTML` `CSS` `JS` so dynamic backend or special webserver configuration is not required.
+It works out-of-the-box as all operations are done client-side.
+
+<font size="4">**[📺 Live demo](https://honeyy.vercel.app/)**</font>
 
 <img src="screenshot.jpg" style="width: 720px">
 
 
 ## 🚀 Installation
+
+### 🕸️ On existing webserver
 
 1. Download latest prebuilt archive from **[Releases](https://github.com/dani3l0/honey/releases)**.
 
@@ -15,8 +20,18 @@ A sweet dashboard I use on my homeserver with some self-hosted stuff...
 
 3. You're done!
 
-**Note:** honey is written in **pure** `HTML` `CSS` `JS` so dynamic backend or special webserver configuration is not required.
-It works out-of-the-box as all operations are done client-side.
+
+### 🐋 via Docker
+
+```
+docker run -p 4173:4173 -v /path/to/config:/app/dist/config:ro ghcr.io/dani3l0/honey:latest
+```
+
+- `-p 4173:4173` - exposes HTTP port to your machine
+- `-v /path/to/config:/app/dist/config:ro` - mounts config directory to your local filesystem in read-only mode (we don't need write permissions)
+
+If you have custom icons or background images, you can freely put them in `config` dir.
+Just remember to provide valid URLs (with `/config` prefix).
 
 
 ## ⚙️ Configuration
