@@ -56,7 +56,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	max-width: 600px;
+	max-width: 540px;
 	padding: 24px;
 	margin: 120px auto 80px;
 	text-align: right;
@@ -72,9 +72,4 @@
 
 .security #report {
 	opacity: .6;
-}
-
-.score::after {
-	content: "%";
-	font-size: 18px;
 }

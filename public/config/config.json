@@ -8,8 +8,7 @@
 		"dark_mode": false,
 		"open_new_tab": false,
 		"blur": true,
-		"animations": true,
-		"https_importance": 0.5
+		"animations": true
 	},
 	"services": [
 		{

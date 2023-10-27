@@ -55,7 +55,6 @@ Some of them are listed in _Settings_ page and can be customized by end-user.
 | `open_new_tab`		| Tells whether clicking on a service will open it in new tab by default.																		|		✅		|
 | `blur`				| Tells whether card background blur is enabled by default.																						|		✅		|
 | `animations`			| Tells whether UI animations are enabled by default.																							|		✅		|
-| `https_importance`	| How important is HTTPS comparing to independence. If set to `0.25`, HTTPS will score maximum 25% in Privacy Panel. Total importance is `1`.	|		❌		|
 
 
 ### 🔗 Adding custom services

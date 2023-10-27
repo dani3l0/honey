@@ -26,77 +26,57 @@ export default class Privacy {
 			stats.thirdParties += analysis.isThirdParty
 		}
 
-		let secure_pp = 100 * stats.secure / stats.total
-		let indepencence_pp = 100 * (stats.total - stats.thirdParties) / stats.total
-		let https_importance = this.config.get("https_importance")
-		let privacy_score = secure_pp * https_importance + indepencence_pp * (1 - https_importance)
+		let encryption = stats.secure / stats.total
+		let encryption_t
+		if (encryption == 1) encryption_t = "All"
+		else if (encryption >= 0.9) encryption_t = "Most"
+		else if (encryption > 0.5) encryption_t = "Many"
+		else if (encryption > 0.2) encryption_t = "Some"
+		else if (encryption > 0) encryption_t = "Few"
+		else encryption_t = "No"
+		encryption_t = `${encryption_t} listed services use secure connections.`
 
-		let privacy_report;
-		if (privacy_score == 100) {
-			privacy_report = "Data is sent securely and no third-party services are involved."
+		let indepencence = (stats.total - stats.thirdParties) / stats.total
+		let indepencence_t
+		if (indepencence == 1) indepencence_t = "no"
+		else if (indepencence > 0.7) indepencence_t = "some"
+		else if (indepencence > 0.4) indepencence_t = "many"
+		else if (indepencence > 0) indepencence_t = "a lot of"
+		else indepencence_t = "only"
+		indepencence_t = `There are ${indepencence_t} 3rd-party services here.`
+
+		let score = (encryption + indepencence) / 2
+		score = 0.99
+		let score_t, score_d
+		if (score == 1) {
+			score_t = "Superb"
+			score_d = "All data is sent securely and no 3rd-party services are involved."
 		}
-		else if (privacy_score >= 85) {
-			privacy_report = "Great privacy overall, but at some point it could be better."
+		else if (score >= 0.9) {
+			score_t = "Great"
+			score_d = "Awesome privacy practices, but still not perfect."
 		}
-		else if (privacy_score >= 40) {
-			privacy_report = "Decent privacy. You should pay attention what you're doing."
+		else if (score >= 0.6) {
+			score_t = "Good"
+			score_d = "Acceptable privacy practices, but still not perfect."
 		}
-		else privacy_report = "Transferring data is insecure and vulnerable to various threats."
+		else if (score >= 0.3) {
+			score_t = "Fair"
+			score_d = "Definitely not a vault, but self-hosted at least."
+		}
+		else if (score > 0) {
+			score_t = "Dangerous"
+			score_d = "You should really pay attention what you're doing here."
+		}
+		else {
+			score_t = ":0"
+			score_d = "You're just testing, right?"
+		}
 
-		document.getElementById("report-score").innerText = Math.round(privacy_score)
-		document.getElementById("report").innerText = privacy_report
+		document.getElementById("report-score").innerText = score_t
+		document.getElementById("report").innerText = score_d
 
-		const phrase = " of the listed services are using secure connections"
-		privacyBox(secure_pp, "icon-https", [
-			{
-				"from": 0,
-				"name": "No encryption",
-				"desc": "None" + phrase
-			},
-			{
-				"from": 0.1,
-				"name": "Poor encryption",
-				"desc": "Only some" + phrase
-			},
-			{
-				"from": 60,
-				"name": "Fair encryption",
-				"desc": "Most" + phrase
-			},
-			{
-				"from": 90,
-				"name": "Good encryption",
-				"desc": "Nearly all" + phrase
-			},
-			{
-				"from": 100,
-				"name": "Full encryption",
-				"desc": "All" + phrase
-			}
-		])
-
-		privacyBox(indepencence_pp, "icon-rocket", [
-			{
-				"from": 0,
-				"name": "Not independent",
-				"desc": "This server lists a lot of 3rd party services"
-			},
-			{
-				"from": 40,
-				"name": "Partially independent",
-				"desc": "This server lists many 3rd party services"
-			},
-			{
-				"from": 65,
-				"name": "Mostly independent",
-				"desc": "This server still lists some 3rd party services"
-			},
-			{
-				"from": 100,
-				"name": "Fully independent",
-				"desc": "This server is free of 3rd party services"
-			}
-		])
+		privacyBox("icon-https", "Encryption", encryption_t)
+		privacyBox("icon-rocket", "Independence", indepencence_t)
 	}
-
 }
