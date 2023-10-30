@@ -29,6 +29,6 @@ export function addOnOffTile(conf, icon, name, desc, key, func) {
 	handleState()
 	if (func) f()
 
-	document.getElementById("settings").appendChild(item)
+	document.querySelector("#settings").appendChild(item)
 	return item
 }

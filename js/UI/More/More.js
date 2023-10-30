@@ -1,5 +1,5 @@
 import App from "../../App";
-import Privacy from "./Privacy/Privacy";
+import Overview from "./Overview/Overview";
 import Settings from "./Settings/Settings";
 
 
@@ -7,21 +7,21 @@ export default class More {
 	constructor() {
 		this.app = new App()
 		this.config = this.app.config
-		this.privacy = new Privacy()
+		this.overview = new Overview()
 		this.settings = new Settings()
 		this.init()
 	}
 
 	init() {
-		this.privacy.init()
+		this.overview.init()
 		this.settings.init()
 		this.initPager()
 	}
 
 	initPager() {
-		let switcher = document.getElementById("switch")
+		let switcher = document.querySelector(".subswitch")
 		let buttons = switcher.children
-		let subsettings = document.getElementById("subsettings")
+		let subsettings = document.querySelector(".subpages")
 
 		for (let i = 0; i < buttons.length; i++) {
 			let button = buttons[i]

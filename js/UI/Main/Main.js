@@ -9,12 +9,12 @@ export default class Main {
 
 	init() {
 		document.title = this.config.get("name")
-		document.getElementById("favicon").href = this.config.get("icon")
+		document.querySelector("#favicon").href = this.config.get("icon")
 		this.initBackgrounds()
 	}
 
 	initBackgrounds() {
-		this.backgrounds = document.getElementById("background")
+		this.backgrounds = document.querySelector("#background")
 		for (let i = 0; i < 2; i++) {
 			let img = document.createElement("img")
 			img.classList.add("notloaded")

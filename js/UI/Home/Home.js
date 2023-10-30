@@ -16,7 +16,7 @@ export default class Home {
 	}
 
 	initButtons() {
-		let buttons = document.getElementsByClassName("buttons")[0].children
+		let buttons = document.querySelector(".buttons").children
 		for (let button of buttons) {
 			let target = button.getAttribute("t")
 			if (target) {
@@ -28,7 +28,7 @@ export default class Home {
 	}
 
 	initBackButtons() {
-		let backButtons = document.getElementsByClassName("back")
+		let backButtons = document.querySelectorAll(".back")
 		for (let button of backButtons) {
 			button.addEventListener("click", () => {
 				showPage("home")
@@ -37,17 +37,17 @@ export default class Home {
 	}
 
 	initHomeUI() {
-		let logo = document.getElementById("app-icon")
+		let logo = document.querySelector(".appicon")
 		logo.src = this.config.get("icon")
 		logo.classList.add("notloaded")
 		logo.addEventListener("load", () => {
 			logo.classList.remove("notloaded")
 		})
 
-		let name = document.getElementById("app-name")
+		let name = document.querySelector(".appname")
 		name.innerText = this.config.get("name")
 
-		let desc = document.getElementById("app-desc")
+		let desc = document.querySelector(".appdesc")
 		desc.innerText = this.config.get("desc")
 	}
 }

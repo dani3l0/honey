@@ -1,0 +1,54 @@
+.overview {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 640px;
+	padding: 0 20px;
+	margin: 128px auto 88px;
+	text-align: right;
+}
+
+.overview > i {
+	font-size: 80px;
+}
+
+.overview .big {
+	font-size: 64px;
+	margin-bottom: -4px;
+}
+
+.overview .small {
+	opacity: .5;
+}
+
+.privacy-boxes {
+	display: flex;
+	text-align: left;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+}
+
+.privacy-boxes > div {
+	display: flex;
+	width: 50%;
+	min-width: 256px;
+	flex: 1;
+	padding: 8px;
+	align-items: center;
+}
+
+.privacy-boxes i {
+	color: var(--color);
+	text-shadow: 0 0 48px var(--color);
+	padding: 16px;
+	font-size: 28px;
+	border-radius: 32px;
+}
+
+.privacy-boxes .title {
+	font-size: 16px;
+}
+
+.privacy-boxes .subtitle {
+	opacity: .5;
+}

@@ -81,7 +81,7 @@
 	font-size: 26px;
 }
 
-.sub-switch {
+.subswitch {
 	display: flex;
 	background: var(--bg2);
 	transition: background .2s;
@@ -94,7 +94,7 @@
 	--id: inherit;
 }
 
-.sub-switch::before {
+.subswitch::before {
 	content: " ";
 	z-index: -1;
 	position: absolute;
@@ -108,7 +108,7 @@
 	transition: left .3s, background .3s;
 }
 
-.sub-switch div {
+.subswitch div {
 	padding: 12px;
 	width: 50%;
 	cursor: pointer;

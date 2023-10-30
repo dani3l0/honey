@@ -81,13 +81,6 @@ Example:
 ```
 
 
-## 🛡️ Privacy Panel
-
-**How does it work?**
-- Checks how many listed services use `HTTPS` for secure connections
-- Checks if listed services are on the same origin (like domain, subdomain or IP address), otherwise are considered as third-party
-
-
 ## 🛠️ Development
 
 honey is built on top of [Vite.js](https://vitejs.dev/). This tool allows faster development and offers various optimizations.

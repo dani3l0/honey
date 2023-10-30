@@ -16,6 +16,10 @@ body {
 	-webkit-tap-highlight-color: transparent;
 }
 
+* {
+	scrollbar-width: 0;
+}
+
 ::-webkit-scrollbar {
 	display: none;
 }

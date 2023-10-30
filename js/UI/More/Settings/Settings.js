@@ -39,13 +39,13 @@ export default class Settings {
 			"animations", EVENTS.onAnimationChange
 		)
 
-		document.getElementById("theme-switcher").addEventListener("click", () => {
+		document.querySelector("#theme-switcher").addEventListener("click", () => {
 			darkMode.click()
 		})
 	}
 
 	checkLocalStorage() {
-		let warn = document.getElementById("no-cookies").classList
+		let warn = document.querySelector("#no-cookies").classList
 		if (this.config.storageAvailable) warn.add("hidden")
 	}
 }

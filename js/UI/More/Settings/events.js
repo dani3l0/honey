@@ -7,7 +7,7 @@ export function onThemeChange(config) {
 
 export function onNewTabChange(config) {
 	let openNewTab = config.get("open_new_tab")
-	let appList = document.getElementById("app-list").children
+	let appList = document.querySelector("#app-list").children
 
 	for (let app of appList) {
 		if (openNewTab) app.setAttribute("target", "_blank")
