@@ -30,25 +30,38 @@ export default class Overview {
 		this.div.querySelector(".big").innerText = stats.total
 		this.div.querySelector(".small").innerText = `Available service${s(stats.total)}`
 
-		let encryption_t
-		let donot = ""
-		if (stats.secure == stats.total) encryption_t = "All"
-		else if (stats.secure == 0) encryption_t = "None of"
-		else {
-			encryption_t = stats.total - stats.secure
-			donot = "do not"
+		let encryption_t, encryption_d
+		if (stats.secure == stats.total) {
+			encryption_t = "Full encryption"
+			encryption_d = "All services use secure connections (HTTPS)."
 		}
-		encryption_t = `${encryption_t} service${s(encryption_t)} ${donot} use secure connections (HTTPS).`
+		else if (stats.secure == 0) {
+			encryption_t = "No encryption"
+			encryption_d = "It seems server does not support HTTPS."
 
-		let indepencence_t
-		if (stats.thirdParties == 0) indepencence_t =
-			"This server is free of 3rd party services."
-		else if (stats.thirdParties == stats.total) indepencence_t =
-			"It seems only 3rd-party services are listed."
-		else indepencence_t = 
-			`${stats.thirdParties} service${s(stats.thirdParties)} ${isare(stats.thirdParties)} provided by 3rd-parties.`
+		}
+		else {
+			let insecure = stats.total - stats.secure
+			encryption_t = "Partial encryption"
+			encryption_d = `${insecure} service${s(insecure)} do not use secure connections.`
 
-		privacyBox("lock", "#0D6", "Encryption", encryption_t, stats.secure / stats.total)
-		privacyBox("home", "#68F", "Independence", indepencence_t, 1 - stats.thirdParties / stats.total)
+		}
+
+		let indepencence_t, indepencence_d
+		if (stats.thirdParties == 0) {
+			indepencence_t = "Independence"
+			indepencence_d = "This server is free of 3rd party services."
+		}
+		else if (stats.thirdParties == stats.total) {
+			indepencence_t = "Something is wrong..."
+			indepencence_d = "It seems only 3rd-party services are listed."
+		}
+		else {
+			indepencence_t = "Partial independence"
+			indepencence_d = `${stats.thirdParties} service${s(stats.thirdParties)} ${isare(stats.thirdParties)} provided by 3rd-parties.`
+		}
+
+		privacyBox("lock", "#0D6", encryption_t, encryption_d, stats.secure / stats.total)
+		privacyBox("home", "#68F", indepencence_t, indepencence_d, 1 - stats.thirdParties / stats.total)
 	}
 }
