@@ -27,7 +27,7 @@ export default class Overview {
 			stats.secure += analysis.isSecure
 			stats.thirdParties += analysis.isThirdParty
 		}
-		this.div.querySelector(".big").innerText = stats.total
+		this.div.querySelector(".big").setAttribute("style", `--value: ${stats.total}`)
 		this.div.querySelector(".small").innerText = `Available service${s(stats.total)}`
 
 		let encryption_t, encryption_d

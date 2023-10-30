@@ -12,9 +12,26 @@
 	font-size: 80px;
 }
 
+@property --value {
+	syntax: '<integer>';
+	initial-value: 0;
+	inherits: false;
+}
+
 .overview .big {
 	font-size: 64px;
 	margin-bottom: -4px;
+	counter-reset: value var(--value);
+	transition: --value 1.2s;
+}
+
+.page:not(.current) .overview .big {
+	--value: 0 !important;
+	transition: --value 0s .5s;
+}
+
+.overview .big::after {
+	content: counter(value);
 }
 
 .overview .small {
