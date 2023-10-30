@@ -28,6 +28,7 @@ export default class Overview {
 			stats.thirdParties += analysis.isThirdParty
 		}
 		this.div.querySelector(".big").innerText = stats.total
+		this.div.querySelector(".small").innerText = `Available service${s(stats.total)}`
 
 		let encryption_t
 		let donot = ""
