@@ -52,6 +52,12 @@
 			"desc": "Sweet & lightweight app for taking notes.",
 			"href": "notes",
 			"icon": "img/preview/notes.png"
+		},
+		{
+			"name": "Google",
+			"desc": "DON'T CLICK: goes to google.com",
+			"href": "https://google.com",
+			"icon": "img/preview/google.png"
 		}
 	]
 }
