@@ -17,7 +17,7 @@ body {
 }
 
 * {
-	scrollbar-width: 0;
+	scrollbar-width: none;
 }
 
 ::-webkit-scrollbar {
