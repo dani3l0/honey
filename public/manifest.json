@@ -1,0 +1,14 @@
+{
+	"name": "honey",
+	"short_name": "honey",
+	"description": "Nice and sweet place for all your self-hosted services",
+	"start_url": "/",
+	"background_color": "#000",
+	"display": "standalone",
+	"icons": [
+		{
+			"src": "img/icon.png",
+			"sizes": "192x192 256x256 512x512"
+		}
+	]
+}
