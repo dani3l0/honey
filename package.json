@@ -1,7 +1,7 @@
 {
   "name": "honey",
   "private": true,
-  "version": "2.2.0",
+  "version": "2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,6 +9,6 @@
     "preview": "vite preview --host"
   },
   "devDependencies": {
-    "vite": "^4.4.5"
+    "vite": "^4.5.0"
   }
 }
