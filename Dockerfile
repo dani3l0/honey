@@ -9,7 +9,7 @@ RUN npm install
 RUN npm run build
 
 # Run a built-in webserver
-CMD npm run preview
+CMD ["/app/entrypoint.sh"]
 
 # Expose port
 EXPOSE 4173

@@ -24,14 +24,16 @@ It works out-of-the-box as all operations are done client-side.
 ### 🐋 via Docker
 
 ```
-docker run -p 4173:4173 -v /path/to/config:/app/dist/config:ro ghcr.io/dani3l0/honey:latest
+docker run -p 4173:4173 -v /path/to/config:/app/dist/config ghcr.io/dani3l0/honey:latest
 ```
 
 - `-p 4173:4173` - exposes HTTP port to your machine
-- `-v /path/to/config:/app/dist/config:ro` - mounts config directory to your local filesystem in read-only mode (we don't need write permissions)
+- `-v /path/to/config:/app/dist/config` - mounts config directory to your local filesystem, missing config files will be created automatically
 
 If you have custom icons or background images, you can freely put them in `config` dir.
 Just remember to provide valid URLs (with `/config` prefix).
+
+_alternatively, use a `docker-compose.yml` file_
 
 
 ## ⚙️ Configuration
