@@ -9,6 +9,6 @@
     "preview": "vite preview --host"
   },
   "devDependencies": {
-    "vite": "^4.5.0"
+    "vite": "^5.4.9"
   }
 }
