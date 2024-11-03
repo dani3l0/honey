@@ -1,5 +1,5 @@
 import App from "../../../App";
-import { addOnOffTile } from "./tiles";
+import { addOnOffTile, addOptionsTile } from "./tiles";
 import * as EVENTS from "./events"
 
 
@@ -15,7 +15,7 @@ export default class Settings {
 	}
 
 	initSettings() {
-		let darkMode = addOnOffTile(this.config,
+		let darkMode = addOptionsTile(this.config,
 			"dark_mode", "Dark mode",
 			"Make the colors more appropriate for low-light environments",
 			"dark_mode", EVENTS.onThemeChange

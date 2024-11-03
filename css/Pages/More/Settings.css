@@ -8,11 +8,13 @@
 	margin: 8px;
 	padding: 20px;
 	display: flex;
-	cursor: pointer;
 	border-radius: 16px;
 	align-items: center;
 	text-align: left;
 	transition: background .3s;
+}
+.setting.pointer {
+	cursor: pointer;
 }
 
 .setting i {
@@ -69,4 +71,35 @@
 
 #no-cookies.hidden {
 	display: none;
+}
+
+.options {
+	position: relative;
+	margin-left: auto;
+	background: #8883;
+	border-radius: 16px;
+	border: 4px solid transparent;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	overflow: hidden;
+}
+
+.options::before {
+	content: " ";
+	position: absolute;
+	width: calc(100% / var(--items));
+	left: calc(100% / var(--items) * var(--item));
+	height: 100%;
+	border-radius: 12px;
+	background: #68F;
+	transition: left .3s;
+}
+
+.options div {
+	padding: 12px 0;
+	width: 64px;
+	flex: 1;
+	cursor: pointer;
+	z-index: 1;
 }

@@ -1,8 +1,8 @@
 export default class Config {
+
+	// Initialization & localStorage availability check
 	constructor(config) {
 		this.config = config
-
-		// localStorage availability check
 		try {
 			window.localStorage
 			this.storageAvailable = true
@@ -12,9 +12,10 @@ export default class Config {
 		}
 	}
 
+	// Get value from config or localStorage (if set)
 	get(key) {
 		let value = this.config["ui"][key]
-		
+
 		if (this.storageAvailable) {
 			let type = typeof(value)
 			let stored_value = window.localStorage.getItem(key)
@@ -29,7 +30,9 @@ export default class Config {
 		return value
 	}
 
+	// Save value to localStorage
 	set(key, value) {
+		key = key.toLowerCase()
 		this.config["ui"][key] = value
 
 		if (this.storageAvailable) {
@@ -37,6 +40,7 @@ export default class Config {
 		}
 	}
 
+	// Get services from config.json file
 	getServices() {
 		return this.config["services"]
 	}

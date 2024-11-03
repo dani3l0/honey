@@ -5,7 +5,7 @@
 		"icon": "img/icon.png",
 		"wallpaper": "img/background.jpg",
 		"wallpaper_dark": "img/background-dark.jpg",
-		"dark_mode": false,
+		"dark_mode": "Auto",
 		"open_new_tab": false,
 		"blur": true,
 		"animations": true
