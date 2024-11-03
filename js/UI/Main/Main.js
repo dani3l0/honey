@@ -10,6 +10,7 @@ export default class Main {
 	init() {
 		document.title = this.config.get("name")
 		document.querySelector("#favicon").href = this.config.get("icon")
+		document.querySelector("#apple-touch-icon").href = this.config.get("icon")
 		this.initBackgrounds()
 	}
 
