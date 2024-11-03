@@ -40,7 +40,18 @@ export default class Settings {
 		)
 
 		document.querySelector("#theme-switcher").addEventListener("click", () => {
-			darkMode.click()
+			let targetButtons = darkMode.querySelector(".options").children
+			let storedValue = this.config.get("dark_mode")
+			let target;
+			if (storedValue == "Auto") {
+				let isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+				target = 2 - isSystemDark
+			}
+			else {
+				let isEnforcedDark = storedValue == "On"
+				target = !isEnforcedDark + 1
+			}
+			targetButtons[target].click()
 		})
 	}
 
