@@ -12,7 +12,7 @@ export function onThemeChange(config) {
 	if (!onThemeChange_SystemListener) {
 		onThemeChange_SystemListener = true
 		mm.addEventListener('change', event => {
-			if (value == "Auto") {
+			if (config.get("dark_mode") == "Auto") {
 				let isDark = event.matches;
 				isDark ? CL.add("dark") : CL.remove("dark")
 			}
