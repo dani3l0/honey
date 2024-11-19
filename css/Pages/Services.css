@@ -44,7 +44,37 @@ a.box {
 }
 
 .box .name {
+	position: relative;
 	font-size: 18px;
+}
+
+.box.pingdot .name {
+	padding-left: 16px;
+}
+
+.box.pingdot .name::before {
+	content: " ";
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	border-radius: 6px;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	background: #888;
+	transition: background .2s, box-shadow .8s;
+}
+.box.pingdot.up .name::before {
+	background: #0F8;
+	box-shadow: 0 0 12px #0F8;
+}
+.box.pingdot.down .name::before {
+	background: #F35;
+	box-shadow: 0 0 12px #F35;
+}
+.box.pingdot.error .name::before {
+	background: #F82;
+	box-shadow: 0 0 12px #F82;
 }
 
 .box .desc {

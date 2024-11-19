@@ -1,3 +1,5 @@
+import App from "../../../App";
+
 const CL = document.body.classList
 
 // Switch between light & dark themes
@@ -29,6 +31,12 @@ export function onNewTabChange(config) {
 		if (openNewTab) app.setAttribute("target", "_blank")
 		else app.removeAttribute("target") 
 	}
+}
+
+// Enable/disable ping dots
+export function onPingDotsChange(config) {
+	let app = new App()
+	app.drawer.importApps()
 }
 
 // Enable/disable background blur

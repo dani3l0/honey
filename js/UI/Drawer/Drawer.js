@@ -1,4 +1,5 @@
 import App from "../../App";
+import PingService from "../../Utils/PingService";
 
 export default class Drawer {
 	constructor() {
@@ -10,18 +11,35 @@ export default class Drawer {
 	init() {
 		this.importApps()
 	}
-	
+
 	importApps() {
 		let apps = this.config.getServices()
-		let applist = document.querySelector("#app-list");
+		let enablePingDots = this.config.get("ping_dots")
+		let applist = document.querySelector("#app-list")
+		applist.innerHTML = ""
 		for (let app of apps) {
-			applist.innerHTML += `<a class="box" href="${app.href}">
+			let a = document.createElement("a")
+			a.classList.add("box")
+			a.href = app.href
+			a.innerHTML = `
 				<img src="${app.icon}">
 				<div>
 					<div class="name">${app.name}</div>
 					<div class="desc">${app.desc}</div>
-				</div>
-			</a>`
+				</div>`
+
+			if (enablePingDots) {
+				a.classList.add("pingdot")
+				PingService(app.href, status => {
+					if (!status) return
+					let resp = "down"
+					if (status >= 200 && status < 400) resp = "up"
+					else if (status >= 400) resp = "error"
+					a.classList.add(resp)
+				})
+			}
+
+			applist.appendChild(a)
 		}
 	}
 }

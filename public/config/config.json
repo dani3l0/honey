@@ -7,6 +7,7 @@
 		"wallpaper_dark": "img/background-dark.jpg",
 		"dark_mode": "Auto",
 		"open_new_tab": false,
+		"ping_dots": false,
 		"blur": true,
 		"animations": true
 	},

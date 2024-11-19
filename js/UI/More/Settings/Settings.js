@@ -28,6 +28,12 @@ export default class Settings {
 		)
 
 		addOnOffTile(this.config,
+			"sensors", "Ping dots",
+			"Shows small dots before titles indicating whether service is up or not",
+			"ping_dots", EVENTS.onPingDotsChange
+		)
+
+		addOnOffTile(this.config,
 			"blur_on", "Enable blur",
 			"Improves UI sweetness but may have a huge impact on performance",
 			"blur", EVENTS.onBlurChange

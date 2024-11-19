@@ -55,6 +55,7 @@ Some of them are listed in _Settings_ page and can be customized by end-user.
 | `wallpaper_dark`		| Background image visible when dark mode is enabled.											|		❌		|
 | `dark_mode`			| Tells whether dark mode is enabled by default. (Available values: `Auto`,`Off`,`On`)			|		✅		|
 | `open_new_tab`		| Tells whether clicking on a service will open it in new tab by default.						|		✅		|
+| `ping_dots`			| Enables small dot before service name indicating whether is it available or not.				|		✅		|
 | `blur`				| Tells whether card background blur is enabled by default.										|		✅		|
 | `animations`			| Tells whether UI animations are enabled by default.											|		✅		|
 
