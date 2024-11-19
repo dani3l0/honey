@@ -46,18 +46,19 @@ Configuration file is located at `config/config.json`.
 The following keys are available under `ui` section.
 Some of them are listed in _Settings_ page and can be customized by end-user.
 
-| Key name				| Description																					| in Settings	|
-|-----------------------|-----------------------------------------------------------------------------------------------|----------------|
-| `name`				| Name shown at the main screen and the tab title.												|		❌		|
-| `desc`				| Short description shown under title at the main screen.										|		❌		|
-| `icon`				| Icon shown at the main screen and as site's favicon.											|		❌		|
-| `wallpaper`			| Background image visible when dark mode is disabled.											|		❌		|
-| `wallpaper_dark`		| Background image visible when dark mode is enabled.											|		❌		|
-| `dark_mode`			| Tells whether dark mode is enabled by default. (Available values: `Auto`,`Off`,`On`)			|		✅		|
-| `open_new_tab`		| Tells whether clicking on a service will open it in new tab by default.						|		✅		|
-| `ping_dots`			| Enables small dot before service name indicating whether is it available or not.				|		✅		|
-| `blur`				| Tells whether card background blur is enabled by default.										|		✅		|
-| `animations`			| Tells whether UI animations are enabled by default.											|		✅		|
+| Key name				| Description																								| in Settings	 |
+|-----------------------|-----------------------------------------------------------------------------------------------------------|----------------|
+| `name`				| Name shown at the main screen and the tab title.															|		❌		|
+| `desc`				| Short description shown under title at the main screen.													|		❌		|
+| `icon`				| Icon shown at the main screen and as site's favicon.														|		❌		|
+| `wallpaper`			| Background image visible when dark mode is disabled.														|		❌		|
+| `wallpaper_dark`		| Background image visible when dark mode is enabled.														|		❌		|
+| `dark_mode`			| Tells whether dark mode is enabled by default. (Available values: `Auto`,`Off`,`On`)						|		✅		|
+| `open_new_tab`		| Tells whether clicking on a service will open it in new tab by default.									|		✅		|
+| `ping_dots`			| Enables small dot before service name indicating whether is it available or not.							|		✅		|
+| `blur`				| Tells whether card background blur is enabled by default.													|		✅		|
+| `animations`			| Tells whether UI animations are enabled by default.														|		✅		|
+| `trusted_domains`		| Array of domains (or IP addresses) to no longer be considered as 3rd-parties. RegExp is fully supported.	|		✅		|
 
 
 ### 🔗 Adding custom services

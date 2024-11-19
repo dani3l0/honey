@@ -9,7 +9,8 @@
 		"open_new_tab": false,
 		"ping_dots": false,
 		"blur": true,
-		"animations": true
+		"animations": true,
+		"trusted_domains": []
 	},
 	"services": [
 		{

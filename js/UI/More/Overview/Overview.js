@@ -22,7 +22,7 @@ export default class Overview {
 			thirdParties: 0
 		}
 		for (let service of this.config.getServices()) {
-			let analysis = analyzeService(service.href)
+			let analysis = analyzeService(service.href, this.config.get("trusted_domains"))
 			stats.total++
 			stats.secure += analysis.isSecure
 			stats.thirdParties += analysis.isThirdParty
