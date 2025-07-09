@@ -15,12 +15,14 @@ export default class Drawer {
 	importApps() {
 		let apps = this.config.getServices()
 		let enablePingDots = this.config.get("ping_dots")
+		let openNewTab = this.config.get("open_new_tab")
 		let applist = document.querySelector("#app-list")
 		applist.innerHTML = ""
 		for (let app of apps) {
 			let a = document.createElement("a")
 			a.classList.add("box")
 			a.href = app.href
+			if (openNewTab) a.setAttribute("target", "_blank")
 			a.innerHTML = `
 				<img src="${app.icon}">
 				<div>
