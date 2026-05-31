@@ -8,6 +8,7 @@
 		"dark_mode": "Auto",
 		"open_new_tab": false,
 		"ping_dots": false,
+		"ping_dots_setting_available": true,
 		"blur": true,
 		"animations": true,
 		"trusted_domains": []

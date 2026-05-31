@@ -27,11 +27,13 @@ export default class Settings {
 			"open_new_tab", EVENTS.onNewTabChange
 		)
 
-		addOnOffTile(this.config,
-			"sensors", "Ping dots",
-			"Shows small dots before titles indicating whether service is up or not",
-			"ping_dots", EVENTS.onPingDotsChange
-		)
+		if (this.config.get("ping_dots_setting_available")) {
+			addOnOffTile(this.config,
+				"sensors", "Ping dots",
+				"Shows small dots before titles indicating whether service is up or not",
+				"ping_dots", EVENTS.onPingDotsChange
+			)
+		}
 
 		addOnOffTile(this.config,
 			"blur_on", "Enable blur",

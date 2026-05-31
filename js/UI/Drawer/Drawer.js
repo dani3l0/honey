@@ -14,7 +14,7 @@ export default class Drawer {
 
 	importApps() {
 		let apps = this.config.getServices()
-		let enablePingDots = this.config.get("ping_dots")
+		let enablePingDots = this.config.get("ping_dots") && this.config.get("ping_dots_setting_available")
 		let openNewTab = this.config.get("open_new_tab")
 		let applist = document.querySelector("#app-list")
 		applist.innerHTML = ""
