@@ -22,7 +22,7 @@ export default class App {
 		this.drawer = new Drawer()
 		this.more = new More()
 
-		showPage("home")
+		showPage(window.location.hash)
 		setTimeout(() => {
 			document.body.classList.add("loaded")
 		}, 100)

@@ -1,4 +1,5 @@
 import App from "./App"
+import { showPage } from "./Utils/DOMUtils"
 
 window.addEventListener("DOMContentLoaded", () => {
 	let xhr = new XMLHttpRequest()
@@ -8,4 +9,8 @@ window.addEventListener("DOMContentLoaded", () => {
 		window.app = new App(config)
 	}
 	xhr.send()
+})
+
+window.addEventListener("hashchange", () => {
+	showPage(window.location.hash)
 })
