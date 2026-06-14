@@ -8,7 +8,7 @@ type DashboardItem struct {
 	PingDot     bool   `yaml:"ping_dot" json:"ping_dot"`
 }
 
-var dashboardItemsDefault = []DashboardItem{
+var dashboardItemsDefaults = []DashboardItem{
 	{
 		Name:        "First service",
 		Description: "The first service ever added here.",

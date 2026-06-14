@@ -8,6 +8,10 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "@fontsource/quicksand": "^5.2.10",
+    "material-symbols": "^0.45.1"
+  },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^7.1.2",
     "svelte": "^5.55.5",

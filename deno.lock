@@ -1,7 +1,9 @@
 {
   "version": "5",
   "specifiers": {
+    "npm:@fontsource/quicksand@^5.2.10": "5.2.10",
     "npm:@sveltejs/vite-plugin-svelte@^7.1.2": "7.1.2_svelte@5.56.3_vite@8.0.16",
+    "npm:material-symbols@~0.45.1": "0.45.1",
     "npm:svelte@^5.55.5": "5.56.3",
     "npm:vite@^8.0.12": "8.0.16"
   },
@@ -24,6 +26,9 @@
       "dependencies": [
         "tslib"
       ]
+    },
+    "@fontsource/quicksand@5.2.10": {
+      "integrity": "sha512-rck0ccT6vJF9RnbSW2ON1grq5qFZvjVOGvYIUixATXF8mNh4KglD+8Sn8QpRgKQBSBJF5yOR3SBYBWPg/Y8YbQ=="
     },
     "@jridgewell/gen-mapping@0.3.13": {
       "integrity": "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==",
@@ -308,6 +313,9 @@
         "@jridgewell/sourcemap-codec"
       ]
     },
+    "material-symbols@0.45.1": {
+      "integrity": "sha512-iQibeoKymxHthNqTjYg/jCN2pRySFQ+DAD0sYK9FS7rUpf38i1qR3N4I1jfi/bLS5qdEKvkkJAvf2mE89amSZw=="
+    },
     "nanoid@3.3.12": {
       "integrity": "sha512-ZB9RH/39qpq5Vu6Y+NmUaFhQR6pp+M2Xt76XBnEwDaGcVAqhlvxrl3B2bKS5D3NH3QR76v3aSrKaF/Kiy7lEtQ==",
       "bin": true
@@ -418,7 +426,9 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
+        "npm:@fontsource/quicksand@^5.2.10",
         "npm:@sveltejs/vite-plugin-svelte@^7.1.2",
+        "npm:material-symbols@~0.45.1",
         "npm:svelte@^5.55.5",
         "npm:vite@^8.0.12"
       ]

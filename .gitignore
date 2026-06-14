@@ -7,14 +7,17 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies & compiled code
 node_modules
 dist
 dist-ssr
 *.local
+backend/tmp
+backend/webserver/dist
+backend/honey
 
 # Editor directories and files
 .vscode/*
-!.vscode/extensions.json
 .idea
 .DS_Store
 *.suo
