@@ -6,8 +6,8 @@ import (
 )
 
 type Admin struct {
-	Name     string `yaml:"name" json:"-"`
-	Password string `yaml:"password" json:"-"`
+	Name     string `yaml:"name" json:"name"`
+	Password string `yaml:"password" json:"password"`
 }
 
 var adminDefaults = Admin{

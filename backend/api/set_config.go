@@ -11,6 +11,11 @@ func SetConfig(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Auth
+	if !Auth(w, r) {
+		return
+	}
+
 	// Parse JSON
 	var newConfig config.Config
 	err := json.NewDecoder(r.Body).Decode(&newConfig)

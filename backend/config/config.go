@@ -13,4 +13,5 @@ var App = Config{
 	DashboardItems:  dashboardItemsDefaults,
 	Personalization: personalizationDefaults,
 	System:          systemDefaults,
+	Admin:           adminDefaults,
 }

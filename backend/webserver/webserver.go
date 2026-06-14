@@ -16,7 +16,7 @@ var distEmbed embed.FS
 var Mux *http.ServeMux
 
 func Run() {
-	fmt.Println("Starting Honey Web Server...")
+	fmt.Println("Starting Honey Web Server ...")
 
 	Mux = http.NewServeMux()
 
@@ -32,8 +32,9 @@ func Run() {
 	// API
 	Mux.HandleFunc("/api/getConfig", api.GetConfig)
 	Mux.HandleFunc("/api/setConfig", api.SetConfig)
+	Mux.HandleFunc("/api/setAdmin", api.SetAdmin)
 
 	// Message and spinup the server
-	fmt.Println("Serving under ", config.App.System.ListenAddr)
+	fmt.Printf("Serving under http://%s\n", config.App.System.ListenAddr)
 	http.ListenAndServe(config.App.System.ListenAddr, Mux)
 }
