@@ -1,7 +1,5 @@
 package config
 
-import "path"
-
 type Personalization struct {
 	Favicon             string `yaml:"favicon" json:"favicon"`
 	BackgroundImage     string `yaml:"background_image" json:"background_image"`
@@ -9,7 +7,7 @@ type Personalization struct {
 }
 
 var personalizationDefaults = Personalization{
-	Favicon:             path.Join(systemDefaults.StaticIconsDir, "favicon.png"),
-	BackgroundImage:     path.Join(systemDefaults.StaticBackgroundsDir, "background-light.png"),
-	BackgroundImageDark: path.Join(systemDefaults.StaticBackgroundsDir, "background-dark.png"),
+	Favicon:             "honey.png",
+	BackgroundImage:     "Field-Light.png",
+	BackgroundImageDark: "Field-Dark.png",
 }
