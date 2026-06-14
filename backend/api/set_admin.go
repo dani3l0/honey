@@ -38,5 +38,6 @@ func SetAdmin(w http.ResponseWriter, r *http.Request) {
 		Expires:  time.Now().Add(config.App.System.CookieLifetime),
 	})
 
+	config.Sync()
 	WriteJSON(w, http.StatusOK, "OK", config.App.Admin)
 }

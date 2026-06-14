@@ -27,5 +27,6 @@ func SetSystem(w http.ResponseWriter, r *http.Request) {
 	// Override system configuration
 	config.App.System = newConfig
 
+	config.Sync()
 	WriteJSON(w, http.StatusOK, "OK", config.App.System)
 }

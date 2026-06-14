@@ -15,6 +15,7 @@ dist-ssr
 backend/tmp
 backend/webserver/dist
 backend/honey
+config.yaml
 
 # Editor directories and files
 .vscode/*

@@ -29,5 +29,6 @@ func SetConfig(w http.ResponseWriter, r *http.Request) {
 	newConfig.System = config.App.System
 	config.App = newConfig
 
+	config.Sync()
 	WriteJSON(w, http.StatusOK, "OK", config.App)
 }

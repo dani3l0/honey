@@ -2,7 +2,6 @@ package api
 
 import (
 	"encoding/json"
-	"fmt"
 	"honey/backend/config"
 	"net/http"
 	"time"
@@ -17,7 +16,6 @@ func AuthEndpoint(w http.ResponseWriter, r *http.Request) {
 	var data config.Admin
 	err := json.NewDecoder(r.Body).Decode(&data)
 	if err != nil {
-		fmt.Println(err.Error())
 		WriteJSON(w, http.StatusBadRequest, "Bad Request", "Malformed JSON input")
 		return
 	}
