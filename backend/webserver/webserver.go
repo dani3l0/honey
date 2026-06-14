@@ -32,7 +32,12 @@ func Run() {
 	// API
 	Mux.HandleFunc("/api/getConfig", api.GetConfig)
 	Mux.HandleFunc("/api/setConfig", api.SetConfig)
+
+	Mux.HandleFunc("/api/auth", api.AuthEndpoint)
 	Mux.HandleFunc("/api/setAdmin", api.SetAdmin)
+
+	Mux.HandleFunc("/api/getSystem", api.GetSystem)
+	Mux.HandleFunc("/api/setSystem", api.SetSystem)
 
 	// Message and spinup the server
 	fmt.Printf("Serving under http://%s\n", config.App.System.ListenAddr)

@@ -2,32 +2,31 @@ package api
 
 import (
 	"encoding/json"
+	"fmt"
 	"honey/backend/config"
 	"net/http"
 	"time"
 )
 
-func SetAdmin(w http.ResponseWriter, r *http.Request) {
+func AuthEndpoint(w http.ResponseWriter, r *http.Request) {
 	if MethodNotAllowed(w, r, "POST") {
 		return
 	}
 
-	// Auth
-	if !Auth(w, r) {
-		return
-	}
-
 	// Parse JSON
-	var newConfig config.Admin
-	err := json.NewDecoder(r.Body).Decode(&newConfig)
+	var data config.Admin
+	err := json.NewDecoder(r.Body).Decode(&data)
 	if err != nil {
+		fmt.Println(err.Error())
 		WriteJSON(w, http.StatusBadRequest, "Bad Request", "Malformed JSON input")
 		return
 	}
+	authed := config.App.Admin.Name == data.Name && config.App.Admin.Password == config.SHA256(data.Password)
 
-	// Override user
-	config.App.Admin.Name = newConfig.Name
-	config.App.Admin.Password = config.SHA256(newConfig.Password)
+	if !authed {
+		WriteJSON(w, http.StatusUnauthorized, "Unauthorized", "")
+		return
+	}
 
 	// Set cookie
 	http.SetCookie(w, &http.Cookie{

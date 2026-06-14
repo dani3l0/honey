@@ -23,7 +23,7 @@ func WriteJSON(w http.ResponseWriter, statusCode int, message string, data any) 
 	w.WriteHeader(statusCode)
 
 	response := map[string]any{
-		"error":   statusCode == http.StatusOK,
+		"ok":      statusCode == http.StatusOK,
 		"message": message,
 	}
 	if data != nil {
