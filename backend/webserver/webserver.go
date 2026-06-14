@@ -13,10 +13,25 @@ import (
 //go:embed all:dist
 var distEmbed embed.FS
 
+//go:embed all:res
+var resEmbed embed.FS
+
+// App Router
 var Mux *http.ServeMux
 
 func Run() {
 	fmt.Println("Starting Honey Web Server ...")
+
+	// Copy static files to host
+	if _, err := os.Stat("./res"); os.IsNotExist(err) {
+		fmt.Println("Copying example resource files to host ...")
+		if err := os.CopyFS(".", resEmbed); err != nil {
+			panic("Failed to copy static files: " + err.Error())
+		}
+		fmt.Println("Resource files copied successfully")
+	} else {
+		fmt.Println("Using host's resource directory")
+	}
 
 	Mux = http.NewServeMux()
 
@@ -28,6 +43,10 @@ func Run() {
 	}
 	fsServer := http.FileServer(http.FS(staticFS))
 	Mux.Handle("/", fsServer)
+
+	// Resource Files
+	resServer := http.FileServer(http.FS(resEmbed))
+	Mux.Handle("/res/", resServer)
 
 	// API
 	Mux.HandleFunc("/api/getConfig", api.GetConfig)

@@ -16,6 +16,7 @@ backend/tmp
 backend/webserver/dist
 backend/honey
 config.yaml
+backend/res
 
 # Editor directories and files
 .vscode/*
