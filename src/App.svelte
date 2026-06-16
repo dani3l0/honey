@@ -4,5 +4,7 @@
 
 </script>
 
-<Background />
-<Main />
+<main>
+	<Background />
+	<Main />
+</main>
