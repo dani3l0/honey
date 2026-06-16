@@ -2,9 +2,7 @@
     import CloseButton from "../../components/CloseButton.svelte";
     import { hash } from "../../engine/variables";
 
-	let titles = ["Summary", "Settings", "About"]
-	let hashes = ["#summary", "#settings", "#about"]
-
+    let { titles, hashes } = $props()
 </script>
 
 
@@ -27,14 +25,16 @@
 	.header {
 		display: flex;
 		align-items: center;
+		margin-bottom: 24px;
 	}
 	.switch {
 		flex: 1;
 		border-radius: 100px;
 		text-align: center;
-		margin: 0 4px 0 6px;
+		margin: 8px 4px 8px 6px;
 		position: relative;
 		background: #8883;
+		overflow: hidden;
 	}
 	.switches {
 		display: flex;

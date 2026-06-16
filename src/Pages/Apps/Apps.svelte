@@ -47,10 +47,11 @@
 		box-shadow: 8px 8px 24px #0004;
 		background: #FFFB;
 		backdrop-filter: blur(32px);
-		border-radius: 20px;
-		left: 50%;
 		transform: translateX(-50%);
+		left: 50%;
+		padding: 6px;
 		overflow: hidden;
+		border-radius: 20px;
 		z-index: 2;
 		transition: all .3s .1s;
 	}
@@ -69,10 +70,6 @@
 		padding: 6px;
 		flex-wrap: wrap;
 		overflow-y: scroll;
-		scrollbar-width: none;
 		max-height: calc(100vh - 128px);
-	}
-	::-webkit-scrollbar {
-		display: none;
 	}
 </style>
