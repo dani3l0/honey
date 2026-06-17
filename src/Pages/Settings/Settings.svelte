@@ -9,12 +9,20 @@
    	let titles = ["Summary", "Settings", "About"]
 	let hashes = ["#summary", "#settings", "#about"]
 
+	let lastHash = $state(hashes[0])
+	let position = $state(0)
+	$effect(() => {
+		if (hashes.includes($hash)) lastHash = $hash
+		else setTimeout(() => lastHash = hashes[0], 400)
+		position = hashes.indexOf(lastHash)
+	})
+
 </script>
 <div class="settings {className(!["#summary", "#settings", "#about"].includes($hash), "hidden")}">
-	<Header {titles} {hashes} />
+	<Header {titles} {hashes} {position} />
 	<div class="container"
 		style:--items={titles.length}
-		style:--position={hashes.indexOf($hash)}
+		style:--position={position}
 	>
 		<Summary />
 		<UserSettings />

@@ -2,7 +2,7 @@
     import CloseButton from "../../components/CloseButton.svelte";
     import { hash } from "../../engine/variables";
 
-    let { titles, hashes } = $props()
+    let { titles, hashes, position } = $props()
 </script>
 
 
@@ -13,7 +13,7 @@
 				<a href={hashes[titles.indexOf(title)]}>{title}</a>
 			{/each}
 		</div>
-		<div class="highlighter" style:--position={hashes.indexOf($hash)} style:--items={titles.length}></div>
+		<div class="highlighter" style:--position={position} style:--items={titles.length}></div>
 	</div>
 	<div class="closebtn">
 		<CloseButton />
