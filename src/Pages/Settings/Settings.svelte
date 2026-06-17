@@ -8,6 +8,7 @@
 
    	let titles = ["Summary", "Settings", "About"]
 	let hashes = ["#summary", "#settings", "#about"]
+	let heights = $state([0, 0, 0])
 
 	let lastHash = $state(hashes[0])
 	let position = $state(0)
@@ -18,15 +19,15 @@
 	})
 
 </script>
-<div class="settings {className(!["#summary", "#settings", "#about"].includes($hash), "hidden")}">
+<div class="settings {className(!["#summary", "#settings", "#about"].includes($hash), "hidden")}" style:--height="{heights[position]}px">
 	<Header {titles} {hashes} {position} />
 	<div class="container"
 		style:--items={titles.length}
 		style:--position={position}
 	>
-		<Summary />
-		<UserSettings />
-		<About />
+		<Summary bind:height={heights[0]} />
+		<UserSettings bind:height={heights[1]} />
+		<About bind:height={heights[2]} />
 	</div>
 </div>
 
@@ -47,6 +48,7 @@
 		overflow: hidden;
 		border-radius: 20px;
 		z-index: 2;
+		height: calc(108px + var(--height));
 		transition: all .3s .1s;
 	}
 	.settings.hidden {

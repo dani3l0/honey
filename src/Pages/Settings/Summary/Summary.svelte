@@ -1,10 +1,13 @@
 <script>
-    import { className } from "../../../engine/utils";
-    import { hash } from "../../../engine/variables";
-    import Check from "./Check.svelte";
+	import { className } from "../../../engine/utils";
+	import { hash } from "../../../engine/variables";
+	import Check from "./Check.svelte";
 
+	let { height = $bindable() } = $props()
 </script>
-<div class="summary {className($hash != "#summary", "hidden")}">
+
+
+<div class="summary {className($hash != "#summary", "hidden")}" bind:clientHeight={height}>
 	<div class="rocket-big">
 		<span class="material-symbols-outlined">rocket_launch</span>
 		<div class="text">

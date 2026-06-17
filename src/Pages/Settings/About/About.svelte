@@ -2,10 +2,11 @@
     import { className } from "../../../engine/utils";
     import { hash, isDev } from "../../../engine/variables";
 
+    let { height = $bindable() } = $props()
 </script>
 
 
-<div class="about {className($hash != "#about", "hidden")}">
+<div class="about {className($hash != "#about", "hidden")}" bind:clientHeight={height}>
 	<div class="branding">
 		<img src={isDev ? "http://127.0.0.1:4208/res/icons/honey.png" : "/res/icons/honey.png"} alt="logo">
 		<div class="title">honey</div>

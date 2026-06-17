@@ -2,8 +2,12 @@
     import { className } from "../../../engine/utils";
     import { hash } from "../../../engine/variables";
 
+    let { height = $bindable() } = $props()
+
 </script>
-<div class="user-settings {className($hash != "#settings", "hidden")}">
+
+
+<div class="user-settings {className($hash != "#settings", "hidden")}" bind:clientHeight={height}>
 	<div>blahblach</div>
 	<div>blahblach</div>
 	<div>blahblach</div>
