@@ -48,7 +48,7 @@
 		overflow: hidden;
 		border-radius: 20px;
 		z-index: 2;
-		height: calc(108px + var(--height));
+		height: calc(96px + var(--height));
 		transition: all .3s .1s;
 	}
 	.settings.hidden {
