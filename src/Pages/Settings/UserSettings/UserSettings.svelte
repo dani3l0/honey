@@ -11,41 +11,41 @@
 
 <div class="user-settings {className($hash != "#settings", "hidden")}" bind:clientHeight={height}>
 	<Switch
-		icon="settings"
+		icon="devices"
 		name="Platform dark mode"
 		desc="Sync dark mode with your device's native OS"
 		bind:value={$CONFIG.client.dark_mode}
 	/>
 
 	<Switch
-		icon="settings"
+		icon="dark_mode"
 		name="Dark mode"
 		desc="Manually switch between light and dark color compositions"
 		bind:value={$CONFIG.client.device_dark_mode}
 	/>
 
 	<Switch
-		icon="settings"
+		icon="blur_on"
 		name="Blur"
-		desc="Manually switch between light and dark color compositions"
+		desc="Greatly improves UI sweetness but has massive impact on performance"
 		bind:value={$CONFIG.client.blur}
 	/>
 
 	<Switch
-		icon="settings"
+		icon="open_in_new"
 		name="New tab"
-		desc="Manually switch between light and dark color compositions"
+		desc="When a service is clicked, open it in new tab"
 		bind:value={$CONFIG.client.open_in_new_tab}
 	/>
 
 	<Switch
-		icon="settings"
+		icon="motion_blur"
 		name="Animations"
-		desc="Manually switch between light and dark color compositions"
+		desc="Enable smooth transitions in UI"
 		bind:value={$CONFIG.client.animations}
 	/>
 
-	<List icon="settings" name="Animation duration" desc="Decide how long smooth UI transitions should be" values={{
+	<List icon="timer" name="Animation duration" desc="How long animations should be" values={{
 		"disabled": "Disabled",
 		"short": "Short",
 		"default": "Default",
