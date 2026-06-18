@@ -1,7 +1,7 @@
 <script>
 	import { className } from "../../../engine/utils";
 	import { hash } from "../../../engine/variables";
-	import Check from "./Check.svelte";
+    import Check from "./Check.svelte";
 
 	let { height = $bindable() } = $props()
 </script>

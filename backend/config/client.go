@@ -5,9 +5,8 @@ type Client struct {
 	DeviceDarkMode     bool `yaml:"device_dark_mode" json:"device_dark_mode"`
 	Blur               bool `yaml:"blur" json:"blur"`
 	Animations         bool `yaml:"animations" json:"animations"`
-	AnimationsDuration int  `yaml:"animations_duration" json:"animations_duration"`
+	AnimationsDuration string  `yaml:"animations_duration" json:"animations_duration"`
 	OpenInNewTab       bool `yaml:"open_in_new_tab" json:"open_in_new_tab"`
-	RotateIconsOnHover bool `yaml:"rotate_icons_on_hover" json:"rotate_icons_on_hover"`
 }
 
 var clientDefaults = Client{
@@ -15,7 +14,6 @@ var clientDefaults = Client{
 	DeviceDarkMode:     true,
 	Blur:               true,
 	Animations:         true,
-	AnimationsDuration: 100,
+	AnimationsDuration: "default",
 	OpenInNewTab:       true,
-	RotateIconsOnHover: false,
 }

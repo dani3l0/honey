@@ -1,6 +1,7 @@
 <script>
 	let { icon, name, desc, values, valWidth = 128, value = $bindable(Object.keys(values)[0]) } = $props()
 
+	// @ts-ignore
 	const change = (amount) => {
 		let keys = Object.keys(values)
 		let test = keys.indexOf(value)
@@ -8,7 +9,6 @@
 		if (test < 0) test = keys.length - 1
 		if (test >= keys.length) test = 0
 		value = keys[test]
-		console.log(keys.indexOf(value))
 	}
 </script>
 

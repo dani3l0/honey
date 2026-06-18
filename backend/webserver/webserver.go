@@ -60,5 +60,5 @@ func Run() {
 
 	// Message and spinup the server
 	fmt.Printf("Serving under http://%s\n", config.App.System.ListenAddr)
-	http.ListenAndServe(config.App.System.ListenAddr, Mux)
+	http.ListenAndServe(config.App.System.ListenAddr, enableCORS(Mux))
 }

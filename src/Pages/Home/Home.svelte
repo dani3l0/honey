@@ -16,7 +16,7 @@
 		<div class="home">
 			<Option icon="dark_mode" name="Theme" to="#" />
 			<Option icon="apps" name="Services" to="#services" />
-			<Option icon="settings" name="Settings" to="#summary" />
+			<Option icon="more" name="More" to="#summary" />
 		</div>
 	</div>
 </div>

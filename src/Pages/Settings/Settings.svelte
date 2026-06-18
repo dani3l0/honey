@@ -37,6 +37,7 @@
 		position: fixed;
 		width: calc(100% - 20px);
 		max-width: 960px;
+		min-width: 360px;
 		top: 16px;
 		max-height: calc(100% - 32px);
 		box-shadow: 8px 8px 24px #0004;

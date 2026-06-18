@@ -35,6 +35,7 @@
 		border-radius: 16px;
 		background: #0000;
 		transform: scale(0.95);
+		z-index: -1;
 		transition: all .2s;
 	}
 	.app:hover::after {
