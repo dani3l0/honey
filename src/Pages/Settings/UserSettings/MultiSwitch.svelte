@@ -12,7 +12,7 @@
 </script>
 
 
-<div class="list-switch">
+<div class="multi-switch">
 	<div class="icon">
 		<span class="material-symbols-rounded">{icon}</span>
 	</div>
@@ -25,19 +25,21 @@
 		style:--elements={Object.keys(values).length}
 		style:--value={Object.keys(values).indexOf(value)}
 	>
-		<button style:left={0} onclick={() => change(-1)}>-</button>
+		<div class="handle"></div>
 		<div class="values">
 			{#each Object.keys(values) as val}
-				<div style:--visible={Number(val == value)}>{values[val]}</div>
+				<button
+					style:--color={value == val ? "#48F" : "inherit"}
+					onclick={() => value = val}
+				>{values[val]}</button>
 			{/each}
 		</div>
-		<button style:right={0} onclick={() => change(1)}>+</button>
 	</div>
 </div>
 
 
 <style>
-	.list-switch {
+	.multi-switch {
 		display: flex;
 		align-items: center;
 		padding: 16px;
@@ -65,9 +67,7 @@
 		border: 2px solid #8888;
 		border-radius: 32px;
 		display: flex;
-		padding: 8px 0;
-		height: 20px;
-		overflow: hidden;
+		height: 40px;
 		align-items: center;
 	}
 	.values {
@@ -75,21 +75,24 @@
 		justify-content: center;
 		text-align: center;
 		align-items: center;
-		flex-direction: column;
-		transform: translateY(calc(-12px + 50% + -100% * var(--value) / var(--elements)));
 		transition: all .2s;
 	}
-	.values div {
+	.values button {
 		flex: 1;
-		margin: 2px 42px;
-		opacity: var(--visible);
+		padding: 8px 16px;
+		color: var(--color);
 		transition: all .2s;
 	}
-	button {
+	.handle {
 		position: absolute;
-		width: fit-content;
-		padding: 12px;
-		background: #8883;
-		z-index: 1;
+		top: 0;
+		left: calc(100% / var(--elements) * var(--value));
+		border-radius: 100px;
+		margin: 2px;
+		width: calc(100% / var(--elements) - 4px);
+		height: calc(100% - 4px);
+		z-index: -1;
+		background: #68F3;
+		transition: all .2s;
 	}
 </style>

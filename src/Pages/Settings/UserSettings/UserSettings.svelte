@@ -2,6 +2,7 @@
     import { className } from "../../../engine/utils";
     import { CONFIG, hash } from "../../../engine/variables";
     import List from "./List.svelte";
+    import MultiSwitch from "./MultiSwitch.svelte";
     import Switch from "./Switch.svelte";
 
     let { height = $bindable() } = $props()
@@ -10,17 +11,15 @@
 
 
 <div class="user-settings {className($hash != "#settings", "hidden")}" bind:clientHeight={height}>
-	<Switch
-		icon="devices"
-		name="Platform dark mode"
-		desc="Sync dark mode with your device's native OS"
-		bind:value={$CONFIG.client.dark_mode}
-	/>
-
-	<Switch
+	<MultiSwitch
 		icon="dark_mode"
 		name="Dark mode"
-		desc="Manually switch between light and dark color compositions"
+		desc="Switch between light and dark color compositions"
+		values={{
+			"auto": "Auto",
+			"light": "Light",
+			"dark": "Dark"
+		}}
 		bind:value={$CONFIG.client.device_dark_mode}
 	/>
 
@@ -36,13 +35,6 @@
 		name="New tab"
 		desc="When a service is clicked, open it in new tab"
 		bind:value={$CONFIG.client.open_in_new_tab}
-	/>
-
-	<Switch
-		icon="motion_blur"
-		name="Animations"
-		desc="Enable smooth transitions in UI"
-		bind:value={$CONFIG.client.animations}
 	/>
 
 	<List icon="timer" name="Animation duration" desc="How long animations should be" values={{
