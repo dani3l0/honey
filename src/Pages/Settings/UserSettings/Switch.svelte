@@ -43,12 +43,12 @@
 		opacity: .5;
 	}
 	.value {
-		background: #8882;
+		background: #6662;
 		height: 24px;
 		width: 44px;
 		position: relative;
 		border-radius: 32px;
-		border: 2px solid #8888;
+		border: 2px solid #6664;
 		transition: all .2s;
 	}
 	.value.checked {
@@ -60,7 +60,7 @@
 		position: absolute;
 		width: 20px;
 		height: 20px;
-		background: #888D;
+		background: #888C;
 		top: 0;
 		left: 0;
 		margin: 2px;

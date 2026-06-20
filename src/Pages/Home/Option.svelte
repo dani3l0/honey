@@ -1,9 +1,10 @@
 <script>
-	let { icon, name, to } = $props()
+	const emptyFunc = () => {}
+	let { icon, name, to, onclick = emptyFunc } = $props()
 
 </script>
 
-<a class="option" href={to}>
+<a class="option" href={to} {onclick}>
 	<span class="material-symbols-rounded">{icon}</span>
 	<div class="name">{name}</div>
 </a>
@@ -31,7 +32,8 @@
 		width: 100%;
 		height: 100%;
 		border-radius: 16px;
-		background: #0000;
+		background: transparent;
+		z-index: 1;
 		transform: scale(.9);
 		transition: all .2s;
 	}

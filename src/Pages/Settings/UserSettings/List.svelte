@@ -61,8 +61,8 @@
 	}
 	.wrapper {
 		position: relative;
-		background: #8883;
-		border: 2px solid #8888;
+		background: #6662;
+		border: 2px solid #6664;
 		border-radius: 32px;
 		display: flex;
 		padding: 8px 0;

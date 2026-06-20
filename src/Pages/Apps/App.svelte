@@ -1,10 +1,13 @@
 <script>
+    import { className } from "../../engine/utils";
+    import { CONFIG } from "../../engine/variables";
+
 	let { name, description, iconUrl, url } = $props()
 
 </script>
 
 
-<a class="app" href={url}>
+<a class="app" href={url} target={className($CONFIG.client.open_in_new_tab, "_blank")}>
 	<div class="icon">
 		<img src={iconUrl} alt="appicon">
 	</div>
@@ -43,8 +46,8 @@
 		transform: none;
 	}
 	img {
-		width: 64px;
-		height: 64px;
+		width: 54px;
+		height: 54px;
 		object-fit: cover;
 		margin: 12px;
 		border-radius: 4px;

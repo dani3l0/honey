@@ -68,4 +68,14 @@
 		align-items: flex-start;
 		transition: all .3s;
 	}
+
+	:global(.noblur > .settings) {
+		background: #FFF;
+	}
+	:global(.dark > .settings) {
+		background: #000B;
+	}
+	:global(.dark.noblur > .settings) {
+		background: #000;
+	}
 </style>

@@ -1,6 +1,6 @@
 <script>
     import { className } from "../../engine/utils";
-    import { hash, isDev } from "../../engine/variables";
+    import { CONFIG, hash, isDark, isDev } from "../../engine/variables";
     import Option from "./Option.svelte";
 
 </script>
@@ -14,7 +14,7 @@
 	</div>
 	<div class="options">
 		<div class="home">
-			<Option icon="dark_mode" name="Theme" to="#" />
+			<Option icon="colors" name="Theme" to="#" onclick={() => $CONFIG.client.dark_mode = isDark() ? "light" : "dark"} />
 			<Option icon="apps" name="Services" to="#services" />
 			<Option icon="more" name="More" to="#summary" />
 		</div>
@@ -78,5 +78,15 @@
 		justify-content: center;
 		gap: 4px;
 		margin: 4px;
+	}
+
+	:global(.noblur > .main > .options) {
+		background: #FFF;
+	}
+	:global(.dark > .main > .options) {
+		background: #000B;
+	}
+	:global(.dark.noblur > .main > .options) {
+		background: #000;
 	}
 </style>

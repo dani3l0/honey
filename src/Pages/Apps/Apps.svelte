@@ -1,38 +1,26 @@
 <script>
     import { className } from "../../engine/utils";
-    import { hash } from "../../engine/variables";
+    import { CONFIG, hash, isDev } from "../../engine/variables";
     import App from "./App.svelte";
     import Header from "./Header.svelte";
+
+    const mkIconUrl = (url) => {
+		if (!url.includes("/")) return isDev ? "http://127.0.0.1:4208/res/icons/"+url : "/res/icons/"+url
+		return url
+    }
 
 </script>
 <div class="services {className($hash != "#services", "hidden")}">
 	<Header />
 	<div class="apps">
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
-		<App name="honey" description="miodzio miodzio" iconUrl="http://127.0.0.1:4208/res/icons/honey.png" url="#" />
+		{#each $CONFIG.dashboard_items as item}
+			<App
+				name={item.name}
+				description={item.description}
+				iconUrl={mkIconUrl(item.icon_url)}
+				url={item.url}
+			/>
+		{/each}
 	</div>
 </div>
 
@@ -71,5 +59,15 @@
 		flex-wrap: wrap;
 		overflow-y: scroll;
 		max-height: calc(100vh - 128px);
+	}
+
+	:global(.noblur > .services) {
+		background: #FFF;
+	}
+	:global(.dark > .services) {
+		background: #000B;
+	}
+	:global(.dark.noblur > .services) {
+		background: #000;
 	}
 </style>

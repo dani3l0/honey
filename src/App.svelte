@@ -2,7 +2,7 @@
     import { onDestroy, onMount } from "svelte";
     import Background from "./Background.svelte";
     import { className } from "./engine/utils";
-    import { CONFIG, isDev } from "./engine/variables";
+    import { CONFIG, isDev, isDeviceDark } from "./engine/variables";
     import Main from "./Pages/Main.svelte";
 
     let loaded = false
@@ -36,14 +36,28 @@
 	onDestroy(() => {
 		if (unsubscribe) unsubscribe()
 	})
+
+	const darkMode = (conf, isDD) => {
+		if (conf == "auto" && isDD) return  "dark"
+		if (conf == "dark") return "dark"
+	}
+
+
 </script>
 
 {#if $CONFIG?.client}
 	<main class="
 		{className(!$CONFIG.client.blur, "noblur")}
 		{className($CONFIG.client.animations == "disabled", "noanime")}
+		{darkMode($CONFIG.client.dark_mode, $isDeviceDark)}
 	">
 		<Background />
 		<Main />
 	</main>
 {/if}
+
+<style>
+	main.dark {
+		color: #EEE;
+	}
+</style>

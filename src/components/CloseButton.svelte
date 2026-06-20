@@ -27,9 +27,9 @@
 		top: 0;
 		left: 0;
 		border-radius: 100px;
-		background: #F666;
+		background: #F664;
 		opacity: 0;
-		z-index: -1;
+		z-index: 1;
 		transform: scale(.9);
 		transition: all .2s;
 	}
