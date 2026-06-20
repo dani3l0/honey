@@ -20,7 +20,7 @@
 			"light": "Light",
 			"dark": "Dark"
 		}}
-		bind:value={$CONFIG.client.device_dark_mode}
+		bind:value={$CONFIG.client.dark_mode}
 	/>
 
 	<Switch
@@ -37,12 +37,12 @@
 		bind:value={$CONFIG.client.open_in_new_tab}
 	/>
 
-	<List icon="timer" name="Animation duration" desc="How long animations should be" values={{
+	<List icon="timer" name="Animations" desc="Set animations duration, or disable them completely" values={{
 		"disabled": "Disabled",
 		"short": "Short",
 		"default": "Default",
 		"long": "Long",
-	}} valWidth={144} bind:value={$CONFIG.client.animations_duration} />
+	}} valWidth={144} bind:value={$CONFIG.client.animations} />
 </div>
 
 

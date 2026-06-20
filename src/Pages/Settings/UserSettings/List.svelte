@@ -5,8 +5,8 @@
 		let keys = Object.keys(values)
 		let test = keys.indexOf(value)
 		test += amount
-		if (test < 0) test = keys.length - 1
-		if (test >= keys.length) test = 0
+		if (test < 0) test = 0
+		if (test >= keys.length) test = keys.length - 1
 		value = keys[test]
 	}
 </script>

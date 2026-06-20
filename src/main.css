@@ -16,3 +16,17 @@ button, input {
 button {
 	cursor: pointer;
 }
+
+.noanime * {
+	transition: none !important;
+}
+.noanime *::before {
+	transition: none !important;
+}
+.noanime *::after {
+	transition: none !important;
+}
+
+.noblur * {
+	backdrop-filter: none !important;
+}

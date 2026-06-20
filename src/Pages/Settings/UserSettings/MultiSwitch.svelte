@@ -1,14 +1,5 @@
 <script>
 	let { icon, name, desc, values, valWidth = 128, value = $bindable(Object.keys(values)[0]) } = $props()
-
-	const change = (amount) => {
-		let keys = Object.keys(values)
-		let test = keys.indexOf(value)
-		test += amount
-		if (test < 0) test = keys.length - 1
-		if (test >= keys.length) test = 0
-		value = keys[test]
-	}
 </script>
 
 
