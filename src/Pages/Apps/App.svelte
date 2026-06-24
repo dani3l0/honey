@@ -44,7 +44,7 @@
 		margin-left: 4px;
 	}
 	.app .name {
-		font-size: 1.5rem;
+		font-size: 1.4rem;
 	}
 	.app .description {
 		font-size: 0.9rem;
