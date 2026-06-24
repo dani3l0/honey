@@ -6,8 +6,8 @@
 
 
 <div class="background">
-	<img class="light {className($hash != "#", "zoomedIn")}" src={isDev ? "http://127.0.0.1:4208/res/backgrounds/LivingRoom-Light.png" : "/res/backgrounds/LivingRoom-Light.png"} alt="light background">
-	<img class="dark {className($hash != "#", "zoomedIn")}" src={isDev ? "http://127.0.0.1:4208/res/backgrounds/LivingRoom-Dark.png" : "/res/backgrounds/LivingRoom-Dark.png"} alt="dark background">
+	<img class="light {className($hash != "#", "zoomedIn")}" src={isDev ? "http://127.0.0.1:4208/res/backgrounds/wallhaven-4ogr3m.jpg" : "/res/backgrounds/wallhaven-4ogr3m.jpg"} alt="light background">
+	<img class="dark {className($hash != "#", "zoomedIn")}" src={isDev ? "http://127.0.0.1:4208/res/backgrounds/wallhaven-6qqgk6.jpg" : "/res/backgrounds/wallhaven-6qqgk6.jpg"} alt="dark background">
 </div>
 
 
