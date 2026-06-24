@@ -78,7 +78,7 @@
 		flex-direction: column;
 		color: #333;
 		transform: translateY(calc(-12px + 50% + -100% * var(--value) / var(--elements)));
-		transition: all .2s;
+		transition: all var(--transition-duration);
 	}
 	:global(.dark .user-settings .list-switch .values) {
 		color: #CCC;
@@ -88,7 +88,7 @@
 		margin: 2px 42px;
 		opacity: var(--visible);
 		color: inherit;
-		transition: all .2s;
+		transition: all var(--transition-duration);
 	}
 	button {
 		position: absolute;

@@ -28,7 +28,7 @@
 		text-decoration: none;
 		color: inherit;
 		border-radius: 16px;
-		transition: all .2s;
+		transition: all var(--transition-duration);
 	}
 	.app:hover {
 		background: #8884;

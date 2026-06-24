@@ -24,7 +24,7 @@
 		border-radius: 16px;
 		color: inherit;
 		align-items: center;
-		transition: all .2s;
+		transition: all var(--transition-duration);
 	}
 	.option:hover {
 		background: #8884;

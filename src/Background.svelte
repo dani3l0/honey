@@ -28,7 +28,7 @@
 		height: 100%;
 		transform: translate(-50%, -50%);
 		object-fit: cover;
-		transition: transform 1s, opacity .6s;
+		transition: transform calc(5 * var(--transition-duration)), opacity calc(3 * var(--transition-duration));
 	}
 	.zoomedIn {
 		transform: translate(-50%, -50%) scale(1.2);

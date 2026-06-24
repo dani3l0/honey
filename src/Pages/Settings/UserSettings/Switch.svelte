@@ -49,7 +49,7 @@
 		position: relative;
 		border-radius: 32px;
 		border: 2px solid #6664;
-		transition: all .2s;
+		transition: all var(--transition-duration);
 	}
 	.value.checked {
 		border-color: #68FB;
@@ -65,7 +65,7 @@
 		left: 0;
 		margin: 2px;
 		border-radius: 20px;
-		transition: all .2s;
+		transition: all var(--transition-duration);
 	}
 
 	.value.checked::after {

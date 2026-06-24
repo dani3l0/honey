@@ -17,16 +17,26 @@ button {
 	cursor: pointer;
 }
 
-.noanime * {
+main {
+	--transition-duration: 200ms;
+}
+main.animefast {
+	--transition-duration: 125ms;
+}
+main.animeslow {
+	--transition-duration: 300ms;
+}
+
+main.noanime * {
 	transition: none !important;
 }
-.noanime *::before {
+main.noanime *::before {
 	transition: none !important;
 }
-.noanime *::after {
+main.noanime *::after {
 	transition: none !important;
 }
 
-.noblur * {
+main.noblur * {
 	backdrop-filter: none !important;
 }

@@ -50,13 +50,13 @@
 		border-radius: 20px;
 		z-index: 2;
 		height: calc(96px + var(--height));
-		transition: all .3s .1s;
+		transition: all calc(1.5 * var(--transition-duration)) calc(var(--transition-duration) / 2);
 	}
 	.settings.hidden {
 		top: 80px;
 		opacity: 0;
 		pointer-events: none;
-		transition: all .3s;
+		transition: all calc(1.5 * var(--transition-duration));
 	}
 	.container {
 		max-height: calc(100vh - 128px);
@@ -66,7 +66,7 @@
 		width: calc(100% * var(--items));
 		left: calc(-100% * var(--position));
 		align-items: flex-start;
-		transition: all .3s;
+		transition: all calc(1.5 * var(--transition-duration));
 	}
 
 	:global(.noblur > .settings) {

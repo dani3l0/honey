@@ -27,7 +27,7 @@
 	.summary {
 		flex: 1;
 		width: 100%;
-		transition: all .3s;
+		transition: all calc(1.5 * var(--transition-duration));
 	}
 	.summary.hidden {
 		pointer-events: none;
@@ -54,7 +54,7 @@
 		font-size: 4rem;
 		margin-bottom: -8px;
 		counter-reset: count var(--count);
-		transition: --count 1s .2s;
+		transition: --count calc(5 * var(--transition-duration)) var(--transition-duration);
 	}
 	.rocket-big .count::after {
 		content: counter(count);

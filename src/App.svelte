@@ -49,6 +49,8 @@
 	<main class="
 		{className(!$CONFIG.client.blur, "noblur")}
 		{className($CONFIG.client.animations == "disabled", "noanime")}
+		{className($CONFIG.client.animations == "short", "animefast")}
+		{className($CONFIG.client.animations == "long", "animeslow")}
 		{darkMode($CONFIG.client.dark_mode, $isDeviceDark)}
 	">
 		<Background />

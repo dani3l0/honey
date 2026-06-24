@@ -41,14 +41,14 @@
 		overflow: hidden;
 		border-radius: 20px;
 		z-index: 2;
-		transition: all .3s .1s;
+		transition: all calc(1.5 * var(--transition-duration)) calc(var(--transition-duration) / 2);
 	}
 	.services.hidden {
 		top: 80px;
 		opacity: 0;
 		visibility: hidden;
 		pointer-events: none;
-		transition: all .3s;
+		transition: all calc(1.5 * var(--transition-duration));
 	}
 
 	.apps {

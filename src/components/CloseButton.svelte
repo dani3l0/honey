@@ -15,7 +15,7 @@
 		justify-content: center;
 		text-decoration: none;
 		position: relative;
-		transition: all .2s;
+		transition: all var(--transition-duration);
 	}
 	.closebtn span {
 		margin-top: 2px;

@@ -35,20 +35,20 @@
 		justify-content: center;
 		flex-direction: column;
 		z-index: 1;
-		transition: all .3s .1s;
+		transition: all calc(1.5 * var(--transition-duration)) calc(var(--transition-duration) / 2);
 	}
 	.main.hidden {
 		top: -64px;
 		pointer-events: none;
-		transition: all .3s;
+		transition: all calc(1.5 * var(--transition-duration));
 	}
 	.main.hidden .branding, .main.hidden .options {
 		opacity: 0;
-		transition: all .3s;
+		transition: all calc(1.5 * var(--transition-duration));
 	}
 
 	.branding {
-		transition: all .3s .1s;
+		transition: all calc(1.5 * var(--transition-duration)) calc(var(--transition-duration) / 2);
 	}
 	.branding img {
 		width: 240px;
@@ -71,7 +71,7 @@
 		max-width: 540px;
 		box-shadow: 8px 8px 24px #0004;
 		margin: 20px auto;
-		transition: all .3s .1s;
+		transition: all calc(1.5 * var(--transition-duration)) calc(var(--transition-duration) / 2);
 	}
 	.home {
 		display: flex;

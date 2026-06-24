@@ -58,6 +58,6 @@
 		width: calc(100% / var(--items) - 8px);
 		left: calc(4px + 100% / (var(--items)) * var(--position));
 		transform: translate(0, -50%);
-		transition: all .3s;
+		transition: all calc(1.5 * var(--transition-duration));
 	}
 </style>

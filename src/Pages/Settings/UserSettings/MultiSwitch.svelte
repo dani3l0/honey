@@ -67,7 +67,7 @@
 		text-align: center;
 		align-items: center;
 		color: #333;
-		transition: all .2s;
+		transition: all var(--transition-duration);
 	}
 	:global(.dark .user-settings .multi-switch .values) {
 		color: #CCC;
@@ -76,7 +76,7 @@
 		flex: 1;
 		padding: 8px 16px;
 		color: var(--color);
-		transition: all .2s;
+		transition: all var(--transition-duration);
 	}
 	.handle {
 		position: absolute;
@@ -88,6 +88,6 @@
 		height: calc(100% - 4px);
 		z-index: -1;
 		background: #68F3;
-		transition: all .2s;
+		transition: all var(--transition-duration);
 	}
 </style>

@@ -28,7 +28,7 @@
 		margin: 0 4px;
 		position: relative;
 		border-radius: 16px;
-		transition: all .2s;
+		transition: all var(--transition-duration);
 	}
 	a:hover {
 		background: #8884;

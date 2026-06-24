@@ -24,7 +24,7 @@
 	.about {
 		flex: 1;
 		width: 100%;
-		transition: all .3s;
+		transition: all calc(1.5 * var(--transition-duration));
 	}
 	.about.hidden {
 		pointer-events: none;
@@ -32,7 +32,7 @@
 
 	.branding {
 		text-align: center;
-		transition: all .3s .1s;
+		transition: all calc(1.5 * var(--transition-duration)) CALC(var(--transition-duration) / 2);
 	}
 	.branding img {
 		width: 240px;
