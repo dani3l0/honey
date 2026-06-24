@@ -11,7 +11,7 @@
 	<div class="rocket-big">
 		<span class="material-symbols-outlined">rocket_launch</span>
 		<div class="text">
-			<div class="count">{$CONFIG.dashboard_items.length}</div>
+			<div class="count" style:--count={$CONFIG.dashboard_items.length}></div>
 			<div class="note">services in total</div>
 		</div>
 	</div>
@@ -45,9 +45,22 @@
 	.rocket-big .text {
 		text-align: right;
 	}
+	@property --count {
+		syntax: "<integer>";
+		initial-value: 0;
+		inherits: false;
+	}
 	.rocket-big .count {
 		font-size: 4rem;
 		margin-bottom: -8px;
+		counter-reset: count var(--count);
+		transition: --count 1s .2s;
+	}
+	.rocket-big .count::after {
+		content: counter(count);
+	}
+	.summary.hidden .count {
+		--count: 0 !important;
 	}
 	.rocket-big .note {
 		opacity: .5;
