@@ -60,6 +60,7 @@
 	}
 	.branding .subtitle {
 		font-size: 1.1rem;
+		opacity: .6;
 	}
 
 	.options {
