@@ -5,7 +5,8 @@
 
 
 <div class="background">
-	<img src={isDev ? "http://127.0.0.1:4208/res/backgrounds/LivingRoom-Dark.png" : "/res/backgrounds/LivingRoom-Light.png"} alt="background">
+	<img src={isDev ? "http://127.0.0.1:4208/res/backgrounds/LivingRoom-Light.png" : "/res/backgrounds/LivingRoom-Light.png"} alt="background">
+	<img src={isDev ? "http://127.0.0.1:4208/res/backgrounds/LivingRoom-Dark.png" : "/res/backgrounds/LivingRoom-Dark.png"} alt="background">
 </div>
 
 

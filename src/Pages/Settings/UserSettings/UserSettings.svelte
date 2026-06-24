@@ -53,7 +53,6 @@
 		transition: all .3s;
 	}
 	.user-settings.hidden {
-		opacity: 0;
 		pointer-events: none;
 	}
 </style>

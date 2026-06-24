@@ -27,23 +27,11 @@
 		position: relative;
 		text-decoration: none;
 		color: inherit;
-	}
-	.app::after {
-		content: " ";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
 		border-radius: 16px;
-		background: #0000;
-		transform: scale(0.95);
-		z-index: -1;
 		transition: all .2s;
 	}
-	.app:hover::after {
+	.app:hover {
 		background: #8884;
-		transform: none;
 	}
 	img {
 		width: 54px;

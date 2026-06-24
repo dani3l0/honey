@@ -15,26 +15,12 @@
 		justify-content: center;
 		text-decoration: none;
 		position: relative;
+		transition: all .2s;
 	}
 	.closebtn span {
 		margin-top: 2px;
 	}
-	.closebtn::after {
-		content: "";
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		border-radius: 100px;
-		background: #F664;
-		opacity: 0;
-		z-index: 1;
-		transform: scale(.9);
-		transition: all .2s;
-	}
-	.closebtn:hover::after {
-		transform: none;
-		opacity: 1;
+	.closebtn:hover {
+		background: #F334;
 	}
 </style>

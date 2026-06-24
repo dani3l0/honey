@@ -27,7 +27,6 @@
 		transition: all .3s;
 	}
 	.about.hidden {
-		opacity: 0;
 		pointer-events: none;
 	}
 
@@ -50,7 +49,7 @@
 	}
 	.links {
 		display: flex;
-		align-items: flex-start;
+		align-items: stretch;
 		flex-wrap: wrap;
 		margin: 0 auto;
 	}

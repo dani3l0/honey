@@ -21,25 +21,13 @@
 		cursor: pointer;
 		overflow: hidden;
 		text-decoration: none;
+		border-radius: 16px;
 		color: inherit;
 		align-items: center;
-	}
-	.option::after {
-		content: " ";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		border-radius: 16px;
-		background: transparent;
-		z-index: 1;
-		transform: scale(.9);
 		transition: all .2s;
 	}
-	.option:hover::after {
+	.option:hover {
 		background: #8884;
-		transform: scale(1);
 	}
 	.material-symbols-rounded {
 		font-size: 28px;

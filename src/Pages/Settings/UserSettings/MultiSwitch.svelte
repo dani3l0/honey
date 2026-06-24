@@ -66,7 +66,11 @@
 		justify-content: center;
 		text-align: center;
 		align-items: center;
+		color: #333;
 		transition: all .2s;
+	}
+	:global(.dark .user-settings .multi-switch .values) {
+		color: #CCC;
 	}
 	.values button {
 		flex: 1;

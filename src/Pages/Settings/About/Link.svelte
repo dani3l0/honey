@@ -27,23 +27,11 @@
 		padding: 16px 14px;
 		margin: 0 4px;
 		position: relative;
-	}
-	a::after {
-		content: " ";
-		position: absolute;
 		border-radius: 16px;
-		background: #0000;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		z-index: -1;
-		transform: scale(.95);
 		transition: all .2s;
 	}
-	a:hover::after {
+	a:hover {
 		background: #8884;
-		transform: none;
 	}
 	span {
 		font-size: 26px;

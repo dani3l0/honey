@@ -76,13 +76,18 @@
 		text-align: center;
 		align-items: center;
 		flex-direction: column;
+		color: #333;
 		transform: translateY(calc(-12px + 50% + -100% * var(--value) / var(--elements)));
 		transition: all .2s;
+	}
+	:global(.dark .user-settings .list-switch .values) {
+		color: #CCC;
 	}
 	.values div {
 		flex: 1;
 		margin: 2px 42px;
 		opacity: var(--visible);
+		color: inherit;
 		transition: all .2s;
 	}
 	button {

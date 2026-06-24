@@ -30,7 +30,6 @@
 		transition: all .3s;
 	}
 	.summary.hidden {
-		opacity: 0;
 		pointer-events: none;
 	}
 
@@ -56,9 +55,10 @@
 
 	.checks {
 		display: flex;
-		align-items: flex-start;
+		align-items: stretch;
 		flex-wrap: wrap;
 		max-width: 880px;
 		margin: 0 auto;
+		gap: 8px;
 	}
 </style>
