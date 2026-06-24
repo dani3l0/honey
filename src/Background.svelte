@@ -1,13 +1,12 @@
 <script>
-    import { className } from "./engine/utils";
-    import { hash, isDev } from "./engine/variables";
-
+	import { className, parseImgUrl } from "./engine/utils";
+	import { CONFIG, hash, isDev } from "./engine/variables";
 </script>
 
 
 <div class="background">
-	<img class="light {className($hash != "#", "zoomedIn")}" src={isDev ? "http://127.0.0.1:4208/res/backgrounds/wallhaven-4ogr3m.jpg" : "/res/backgrounds/wallhaven-4ogr3m.jpg"} alt="light background">
-	<img class="dark {className($hash != "#", "zoomedIn")}" src={isDev ? "http://127.0.0.1:4208/res/backgrounds/wallhaven-6qqgk6.jpg" : "/res/backgrounds/wallhaven-6qqgk6.jpg"} alt="dark background">
+	<img class="light {className($hash != "#", "zoomedIn")}" src={parseImgUrl($CONFIG.personalization.background_image, true)} alt="light background">
+	<img class="dark {className($hash != "#", "zoomedIn")}" src={parseImgUrl($CONFIG.personalization.background_image_dark, true)} alt="dark background">
 </div>
 
 

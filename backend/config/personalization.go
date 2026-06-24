@@ -8,6 +8,6 @@ type Personalization struct {
 
 var personalizationDefaults = Personalization{
 	Favicon:             "honey.png",
-	BackgroundImage:     "Field-Light.png",
-	BackgroundImageDark: "Field-Dark.png",
+	BackgroundImage:     "wallhaven-4ogr3m.jpg",
+	BackgroundImageDark: "wallhaven-6qqgk6.jpg",
 }
