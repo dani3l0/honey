@@ -49,14 +49,17 @@ func Run() {
 	Mux.Handle("/res/", resServer)
 
 	// API
-	Mux.HandleFunc("/api/getConfig", api.GetConfig)
-	Mux.HandleFunc("/api/setConfig", api.SetConfig)
+	// App endpoint
+	Mux.HandleFunc("/api/config", api.GetConfig)
 
-	Mux.HandleFunc("/api/auth", api.AuthEndpoint)
-	Mux.HandleFunc("/api/setAdmin", api.SetAdmin)
+	// Admin endpoints
+	Mux.HandleFunc("/api/admin/setConfig", api.SetConfig)
 
-	Mux.HandleFunc("/api/getSystem", api.GetSystem)
-	Mux.HandleFunc("/api/setSystem", api.SetSystem)
+	Mux.HandleFunc("/api/admin/auth", api.AuthEndpoint)
+	Mux.HandleFunc("/api/admin/setAdmin", api.SetAdmin)
+
+	Mux.HandleFunc("/api/admin/getSystem", api.GetSystem)
+	Mux.HandleFunc("/api/admin/setSystem", api.SetSystem)
 
 	// Message and spinup the server
 	fmt.Printf("Serving under http://%s\n", config.App.System.ListenAddr)

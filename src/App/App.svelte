@@ -1,7 +1,7 @@
 <script>
     import { onDestroy, onMount } from "svelte";
     import Background from "./Background.svelte";
-    import { className } from "./engine/utils";
+    import { className, parseImgUrl } from "./engine/utils";
     import { CONFIG, isDev, isDeviceDark } from "./engine/variables";
     import Main from "./Pages/Main.svelte";
 
@@ -9,7 +9,7 @@
 	let unsubscribe
 
 	onMount(async () => {
-		let url = isDev ? "http://127.0.0.1:4208/api/getConfig" : "/api/getConfig"
+		let url = isDev ? "http://127.0.0.1:4208/api/config" : "/api/config"
 		await fetch(url)
 			.then(response => response.json())
 			.then(data => {
@@ -29,6 +29,10 @@
 					localStorage.setItem("config", JSON.stringify(val.client))
 					console.log(localStorage)
 				})
+
+				// Once-to-do stuff
+				document.head.querySelector("#link-icon").setAttribute("href", parseImgUrl($CONFIG.personalization.favicon))
+				document.title = $CONFIG.personalization.name
 			})
 			.catch(error => console.error("Error while fetching config:", error))
 	})

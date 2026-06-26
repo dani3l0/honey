@@ -6,6 +6,12 @@ export default defineConfig({
 	plugins: [svelte()],
 	build: {
 		outDir: "./backend/webserver/dist",
-		emptyOutDir: true,
+    emptyOutDir: true,
+    rolldownOptions: {
+      input: {
+        app: resolve(import.meta.dirname, 'index.html'),
+        admin: resolve(import.meta.dirname, 'admin.html'),
+      },
+    }
 	},
 });

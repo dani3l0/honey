@@ -1,5 +1,5 @@
 <script>
-    import { className } from "../../engine/utils";
+    import { className, parseImgUrl } from "../../engine/utils";
     import { CONFIG, hash, isDark, isDev } from "../../engine/variables";
     import Option from "./Option.svelte";
 
@@ -8,9 +8,9 @@
 
 <div class="main {className($hash != "#", "hidden")}">
 	<div class="branding">
-		<img src={isDev ? "http://127.0.0.1:4208/res/icons/honey.png" : "/res/icons/honey.png"} alt="logo">
-		<div class="title">honey</div>
-		<div class="subtitle">A sweet place for all your self-hosted services.</div>
+		<img src={parseImgUrl($CONFIG.personalization.favicon)} alt="logo">
+		<div class="title">{$CONFIG.personalization.name}</div>
+		<div class="subtitle">{$CONFIG.personalization.description}</div>
 	</div>
 	<div class="options">
 		<div class="home">

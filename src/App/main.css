@@ -1,3 +1,19 @@
+@import "@fontsource/quicksand";
+@import 'material-symbols';
+
+html, body {
+	user-select: none;
+	font-family: "Quicksand", sans-serif;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	scrollbar-width: none;
+}
+::-webkit-scrollbar {
+	display: none;
+}
+
 button, input {
 	padding: 0;
 	margin: 0;

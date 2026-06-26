@@ -11,8 +11,6 @@
 
 
 <style>
-	@import 'material-symbols';
-
 	.option {
 		flex: 1;
 		width: 100%;
