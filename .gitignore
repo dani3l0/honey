@@ -7,16 +7,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Dependencies & compiled code
+# Dependencies & compiled frontend
 node_modules
 dist
 dist-ssr
 *.local
-backend/tmp
+
+# Backend data
 backend/webserver/dist
-backend/honey
-config.yaml
+backend/config.yaml
 backend/res
+
+# Compiled backend code
+backend/tmp
+backend/honey
 
 # Editor directories and files
 .vscode/*

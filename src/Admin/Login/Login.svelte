@@ -1,18 +1,36 @@
 <script>
 	import { className } from "../../App/engine/utils";
-	import { isLoggedIn } from "../engine/variables";
+    import { isDev } from "../../App/engine/variables";
+	import { authData, isLoggedIn } from "../engine/variables";
 
-	const submit = async () => {
-		isLoggedIn.set(true)
+	let userInput = $state(null)
+	let passInput = $state(null)
+
+	const submit = async (e) => {
+		e.preventDefault()
+		authData.set({
+			"name": userInput.value,
+			"password": passInput.value
+		})
+		const resp = await fetch(isDev ? "http://127.0.0.1:4208/api/admin/auth" : "/api/admin/auth", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify($authData)
+		})
+		isLoggedIn.set(resp.ok)
 	}
 </script>
 
 <div class="login {className($isLoggedIn, "hidden")}">
 	<div class="log-in">Log in</div>
 	<div class="conf">Configuration Page</div>
-	<input class="user" type="text" placeholder="admin" />
-	<input class="pass" type="password" placeholder="*****" />
-	<button style:--hue={Math.round(360 * Math.random())} onclick={submit}>Submit</button>
+	<form onsubmit={submit}>
+		<input class="user" type="text" placeholder="admin" bind:this={userInput} />
+		<input class="pass" type="password" placeholder="*****" bind:this={passInput} />
+		<button style:--hue={Math.round(360 * Math.random())} type="submit">Submit</button>
+	</form>
 </div>
 
 <style>
@@ -29,6 +47,7 @@
 	}
 	.login.hidden {
 		opacity: 0;
+		visibility: hidden;
 		pointer-events: none;
 		transform: translate(-50%, -50%) scale(1.2);
 	}

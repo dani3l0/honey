@@ -1,8 +1,8 @@
 <script>
-	let { icon, name, description } = $props()
+	let { icon, name, description, to } = $props()
 </script>
 
-<div class="main-option" style:--hue={(icon.length + name.length + description.length) % 10}>
+<a class="main-option" style:--hue={(icon.length + name.length + description.length) % 10} href={to}>
 	<div class="icon">
 		<span class="material-symbols-rounded">{icon}</span>
 	</div>
@@ -13,7 +13,7 @@
 	<div class="next">
 		<span class="material-symbols-rounded">chevron_right</span>
 	</div>
-</div>
+</a>
 
 <style>
 	.main-option {
@@ -26,6 +26,8 @@
 		align-items: center;
 		padding: 12px;
 		cursor: pointer;
+		text-decoration: none;
+		color: inherit;
 		transition: all .2s;
 	}
 	.main-option:hover {
@@ -59,5 +61,13 @@
 	.main-option:hover .next {
 		opacity: 1;
 		transform: none;
+	}
+	.name {
+		font-size: 1.25rem;
+		margin-bottom: 2px;
+	}
+	.description {
+		opacity: .5;
+		font-size: 0.9rem;
 	}
 </style>

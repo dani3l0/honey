@@ -1,15 +1,18 @@
 <script>
+    import { className } from "../../../App/engine/utils";
 	import Option from "./Option.svelte";
 
+	let { visible } = $props()
+
 </script>
-<div class="main">
+<div class="{className(visible, "visible")}">
 	<div class="honey-big">honey</div>
 	<div class="honey-small">Configuration Page</div>
-	<Option icon="apps" name="Services" description="Add, remove and reorder available items in Services tab" />
-	<Option icon="brush" name="Personalization" description="Customize honey's look and make it yours!" />
-	<Option icon="display_settings" name="Client" description="Define default frontend settings for clients" />
-	<Option icon="password" name="Admin" description="Manage Configuration Page credentials" />
-	<Option icon="dns" name="Server" description="Settings related to honey's backend" />
+	<Option to="#services" icon="apps" name="Services" description="Add, remove and reorder available items in Services tab" />
+	<Option to="#look" icon="brush" name="Personalization" description="Customize honey's look and make it yours!" />
+	<Option to="#defaults" icon="display_settings" name="Client" description="Define default frontend settings for clients" />
+	<Option to="#admin" icon="password" name="Admin" description="Manage Configuration Page credentials" />
+	<Option to="#system" icon="dns" name="Server" description="Settings related to honey's backend" />
 </div>
 
 <style>
