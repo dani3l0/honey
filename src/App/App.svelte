@@ -9,7 +9,7 @@
 	let unsubscribe
 
 	onMount(async () => {
-		let url = isDev ? "http://127.0.0.1:4208/api/config" : "/api/config"
+		let url = isDev ? "http://localhost:4208/api/config" : "/api/config"
 		await fetch(url)
 			.then(response => response.json())
 			.then(data => {

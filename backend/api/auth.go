@@ -28,11 +28,20 @@ func AuthEndpoint(w http.ResponseWriter, r *http.Request) {
 
 	// Set cookie
 	http.SetCookie(w, &http.Cookie{
-		Name:     config.App.Admin.Name,
+		Name:     "user",
+		Value:    config.App.Admin.Name,
+		Path:     "/",
+		HttpOnly: true,
+		Expires:  time.Now().Add(config.App.System.CookieLifetime),
+		Secure:   false,
+	})
+	http.SetCookie(w, &http.Cookie{
+		Name:     "pass",
 		Value:    config.App.Admin.Password,
 		Path:     "/",
 		HttpOnly: true,
 		Expires:  time.Now().Add(config.App.System.CookieLifetime),
+		Secure:   false,
 	})
 
 	WriteJSON(w, http.StatusOK, "OK", config.App.Admin)

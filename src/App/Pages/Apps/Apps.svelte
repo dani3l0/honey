@@ -5,7 +5,7 @@
     import Header from "./Header.svelte";
 
     const mkIconUrl = (url) => {
-		if (!url.includes("/")) return isDev ? "http://127.0.0.1:4208/res/icons/"+url : "/res/icons/"+url
+		if (!url.includes("/")) return isDev ? "http://localhost:4208/res/icons/"+url : "/res/icons/"+url
 		return url
     }
 

@@ -9,7 +9,7 @@
 
 <div class="about {className($hash != "#about", "hidden")}" bind:clientHeight={height}>
 	<div class="branding">
-		<img src={isDev ? "http://127.0.0.1:4208/res/icons/honey.png" : "/res/icons/honey.png"} alt="logo">
+		<img src={isDev ? "http://localhost:4208/res/icons/honey.png" : "/res/icons/honey.png"} alt="logo">
 		<div class="title">honey</div>
 		<div class="subtitle">A sweet place for all your self-hosted services.</div>
 	</div>

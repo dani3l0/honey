@@ -1,7 +1,7 @@
 <script>
 	import { className } from "../../App/engine/utils";
     import { isDev } from "../../App/engine/variables";
-	import { authData, isLoggedIn } from "../engine/variables";
+	import { authData, getConfigs, isLoggedIn } from "../engine/variables";
     import Error from "./Error.svelte";
 
 	let userInput = $state(null)
@@ -15,17 +15,21 @@
 			"name": userInput.value,
 			"password": passInput.value
 		})
-		const resp = await fetch(isDev ? "http://127.0.0.1:4208/api/admin/auth" : "/api/admin/auth", {
+		const resp = await fetch(isDev ? "http://localhost:4208/api/admin/auth" : "/api/admin/auth", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
 			},
-			body: JSON.stringify($authData)
+			body: JSON.stringify($authData),
+			credentials: "include"
 		})
 		isLoggedIn.set(resp.ok)
 		errorVisible = !resp.ok
 		clearTimeout(errTimeout)
 		errTimeout = setTimeout(() => errorVisible = false, 2500)
+		if (resp.ok) {
+			await getConfigs()
+		}
 	}
 </script>
 

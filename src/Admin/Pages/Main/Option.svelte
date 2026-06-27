@@ -1,8 +1,8 @@
 <script>
-	let { icon, name, description, to } = $props()
+	let { icon, name, description, to, color = 36*(icon.length + name.length) } = $props()
 </script>
 
-<a class="main-option" style:--hue={(icon.length + name.length + description.length) % 10} href={to}>
+<a class="main-option" style:--hue={color} href={to}>
 	<div class="icon">
 		<span class="material-symbols-rounded">{icon}</span>
 	</div>
@@ -46,7 +46,7 @@
 		height: 64px;
 		width: 64px;
 		border-radius: 12px;
-		filter: hue-rotate(calc(var(--hue) * 36deg));
+		filter: hue-rotate(calc(var(--hue) * 1deg));
 	}
 	.icon span {
 		margin-top: 2px;
