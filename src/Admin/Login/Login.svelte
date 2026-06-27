@@ -2,9 +2,12 @@
 	import { className } from "../../App/engine/utils";
     import { isDev } from "../../App/engine/variables";
 	import { authData, isLoggedIn } from "../engine/variables";
+    import Error from "./Error.svelte";
 
 	let userInput = $state(null)
 	let passInput = $state(null)
+	let errorVisible = $state(false)
+	let errTimeout = null
 
 	const submit = async (e) => {
 		e.preventDefault()
@@ -20,12 +23,16 @@
 			body: JSON.stringify($authData)
 		})
 		isLoggedIn.set(resp.ok)
+		errorVisible = !resp.ok
+		clearTimeout(errTimeout)
+		errTimeout = setTimeout(() => errorVisible = false, 2500)
 	}
 </script>
 
 <div class="login {className($isLoggedIn, "hidden")}">
 	<div class="log-in">Log in</div>
 	<div class="conf">Configuration Page</div>
+	<Error name="Invalid login or password" visible={errorVisible} />
 	<form onsubmit={submit}>
 		<input class="user" type="text" placeholder="admin" bind:this={userInput} />
 		<input class="pass" type="password" placeholder="*****" bind:this={passInput} />
