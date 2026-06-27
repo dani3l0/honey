@@ -34,14 +34,19 @@ func WriteJSON(w http.ResponseWriter, statusCode int, message string, data any) 
 }
 
 func Auth(w http.ResponseWriter, r *http.Request) bool {
+	return AuthPre(w, r, false)
+}
+func AuthPre(w http.ResponseWriter, r *http.Request, lazy bool) bool {
 	user, errA := r.Cookie("user")
 	pass, errB := r.Cookie("pass")
 	if e := errors.Join(errA, errB); e != nil {
-		WriteJSON(w, http.StatusUnauthorized, "Unauthorized", "")
+		if !lazy {
+			WriteJSON(w, http.StatusUnauthorized, "Unauthorized", "")
+		}
 		return false
 	}
 	authd := config.App.Admin.Name == user.Value && config.App.Admin.Password == pass.Value
-	if !authd {
+	if !lazy && !authd {
 		WriteJSON(w, http.StatusUnauthorized, "Unauthorized", "")
 	}
 	return authd

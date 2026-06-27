@@ -1,7 +1,8 @@
 <script>
+    import { onMount } from "svelte";
 	import { className } from "../../App/engine/utils";
-	import { authData, getConfigs, isLoggedIn } from "../engine/variables";
-    import Error from "./Error.svelte";
+	import { getConfigs, isLoggedIn } from "../engine/variables";
+	import Error from "./Error.svelte";
 
 	let userInput = $state(null)
 	let passInput = $state(null)
@@ -10,26 +11,33 @@
 
 	const submit = async (e) => {
 		e.preventDefault()
-		authData.set({
+		let authData = {
 			"name": userInput.value,
 			"password": passInput.value
-		})
+		}
 		const resp = await fetch("/api/admin/auth", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
 			},
-			body: JSON.stringify($authData),
+			body: JSON.stringify(authData),
 			credentials: "include"
 		})
 		isLoggedIn.set(resp.ok)
-		errorVisible = !resp.ok
-		clearTimeout(errTimeout)
-		errTimeout = setTimeout(() => errorVisible = false, 2500)
+		if (!e.firstTime) {
+			errorVisible = !resp.ok
+			clearTimeout(errTimeout)
+			errTimeout = setTimeout(() => errorVisible = false, 2500)
+		}
 		if (resp.ok) {
 			await getConfigs()
 		}
 	}
+	onMount(() => {
+		const fakeEvent = { preventDefault: () => {}, firstTime: true }
+		submit(fakeEvent)
+	});
+
 </script>
 
 <div class="login {className($isLoggedIn, "hidden")}">

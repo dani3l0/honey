@@ -12,18 +12,22 @@ func AuthEndpoint(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Parse JSON
-	var data config.Admin
-	err := json.NewDecoder(r.Body).Decode(&data)
-	if err != nil {
-		WriteJSON(w, http.StatusBadRequest, "Bad Request", "Malformed JSON input")
-		return
-	}
-	authed := config.App.Admin.Name == data.Name && config.App.Admin.Password == config.SHA256(data.Password)
+	// If cookie-based auth fails, try to read POST data
+	if !AuthPre(w, r, true) {
+		// Parse JSON
+		var data config.Admin
+		err := json.NewDecoder(r.Body).Decode(&data)
+		if err != nil {
+			WriteJSON(w, http.StatusBadRequest, "Bad Request", "Malformed JSON input")
+			return
+		}
+		authed := config.App.Admin.Name == data.Name && config.App.Admin.Password == config.SHA256(data.Password)
 
-	if !authed {
-		WriteJSON(w, http.StatusUnauthorized, "Unauthorized", "")
-		return
+		// Unauthorized
+		if !authed {
+			WriteJSON(w, http.StatusUnauthorized, "Unauthorized", "")
+			return
+		}
 	}
 
 	// Set cookie
@@ -44,5 +48,6 @@ func AuthEndpoint(w http.ResponseWriter, r *http.Request) {
 		Secure:   false,
 	})
 
+	// OK
 	WriteJSON(w, http.StatusOK, "OK", config.App.Admin)
 }
