@@ -4,6 +4,8 @@
 	let { to = "#", title, icon, color = 36*(icon.length + title.length), unsaved = $bindable(),
 		onSave = () => {},
 		onReset = () => {getConfigs(); unsaved = false},
+		custom = "",
+		onCustom = () => {}
 	} = $props()
 </script>
 
@@ -13,13 +15,18 @@
 		<span class="material-symbols-rounded">{icon}</span>
 	</div>
 	<div class="title">{title}</div>
+	{#if custom.length}
+		<button class="custom" onclick={onCustom}>
+			<span class="material-symbols-rounded">{custom}</span>
+		</button>
+	{/if}
 	{#if unsaved}
 		<button class="reset" onclick={onReset}>
 			<span class="material-symbols-rounded">reset_wrench</span>
 		</button>
 		<button class="save" onclick={onSave}>
 			<span class="material-symbols-rounded">save</span>
-	</button>
+		</button>
 	{/if}
 	<a class="back" href={to}>
 		<span class="material-symbols-rounded">close</span>
@@ -54,7 +61,7 @@
 		border-radius: 16px;
 	}
 
-	.back, .save, .reset {
+	.back, .save, .reset, .custom {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -72,6 +79,9 @@
 	.reset {
 		color: #D80;
 	}
+	.custom {
+		color: #68F;
+	}
 	.back:hover {
 		background: #F664;
 	}
@@ -80,6 +90,9 @@
 	}
 	.reset:hover {
 		background: #D804;
+	}
+	.custom:hover {
+		background: #68F4;
 	}
 	.title {
 		font-size: 1.7rem;

@@ -1,12 +1,14 @@
 <script>
-	let { icon, name, value = $bindable(""), detectChanges } = $props()
+    import { className } from "../../../App/engine/utils";
+
+	let { icon, name, value = $bindable(""), detectChanges, title = false } = $props()
 
 	const oninput = () => {
 		detectChanges()
 	}
 </script>
 
-<div class="property">
+<div class="property {className(title, "title")}">
 	<div class="icon">
 		<span class="material-symbols-rounded">{icon}</span>
 	</div>
@@ -17,15 +19,20 @@
 	.property {
 		display: flex;
 		align-items: stretch;
-		border: 1px solid #8886;
 		overflow: hidden;
 		border-radius: 20px;
 		flex: 1;
 		min-width: 240px;
+		font-size: 0.85rem;
+		color: #666;
 		position: relative;
 	}
+	.property.title {
+		color: inherit;
+		font-size: 1.5rem;
+	}
 	.value {
-		padding: 12px 12px 12px 8px;
+		padding: 6px 8px;
 		white-space: nowrap;
 		overflow-x: auto;
 		flex: 1;
@@ -49,5 +56,9 @@
 		padding-left: 4px;
 		margin-right: -8px;
 		flex-shrink: 0;
+	}
+	.icon span {
+		font-size: 22px;
+		color: #888;
 	}
 </style>

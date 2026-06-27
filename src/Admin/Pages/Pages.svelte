@@ -52,6 +52,7 @@
 		height: 100%;
 		pointer-events: all;
 		overflow-y: scroll;
+		overflow-x: hidden;
 		transition: all .3s .3s;
 	}
 </style>

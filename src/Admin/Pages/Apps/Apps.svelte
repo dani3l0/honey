@@ -7,6 +7,7 @@
 
 	let { visible } = $props()
 	let config = fromStore(configMain)
+	let parent = $state(null)
 
 	let items = $state([])
 	let draggedIndex = null
@@ -37,6 +38,21 @@
 		unsaved = JSON.stringify(config.current) != JSON.stringify(newConf)
 		return newConf
 	}
+	function addItem() {
+		items.push({
+			name: "New Service",
+			icon_url: "",
+			url: "",
+			description: ""
+		})
+		detectChanges()
+		if (parent.scrollTo) setTimeout(() => parent.scrollTo({ top: parent.scrollHeight, behavior: 'smooth' }), 0)
+	}
+	function removeItem(index) {
+		items.splice(index, 1)
+		detectChanges()
+	}
+
 	async function saveConf() {
 		let cleanItems = $state.snapshot(items)
 		let newConf = { ...config.current, dashboard_items: cleanItems }
@@ -53,8 +69,11 @@
 
 </script>
 
-<div class={className(visible, "visible")}>
-	<Header icon="apps" title="Services" color={240} bind:unsaved onSave={saveConf} />
+<div class={className(visible, "visible")} bind:this={parent}>
+	<Header icon="apps" title="Services" color={240}
+		bind:unsaved onSave={saveConf}
+		custom="add" onCustom={addItem}
+	/>
 	<div class="items">
 		{#each items as item, i (i)}
 			<div class="item" draggable="true" role="none"
@@ -64,9 +83,10 @@
 			>
 				<div class="icon">
 					<img src={parseImgUrl(item.icon_url)} alt="appicon">
+					<button onclick={() => removeItem(i)}>Remove</button>
 				</div>
 				<div class="text">
-					<Property icon="tag" name="Name" bind:value={item.name} {detectChanges} />
+					<Property icon="tag" name="Name" bind:value={item.name} {detectChanges} title />
 					<Property icon="photo" name="Icon URL" bind:value={item.icon_url} {detectChanges} />
 					<Property icon="link" name="Service URL" bind:value={item.url} {detectChanges} />
 					<Property icon="description" name="Description" bind:value={item.description} {detectChanges} />
@@ -84,23 +104,28 @@
 		padding: 16px;
 		background: #EEE;
 		border-radius: 24px;
+		overflow-x: auto;
 		margin: 12px 0;
 	}
 	.icon {
-		margin-right: 16px;
+		margin: 0 8px 0 4px;
 	}
 	.icon img {
-		min-width: 96px;
-		max-width: 96px;
-		min-height: 96px;
-		max-height: 96px;
+		min-width: 64px;
+		max-width: 64px;
+		min-height: 64px;
+		max-height: 64px;
 		object-fit: cover;
 	}
 	.text {
 		flex: 1;
-		display: flex;
-		align-items: stretch;
-		flex-wrap: wrap;
-		gap: 8px;
+	}
+	.icon button {
+		color: #B44;
+		font-size: 0.8rem;
+		text-align: center;
+		background: #B443;
+		border-radius: 20px;
+		padding: 4px 6px;
 	}
 </style>
