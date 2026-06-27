@@ -6,7 +6,7 @@ export const className = (condition, classN) => {
 }
 
 export const parseImgUrl = (img, isBackgrounds) => {
-	if (img.startsWith("http://") || img.startsWith("https://")) {
+	if (img.startsWith("http://") || img.startsWith("https://") || img.startsWith("data:image")) {
 		return img
 	}
 	if (isBackgrounds) img = `/res/backgrounds/${img}`
