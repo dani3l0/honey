@@ -2,14 +2,14 @@
     import { onDestroy, onMount } from "svelte";
     import Background from "./Background.svelte";
     import { className, parseImgUrl } from "./engine/utils";
-    import { CONFIG, isDev, isDeviceDark } from "./engine/variables";
+    import { CONFIG, isDeviceDark } from "./engine/variables";
     import Main from "./Pages/Main.svelte";
 
     let loaded = false
 	let unsubscribe
 
 	onMount(async () => {
-		let url = isDev ? "http://localhost:4208/api/config" : "/api/config"
+		let url = "/api/config"
 		await fetch(url)
 			.then(response => response.json())
 			.then(data => {

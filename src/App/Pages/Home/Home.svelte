@@ -1,6 +1,6 @@
 <script>
     import { className, parseImgUrl } from "../../engine/utils";
-    import { CONFIG, hash, isDark, isDev } from "../../engine/variables";
+    import { CONFIG, hash, isDark } from "../../engine/variables";
     import Option from "./Option.svelte";
 
 </script>

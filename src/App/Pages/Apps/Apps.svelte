@@ -1,11 +1,11 @@
 <script>
     import { className } from "../../engine/utils";
-    import { CONFIG, hash, isDev } from "../../engine/variables";
+    import { CONFIG, hash } from "../../engine/variables";
     import App from "./App.svelte";
     import Header from "./Header.svelte";
 
     const mkIconUrl = (url) => {
-		if (!url.includes("/")) return isDev ? "http://localhost:4208/res/icons/"+url : "/res/icons/"+url
+		if (!url.includes("/")) return "/res/icons/"+url
 		return url
     }
 

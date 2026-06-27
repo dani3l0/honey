@@ -1,6 +1,6 @@
 <script>
-    import { className } from "../../../engine/utils";
-    import { hash, isDev } from "../../../engine/variables";
+    import { className, parseImgUrl } from "../../../engine/utils";
+    import { CONFIG, hash } from "../../../engine/variables";
     import Link from "./Link.svelte";
 
     let { height = $bindable() } = $props()
@@ -9,7 +9,7 @@
 
 <div class="about {className($hash != "#about", "hidden")}" bind:clientHeight={height}>
 	<div class="branding">
-		<img src={isDev ? "http://localhost:4208/res/icons/honey.png" : "/res/icons/honey.png"} alt="logo">
+		<img src={parseImgUrl($CONFIG.personalization.favicon)} alt="logo">
 		<div class="title">honey</div>
 		<div class="subtitle">A sweet place for all your self-hosted services.</div>
 	</div>

@@ -1,6 +1,5 @@
 <script>
 	import { className } from "../../App/engine/utils";
-    import { isDev } from "../../App/engine/variables";
 	import { authData, getConfigs, isLoggedIn } from "../engine/variables";
     import Error from "./Error.svelte";
 
@@ -15,7 +14,7 @@
 			"name": userInput.value,
 			"password": passInput.value
 		})
-		const resp = await fetch(isDev ? "http://localhost:4208/api/admin/auth" : "/api/admin/auth", {
+		const resp = await fetch("/api/admin/auth", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"

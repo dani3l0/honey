@@ -11,5 +11,5 @@ export const parseImgUrl = (img, isBackgrounds) => {
 	}
 	if (isBackgrounds) img = `/res/backgrounds/${img}`
 	else img = `/res/icons/${img}`
-	return isDev ? `http://localhost:4208${img}` : img
+	return img
 }

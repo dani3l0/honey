@@ -4,7 +4,6 @@
 	import { configMain } from "../../engine/variables";
 	import Header from "../components/Header.svelte";
 	import Property from "./Property.svelte";
-    import { isDev } from "../../../App/engine/variables";
 
 	let { visible } = $props()
 	let config = fromStore(configMain)
@@ -41,7 +40,7 @@
 	async function saveConf() {
 		let cleanItems = $state.snapshot(items)
 		let newConf = { ...config.current, dashboard_items: cleanItems }
-		let result = await fetch(isDev ? "http://localhost:4208/api/admin/setConfig" : "/api/admin/setConfig", {
+		let result = await fetch("/api/admin/setConfig", {
 			method: "POST",
 			body: JSON.stringify(newConf),
 			credentials: "include"

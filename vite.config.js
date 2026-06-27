@@ -15,4 +15,18 @@ export default defineConfig({
       },
     }
 	},
+	server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:4208',
+        changeOrigin: true,
+        secure: false,
+      },
+      '/res': {
+        target: 'http://localhost:4208',
+        changeOrigin: true,
+        secure: false,
+      }
+    }
+  }
 });

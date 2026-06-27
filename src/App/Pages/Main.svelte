@@ -2,7 +2,7 @@
 	import Apps from "./Apps/Apps.svelte";
 	import Home from "./Home/Home.svelte";
 	import Settings from "./Settings/Settings.svelte";
-	import { CONFIG, isDev } from "../engine/variables";
+	import { CONFIG } from "../engine/variables";
 
 </script>
 

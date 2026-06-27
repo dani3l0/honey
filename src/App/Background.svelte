@@ -1,6 +1,6 @@
 <script>
 	import { className, parseImgUrl } from "./engine/utils";
-	import { CONFIG, hash, isDev } from "./engine/variables";
+	import { CONFIG, hash } from "./engine/variables";
 </script>
 
 
