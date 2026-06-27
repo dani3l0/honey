@@ -18,6 +18,7 @@
 		if (config.current?.dashboard_items) {
 			items = config.current.dashboard_items;
 		}
+		unsaved = false
 	});
 
 	function handleOver(e, index) {
@@ -40,7 +41,7 @@
 	}
 	function addItem() {
 		items.push({
-			name: "New Service",
+			name: "",
 			icon_url: "",
 			url: "",
 			description: ""
@@ -74,6 +75,16 @@
 		bind:unsaved onSave={saveConf}
 		custom="add" onCustom={addItem}
 	/>
+	<div class="notes">
+		<div>
+			<span class="material-symbols-rounded">drag_click</span>
+			<div>Hold right mouse button to reorder items</div>
+		</div>
+		<div>
+			<span class="material-symbols-rounded">arrow_range</span>
+			<div>Use Shift + Mouse Wheel to scroll long blocks horizontally</div>
+		</div>
+	</div>
 	<div class="items">
 		{#each items as item, i (i)}
 			<div class="item" draggable="true" role="none"
@@ -84,6 +95,7 @@
 				<div class="icon">
 					<img src={parseImgUrl(item.icon_url)} alt="appicon">
 					<button onclick={() => removeItem(i)}>Remove</button>
+					<span class="material-symbols-rounded">drag_handle</span>
 				</div>
 				<div class="text">
 					<Property icon="tag" name="Name" bind:value={item.name} {detectChanges} title />
@@ -113,10 +125,11 @@
 		margin: 4px;
 		width: 34%;
 		flex: 1;
-		min-width: 320px;
+		min-width: 340px;
 	}
 	.icon {
 		margin: 0 8px 0 4px;
+		text-align: center;
 	}
 	.icon img {
 		min-width: 64px;
@@ -131,9 +144,41 @@
 	.icon button {
 		color: #B44;
 		font-size: 0.8rem;
-		text-align: center;
-		background: #B443;
 		border-radius: 20px;
 		padding: 4px 6px;
+		transition: all .2s;
+	}
+	.icon button:hover {
+		background: #B443;
+	}
+	.icon span {
+		padding: 4px 16px;
+		border-radius: 32px;
+		transition: all .2s;
+	}
+	.icon span:hover {
+		background: #8884;
+		cursor: grab;
+	}
+
+	.notes {
+		display: flex;
+		align-items: center;
+		color: #888B;
+		text-align: center;
+		margin: 8px 12px 24px;
+		font-size: 0.8rem;
+		gap: 16px;
+	}
+	.notes > div {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: left;
+	}
+	.notes span {
+		margin-right: 8px;
+		font-size: 20px;
 	}
 </style>

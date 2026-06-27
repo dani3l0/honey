@@ -43,7 +43,7 @@
 		left: 50%;
 		transform: translateX(-50%);
 		width: 100%;
-		max-width: 960px;
+		max-width: 1080px;
 		max-height: 100vh;
 	}
 	:global(.adminpages > div.visible) {
