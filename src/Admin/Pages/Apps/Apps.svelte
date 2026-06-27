@@ -98,6 +98,11 @@
 
 
 <style>
+	.items {
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}
 	.item {
 		display: flex;
 		align-items: center;
@@ -105,7 +110,10 @@
 		background: #EEE;
 		border-radius: 24px;
 		overflow-x: auto;
-		margin: 12px 0;
+		margin: 4px;
+		width: 34%;
+		flex: 1;
+		min-width: 320px;
 	}
 	.icon {
 		margin: 0 8px 0 4px;
