@@ -17,7 +17,7 @@
 		width: 100vw;
 		max-width: 1080px;
 		height: 0;
-		top: 48px;
+		top: 0;
 		opacity: 0;
 		left: 50%;
 		overflow-x: hidden;

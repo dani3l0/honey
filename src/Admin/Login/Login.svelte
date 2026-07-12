@@ -25,7 +25,7 @@
 			body: JSON.stringify(authData),
 			credentials: "include"
 		})
-		isLoggedIn.set(resp.ok)
+		setTimeout(() => isLoggedIn.set(resp.ok), 100)
 		if (!e.firstTime) {
 			errorVisible = !resp.ok
 			clearTimeout(errTimeout)
@@ -38,7 +38,7 @@
 	}
 	onMount(() => {
 		const fakeEvent = { preventDefault: () => {}, firstTime: true }
-		setTimeout(() => submit(fakeEvent), 1000)
+		submit(fakeEvent)
 	});
 
 </script>

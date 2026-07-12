@@ -20,7 +20,6 @@
 		margin: 12px auto;
 		max-width: 960px;
 		border-radius: 24px;
-		--transition-duration: 200ms;
 		background: #EEE;
 	}
 </style>
