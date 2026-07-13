@@ -27,7 +27,6 @@
 						return
 					}
 					localStorage.setItem("config", JSON.stringify(val.client))
-					console.log(localStorage)
 				})
 
 				// Once-to-do stuff
