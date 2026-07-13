@@ -44,6 +44,12 @@
 			showNotification(false, "Something went wrong...")
 		}
 	}
+
+	// Resets all changes
+	const resetConfig = () => {
+		configMain.set(structuredClone($configMainSnapshot))
+		configSystem.set(structuredClone($configSystemSnapshot))
+	}
 </script>
 
 
@@ -58,7 +64,7 @@
 		</div>
 
 		{#if !compareConfigs($configMain, $configMainSnapshot) || !compareConfigs($configSystem, $configSystemSnapshot)}
-			<button class="reset" title="Reset configuration">
+			<button class="reset" title="Reset configuration" onclick={resetConfig}>
 				<span class="material-symbols-outlined">reset_wrench</span>
 			</button>
 			<button class="save" title="Save configuration" onclick={saveConfig}>
