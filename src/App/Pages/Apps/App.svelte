@@ -23,7 +23,7 @@
 		display: flex;
 		align-items: center;
 		flex: 1;
-		min-width: 34%;
+		min-width: 320px;
 		position: relative;
 		text-decoration: none;
 		color: inherit;
