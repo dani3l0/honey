@@ -21,7 +21,7 @@ var resEmbed embed.FS
 var Mux *http.ServeMux
 var Server *http.Server
 
-func Run() {
+func Run() error {
 	fmt.Println("Starting Honey Web Server ...")
 
 	Mux = http.NewServeMux()
@@ -73,6 +73,7 @@ func Run() {
 	}
 	err = Server.ListenAndServe()
 	if err != nil && !errors.Is(err, http.ErrServerClosed) {
-		fmt.Println("Error running webserver: ", err.Error())
+		return err
 	}
+	return nil
 }
