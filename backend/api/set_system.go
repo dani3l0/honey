@@ -6,14 +6,14 @@ import (
 	"net/http"
 )
 
-func SetSystem(w http.ResponseWriter, r *http.Request) {
+func SetSystem(w http.ResponseWriter, r *http.Request) bool {
 	if MethodNotAllowed(w, r, "POST") {
-		return
+		return false
 	}
 
 	// Auth
 	if !Auth(w, r) {
-		return
+		return false
 	}
 
 	// Parse JSON
@@ -21,7 +21,7 @@ func SetSystem(w http.ResponseWriter, r *http.Request) {
 	err := json.NewDecoder(r.Body).Decode(&newConfig)
 	if err != nil {
 		WriteJSON(w, http.StatusBadRequest, "Bad Request", "Malformed JSON input")
-		return
+		return false
 	}
 
 	// Override system configuration
@@ -29,4 +29,5 @@ func SetSystem(w http.ResponseWriter, r *http.Request) {
 
 	config.Sync()
 	WriteJSON(w, http.StatusOK, "OK", config.App.System)
+	return true
 }

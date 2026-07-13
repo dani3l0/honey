@@ -3,9 +3,13 @@ package main
 import (
 	"honey/backend/config"
 	"honey/backend/webserver"
+	"time"
 )
 
 func main() {
-	config.Load()
-	webserver.Run()
+	for {
+		config.Load()
+		webserver.Run()
+		time.Sleep(time.Second)
+	}
 }

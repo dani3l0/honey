@@ -2,6 +2,7 @@ package webserver
 
 import (
 	"embed"
+	"errors"
 	"fmt"
 	"honey/backend/api"
 	"honey/backend/config"
@@ -16,22 +17,12 @@ var distEmbed embed.FS
 //go:embed all:res
 var resEmbed embed.FS
 
-// App Router
+// App Router and server
 var Mux *http.ServeMux
+var Server *http.Server
 
 func Run() {
 	fmt.Println("Starting Honey Web Server ...")
-
-	// Copy static files to host
-	if _, err := os.Stat("./res"); os.IsNotExist(err) {
-		fmt.Println("Copying example resource files to host ...")
-		if err := os.CopyFS(".", resEmbed); err != nil {
-			panic("Failed to copy static files: " + err.Error())
-		}
-		fmt.Println("Resource files copied successfully")
-	} else {
-		fmt.Println("Using host's resource directory")
-	}
 
 	Mux = http.NewServeMux()
 
@@ -44,9 +35,22 @@ func Run() {
 	fsServer := http.FileServer(http.FS(staticFS))
 	Mux.Handle("/", fsServer)
 
-	// Resource Files
-	resServer := http.FileServer(http.FS(resEmbed))
-	Mux.Handle("/res/", resServer)
+	// Copy resource files to host
+	if _, err := os.Stat("./res"); os.IsNotExist(err) {
+		fmt.Println("Copying example resource files to host ...")
+		if err := os.CopyFS(".", resEmbed); err != nil {
+			panic("Failed to copy static files: " + err.Error())
+		}
+		fmt.Println("Resource files copied successfully")
+	}
+
+	// Resource Files (Icons)
+	resServer := http.FileServer(http.Dir(config.App.System.StaticIconsDir))
+	Mux.Handle("/res/icons/", http.StripPrefix("/res/icons/", resServer))
+
+	// Resource Files (Backgrounds)
+	backServer := http.FileServer(http.Dir(config.App.System.StaticBackgroundsDir))
+	Mux.Handle("/res/backgrounds/", http.StripPrefix("/res/backgrounds/", backServer))
 
 	// API
 	// App endpoint
@@ -59,9 +63,16 @@ func Run() {
 	Mux.HandleFunc("/api/admin/setAdmin", api.SetAdmin)
 
 	Mux.HandleFunc("/api/admin/getSystem", api.GetSystem)
-	Mux.HandleFunc("/api/admin/setSystem", api.SetSystem)
+	Mux.HandleFunc("/api/admin/setSystem", SaveAndRestart)
 
-	// Message and spinup the server
+	// Message, config and spinup the server
 	fmt.Printf("Serving under http://%s\n", config.App.System.ListenAddr)
-	http.ListenAndServe(config.App.System.ListenAddr, enableCORS(Mux))
+	Server = &http.Server{
+		Addr:    config.App.System.ListenAddr,
+		Handler: enableCORS(Mux),
+	}
+	err = Server.ListenAndServe()
+	if err != nil && !errors.Is(err, http.ErrServerClosed) {
+		fmt.Println("Error running webserver: ", err.Error())
+	}
 }

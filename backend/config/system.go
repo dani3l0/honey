@@ -13,8 +13,8 @@ type System struct {
 
 var systemDefaults = System{
 	ListenAddr:           "0.0.0.0:4208",
-	StaticBackgroundsDir: "./static/backgrounds",
-	StaticIconsDir:       "./static/icons",
+	StaticBackgroundsDir: "./res/backgrounds",
+	StaticIconsDir:       "./res/icons",
 	IsUnderSubdomain:     false,
 	AdminPanelEnabled:    true,
 	CookieLifetime:       time.Hour * 24 * 7,
