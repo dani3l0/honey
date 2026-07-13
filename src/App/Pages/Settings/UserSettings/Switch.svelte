@@ -1,7 +1,7 @@
 <script>
     import { className } from "../../../engine/utils";
 
-	let { icon, name, desc, value = $bindable(true) } = $props()
+	let { icon, name, desc, value = $bindable(true), children = null } = $props()
 
 </script>
 
@@ -12,7 +12,13 @@
 	</div>
 	<div class="text">
 		<div class="name">{name}</div>
-		<div class="description">{desc}</div>
+		<div class="description">
+			{#if desc}
+				{desc}
+			{:else}
+				{@render children?.()}
+			{/if}
+		</div>
 	</div>
 	<div class="value {className(value, "checked")}"></div>
 </button>
