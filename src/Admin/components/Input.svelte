@@ -47,7 +47,7 @@
 		font-size: 0.9rem;
 	}
 	input {
-		background: #8882;
+		background: #8881;
 		padding: 10px 14px;
 		font-size: 0.9rem;
 		transition: all .2s;

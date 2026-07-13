@@ -22,7 +22,7 @@
 		bind:value={$configMain.personalization.description}
 	/>
 	<Input
-		icon="photo"
+		icon="deceased"
 		name="Favicon"
 		description="Icon that shows up on main screen and on your browser tab"
 		bind:value={$configMain.personalization.favicon}

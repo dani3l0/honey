@@ -37,7 +37,21 @@
 			icon="discover_tune"
 			name="System"
 			description="Define advanced backend behavior"
-			color={40}
+			color={60}
+		/>
+		<Item
+			target="#icons"
+			icon="deceased"
+			name="Icons"
+			description="Upload, find or delete icons"
+			color={30}
+		/>
+		<Item
+			target="#wallpapers"
+			icon="wallpaper"
+			name="Wallpapers"
+			description="Upload, find or delete wallpapers"
+			color={0}
 		/>
 		<Item
 			target="#admin"

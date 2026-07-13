@@ -5,6 +5,6 @@
 
 
 <div>
-	<Header icon="apps" title="Services" color={100} />
+	<Header icon="deceased" title="Icons" color={30} />
 	<center>Coming soon!</center>
 </div>

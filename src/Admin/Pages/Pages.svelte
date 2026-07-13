@@ -4,10 +4,12 @@
     import About from "./About/About.svelte";
     import Admin from "./Admin/Admin.svelte";
     import Defaults from "./Defaults/Defaults.svelte";
+    import Icons from "./Icons/Icons.svelte";
     import Main from "./Main/Main.svelte";
     import Personalization from "./Personalization/Personalization.svelte";
     import Services from "./Services/Services.svelte";
     import System from "./System/System.svelte";
+    import Wallpapers from "./Wallpapers/Wallpapers.svelte";
     import Wrapper from "./Wrapper.svelte";
 
 </script>
@@ -38,6 +40,16 @@
 	<!-- Backend configuration -->
 	<Wrapper targetHash="#system">
 		<System />
+	</Wrapper>
+
+	<!-- Icon manager -->
+	<Wrapper targetHash="#icons">
+		<Icons />
+	</Wrapper>
+
+	<!-- Wallpaper manager -->
+	<Wrapper targetHash="#wallpapers">
+		<Wallpapers />
 	</Wrapper>
 
 	<!-- Admin page & credentials -->
