@@ -33,7 +33,7 @@
 	<Input
 		icon="cookie"
 		name="Cookie lifetime"
-		description="How long will it take to log you out from admin panel; value in hours"
+		description="Time in hours after your admin session expires (you will be logged out of config panel)"
 		bind:value={cookieHours}
 	/>
 

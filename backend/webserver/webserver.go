@@ -60,6 +60,7 @@ func Run() error {
 	Mux.HandleFunc("/api/admin/setConfig", api.SetConfig)
 
 	Mux.HandleFunc("/api/admin/auth", api.AuthEndpoint)
+	Mux.HandleFunc("/api/admin/logout", api.Logout)
 	Mux.HandleFunc("/api/admin/setAdmin", api.SetAdmin)
 
 	Mux.HandleFunc("/api/admin/getSystem", api.GetSystem)
