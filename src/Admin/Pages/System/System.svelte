@@ -4,6 +4,13 @@
 	import Input from "../../components/Input.svelte";
 	import { configSystem } from "../../engine/variables";
 	import Switch from "../../../App/Pages/Settings/UserSettings/Switch.svelte";
+
+	// Nicer cookie
+	const ns = 1_000_000_000
+	let cookieHours = $state($configSystem.cookie_lifetime / ns / 3600)
+	$effect(() => {
+		$configSystem.cookie_lifetime = cookieHours * 1_000_000_000 * 3600
+	})
 </script>
 
 
@@ -26,8 +33,8 @@
 	<Input
 		icon="cookie"
 		name="Cookie lifetime"
-		description="How long will it take to log you out from admin panel; value in nanoseconds"
-		bind:value={$configSystem.cookie_lifetime}
+		description="How long will it take to log you out from admin panel; value in hours"
+		bind:value={cookieHours}
 	/>
 
 	<Input
