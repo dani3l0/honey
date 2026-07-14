@@ -4,7 +4,7 @@
 
 </script>
 <div class="branding">
-	<img src={parseImgUrl("honey.png")} alt="logo">
+	<img src={"/honey.png"} alt="logo">
 	<div class="title">honey</div>
 	<div class="subtitle">A sweet place for all your self-hosted services.</div>
 </div>
