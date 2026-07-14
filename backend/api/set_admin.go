@@ -28,16 +28,24 @@ func SetAdmin(w http.ResponseWriter, r *http.Request) {
 	// Override user
 	config.App.Admin.Name = newConfig.Name
 	config.App.Admin.Password = config.SHA256(newConfig.Password)
+	config.Sync()
 
 	// Set cookie
 	http.SetCookie(w, &http.Cookie{
-		Name:     config.App.Admin.Name,
+		Name:     "user",
+		Value:    config.App.Admin.Name,
+		Path:     "/",
+		HttpOnly: true,
+		Expires:  time.Now().Add(config.App.System.CookieLifetime),
+	})
+	http.SetCookie(w, &http.Cookie{
+		Name:     "pass",
 		Value:    config.App.Admin.Password,
 		Path:     "/",
 		HttpOnly: true,
 		Expires:  time.Now().Add(config.App.System.CookieLifetime),
 	})
 
-	config.Sync()
+	// Response
 	WriteJSON(w, http.StatusOK, "OK", config.App.Admin)
 }

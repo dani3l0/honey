@@ -29,6 +29,18 @@ button, input {
 	background: none;
 }
 
+input {
+	background: #8883;
+	border-radius: 32px;
+	padding: 12px 14px;
+	font-size: 0.9rem;
+	transition: all .2s;
+}
+
+input:focus {
+	background: #8885;
+}
+
 button {
 	cursor: pointer;
 }
