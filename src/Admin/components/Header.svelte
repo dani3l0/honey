@@ -75,9 +75,9 @@
 			<span class="material-symbols-outlined">close</span>
 		</a>
 	</div>
+	<div class="save-notification {className(notify, "visible")} {className(notifyOk, "ok")}">{notifyMsg}</div>
 </div>
 
-<div class="save-notification {className(notify, "visible")} {className(notifyOk, "ok")}">{notifyMsg}</div>
 
 
 <style>
@@ -144,8 +144,8 @@
 	}
 
 	.save-notification {
-		position: fixed;
-		bottom: -32px;
+		position: absolute;
+		top: 0;
 		padding: 14px 20px;
 		border-radius: 32px;
 		left: 50%;
@@ -156,6 +156,7 @@
 		box-shadow: none;
 		opacity: 0;
 		visibility: hidden;
+		z-index: 1001;
 		transition: all .3s;
 	}
 	.save-notification.ok {
@@ -163,8 +164,8 @@
 		color: #241;
 	}
 	.save-notification.visible {
-		box-shadow: 4px 8px 32px #888;
-		bottom: 20px;
+		box-shadow: 4px 8px 16px #8888;
+		top: 12px;
 		opacity: 1;
 		visibility: visible;
 		pointer-events: all;
