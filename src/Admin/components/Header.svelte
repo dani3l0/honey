@@ -84,6 +84,7 @@
 	.header-bg {
 		position: sticky;
 		top: 0;
+		z-index: 1000;
 		padding: 8px 8px 16px;
 		background: linear-gradient(#FFF 72px, #FFF0);
 	}

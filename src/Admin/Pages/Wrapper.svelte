@@ -15,7 +15,7 @@
 	.page-wrapper {
 		position: fixed;
 		width: 100vw;
-		max-width: 1080px;
+		max-width: 1280px;
 		height: 0;
 		top: 0;
 		opacity: 0;
