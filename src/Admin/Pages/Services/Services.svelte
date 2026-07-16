@@ -58,15 +58,15 @@
 							<span class="material-symbols-rounded">tag</span>
 							<input bind:value={$configMain.dashboard_items[i].name}>
 						</div>
-						<div class="description">
+						<div class="description lighten">
 							<span class="material-symbols-rounded">short_text</span>
 							<input bind:value={$configMain.dashboard_items[i].description} placeholder="No description">
 						</div>
-						<div class="image">
+						<div class="image lighten">
 							<span class="material-symbols-rounded">image</span>
 							<input bind:value={$configMain.dashboard_items[i].icon_url}>
 						</div>
-						<div class="url">
+						<div class="url lighten">
 							<span class="material-symbols-rounded">link</span>
 							<input bind:value={$configMain.dashboard_items[i].url}>
 						</div>
@@ -93,7 +93,7 @@
 		align-items: stretch;
 		justify-content: center;
 		gap: 8px;
-		margin: 8px;
+		margin: 8px 8px 80px;
 		flex-wrap: wrap;
 	}
 
@@ -137,7 +137,7 @@
 	}
 	.info .text span {
 		font-size: 20px;
-		opacity: .5;
+		opacity: .45;
 		padding: 0 6px 0 8px;
 	}
 	.info .text input {
@@ -145,6 +145,9 @@
 		padding: 4px 0;
 		margin: 0;
 		border-radius: 0;
+	}
+	.info .text .lighten input {
+		opacity: .5;
 	}
 	.info .name input {
 		font-size: 1.25rem;
