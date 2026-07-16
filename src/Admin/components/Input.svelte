@@ -50,6 +50,7 @@
 		background: #8881;
 		padding: 10px 14px;
 		font-size: 0.9rem;
+		border-radius: 0;
 		transition: all .2s;
 	}
 	input:focus {
