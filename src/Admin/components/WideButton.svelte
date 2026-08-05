@@ -67,6 +67,7 @@
 		opacity: 0;
 		pointer-events: none;
 		visibility: hidden;
+		z-index: 2000;
 		transition: all .3s;
 	}
 	.confirmation.visible {
