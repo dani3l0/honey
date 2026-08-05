@@ -9,6 +9,7 @@ html, body {
 	margin: 0;
 	overflow: hidden;
 	scrollbar-width: none;
+	-webkit-tap-highlight-color: transparent;
 }
 ::-webkit-scrollbar {
 	display: none;

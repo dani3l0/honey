@@ -9,7 +9,7 @@
     import Personalization from "./Personalization/Personalization.svelte";
     import Services from "./Services/Services.svelte";
     import System from "./System/System.svelte";
-    import Wallpapers from "./Wallpapers/Wallpapers.svelte";
+    import Backgrounds from "./Backgrounds/Backgrounds.svelte";
     import Wrapper from "./Wrapper.svelte";
 
 </script>
@@ -49,7 +49,7 @@
 
 	<!-- Wallpaper manager -->
 	<Wrapper targetHash="#backgrounds">
-		<Wallpapers />
+		<Backgrounds />
 	</Wrapper>
 
 	<!-- Admin page & credentials -->

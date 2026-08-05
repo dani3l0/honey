@@ -43,14 +43,14 @@
 			target="#icons"
 			icon="deceased"
 			name="Icons"
-			description="Upload, find or delete icons"
+			description="Browse available app icons"
 			color={30}
 		/>
 		<Item
 			target="#backgrounds"
 			icon="wallpaper"
 			name="Backgrounds"
-			description="Upload, find or delete backgrounds"
+			description="Browse available backgrounds"
 			color={0}
 		/>
 		<Item
