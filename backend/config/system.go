@@ -9,6 +9,7 @@ type System struct {
 	IsUnderSubdomain     bool          `yaml:"is_under_subdomain" json:"is_under_subdomain"`
 	AdminPanelEnabled    bool          `yaml:"admin_panel_enabled" json:"admin_panel_enabled"`
 	CookieLifetime       time.Duration `yaml:"cookie_lifetime" json:"cookie_lifetime"`
+	Version              string        `yaml:"-" json:"version"`
 }
 
 var systemDefaults = System{
@@ -18,4 +19,5 @@ var systemDefaults = System{
 	IsUnderSubdomain:     false,
 	AdminPanelEnabled:    true,
 	CookieLifetime:       time.Hour * 24 * 7,
+	Version:              "v3-" + time.Now().Format("20060102_1504"),
 }
