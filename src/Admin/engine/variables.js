@@ -8,6 +8,7 @@ export let onhashchange = () => {
 	let hh = window.location.hash
 	if (!hh.length) hh = "#"
 	hash.set(hh)
+	fetchConfigs()
 }
 window.addEventListener("hashchange", onhashchange)
 
@@ -28,10 +29,36 @@ export const getConfigs = async () => {
 	if (respSystem.ok) configSystem.set((await respSystem.json()).data)
 	configSystemSnapshot.set(structuredClone(get(configSystem)))
 }
-window.addEventListener("hashchange", getConfigs)
 
 export const compareConfigs = (configA, configB) => {
 	let a = JSON.stringify(configA)
 	let b = JSON.stringify(configB)
 	return a == b
+}
+
+// Backgrounds & Icons
+export let iconsList = writable([])
+export let backgroundsList = writable([])
+
+export const getIcons = async () => {
+	let resp = await fetch("/api/admin/listIcons")
+	if (!resp.ok) return
+	let jsoned = await resp.json()
+	let contents = jsoned.data
+	iconsList.set(contents)
+}
+export const getBackgrounds = async () => {
+	let resp = await fetch("/api/admin/listBackgrounds")
+	if (!resp.ok) return
+	let jsoned = await resp.json()
+	let contents = jsoned.data
+	backgroundsList.set(contents)
+}
+
+// HashChange event to fetch configs
+const fetchConfigs = async () => {
+	let h = get(hash)
+	if (h == "#icons") await getIcons()
+	else if (h == "#backgrounds") await getBackgrounds()
+	else await getConfigs()
 }

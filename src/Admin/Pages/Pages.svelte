@@ -48,7 +48,7 @@
 	</Wrapper>
 
 	<!-- Wallpaper manager -->
-	<Wrapper targetHash="#wallpapers">
+	<Wrapper targetHash="#backgrounds">
 		<Wallpapers />
 	</Wrapper>
 

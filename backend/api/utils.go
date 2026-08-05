@@ -5,6 +5,7 @@ import (
 	"errors"
 	"honey/backend/config"
 	"net/http"
+	"os"
 )
 
 func MethodNotAllowed(w http.ResponseWriter, r *http.Request, method string) bool {
@@ -50,4 +51,16 @@ func AuthPre(w http.ResponseWriter, r *http.Request, lazy bool) bool {
 		WriteJSON(w, http.StatusUnauthorized, "Unauthorized", "")
 	}
 	return authd
+}
+
+// Shared function for reading Background and Icon directories
+func ReadResDir(target string) ([]string, error) {
+	filesRaw, err := os.ReadDir(target)
+	var files []string
+	if err == nil {
+		for _, file := range filesRaw {
+			files = append(files, file.Name())
+		}
+	}
+	return files, err
 }

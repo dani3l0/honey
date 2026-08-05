@@ -66,6 +66,9 @@ func Run() error {
 	Mux.HandleFunc("/api/admin/getSystem", api.GetSystem)
 	Mux.HandleFunc("/api/admin/setSystem", SaveAndRestart)
 
+	Mux.HandleFunc("/api/admin/listIcons", api.ListIcons)
+	Mux.HandleFunc("/api/admin/listBackgrounds", api.ListBackgrounds)
+
 	// Message, config and spinup the server
 	fmt.Printf("Serving under http://%s\n", config.App.System.ListenAddr)
 	Server = &http.Server{

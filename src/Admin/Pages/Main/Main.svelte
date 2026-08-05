@@ -47,10 +47,10 @@
 			color={30}
 		/>
 		<Item
-			target="#wallpapers"
+			target="#backgrounds"
 			icon="wallpaper"
-			name="Wallpapers"
-			description="Upload, find or delete wallpapers"
+			name="Backgrounds"
+			description="Upload, find or delete backgrounds"
 			color={0}
 		/>
 		<Item
