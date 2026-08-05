@@ -19,6 +19,8 @@ func Sync() error {
 	if err != nil {
 		fmt.Printf("Error: Couldn't sync config to disk: %+x\n", err)
 		return err
+	} else {
+		fmt.Printf("Synced config file to disk\n")
 	}
 	return nil
 }
