@@ -36,6 +36,15 @@ Just remember to provide valid URLs (with `/config` prefix).
 _alternatively, use a `docker-compose.yml` file_
 
 
+### 🅿️ via Easypanel
+
+[Easypanel](https://easypanel.io) is a self-hosted Docker deployment platform, and honey has a one-click deployment template there.
+
+[![Deploy on Easypanel](https://easypanel.io/img/deploy-on-easypanel-40.svg)](https://easypanel.io/templates/honey)
+
+The template sets up a persistent volume for `/app/dist/config` automatically.
+
+
 ## ⚙️ Configuration
 
 Configuration file is located at `config/config.json`.
