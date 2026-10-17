@@ -9,9 +9,16 @@
 	width: 100%;
 	max-width: 920px;
 	height: 100vh;
+	/* Follow Safari's visible viewport as its browser toolbars change. */
+	height: 100dvh;
 	transform: translateX(-50%);
 	overflow-y: scroll;
 	transition: top .4s, opacity .4s, visibility .4s, color .3s;
+}
+
+.page:not(.home) {
+	box-sizing: border-box;
+	padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .page:not(.current) {
@@ -112,4 +119,34 @@
 	padding: 12px;
 	width: 50%;
 	cursor: pointer;
+}
+
+/* Let touch browsers scroll the document instead of a fixed, transformed layer. */
+@media (pointer: coarse) {
+	.main {
+		position: relative;
+		height: auto;
+		min-height: 100vh;
+		min-height: 100dvh;
+	}
+
+	.page:not(.home) {
+		left: auto;
+		margin-inline: auto;
+		height: auto;
+		min-height: 100vh;
+		min-height: 100dvh;
+		transform: none;
+		display: flow-root;
+		overflow: visible;
+	}
+
+	.page:not(.home).current {
+		position: relative;
+	}
+
+	.page > .wrapper {
+		/* Preserve clipping without creating another scroll container. */
+		overflow: clip;
+	}
 }
